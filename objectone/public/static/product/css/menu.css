@@ -1,0 +1,172 @@
+/*菜单栏公共样式*/
+/*所有服务分类 设置相对定位*/
+.allserver{
+    position: relative;
+}
+
+/*所有服务列表弹出菜单*/
+.server-list-box{
+    width:1200px;
+    position:absolute;
+    top:39px;
+    left:0;
+    z-index: 3;
+    display: flex;
+}
+/*所有服务列表左边的div里的class为mar0右边距为0*/
+.server-list-box-left>div .mar0{
+    margin-left:0;
+    font-size: 16px;
+}
+/*所有服务列表里的div里的ul*/
+.server-list-box-left>div>ul{
+    display: flex;
+    color: #ffffff;
+    font-size: 14px;
+}
+.server-list-box-left>div>ul>li{
+    margin:12px 10px 0 11px;
+}
+.server-list-box-left>div>ul>li>a{
+    color:white;
+}
+/*右箭头*/
+.leftarrows{
+    height:15px;
+    width:20px;
+    background:url("../img/sy-1.png")no-repeat -85px -76px;
+}
+/*公司服务图标*/
+.companyico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat -83px -47px;
+}
+/*会计服务图标*/
+.accountantico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat -109px -47px;
+}
+/*知识产权图标*/
+.equityico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat -139px -47px;
+}
+/*人事社保图标*/
+.socialico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat 1px -76px;
+}
+/*资质办理*/
+.aptitudeico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat -22px -76px;
+}
+/*特殊渠道*/
+.specialico{
+    height:22px;
+    width:25px;
+    background: url("../img/sy-1.png")no-repeat -22px -76px;
+}
+.server-list-box-left>div{
+    background-color:#2B7773;
+    opacity:0.8;
+    height:80px;
+    width:269px;
+    border-bottom: 1px solid #ddd;
+}
+.server-list-box-left>div:last-child{
+    height:81px;
+}
+/*所有服务列表下面右边弹出框*/
+.server-list-box-right{
+    width:929px;
+    height:484px;
+    background:#ffffff;
+    border: 1px solid #1cbbb4;
+    border-left:none;
+}
+/*弹出框容器*/
+.server-list-box-right-list{
+    height: 484px;
+    width:930px;
+}
+/*弹出菜单栏框里的左边样式*/
+.server-list-box-right-list-1{
+    height:484px;
+    width: 932px;
+}
+.server-list-box-right-list-1>div{
+    display: inline-block;
+}
+.server-list-right{
+    height:464px;
+    width:639px;
+    vertical-align: top;
+    margin:10px 20px;
+}
+.server-list-left{
+    height:484px;
+    width:246px;
+    vertical-align: top;
+}
+/*公司注册*/
+.server-list-right-top{
+    display:flex;
+}
+/*有限公司注册 右边距10px*/
+.limited{
+    margin-left:15px;
+    flex-grow: 1;
+}
+.limited>li>a:hover{
+    color:#1cbbb4;
+}
+/*弹出框菜单栏里的公共样式公共样式上外边距20px*/
+.martop20px{
+    margin-top:20px;
+}
+/*弹出框菜单栏里的公共样式公共样式下外边距10px*/
+.marbottom10{
+    margin-bottom: 10px;
+}
+/*有限公司注册里的ul设为弹性布局*/
+.limited>ul{
+    display:flex;
+}
+.martop10px{
+    margin-top: 10px;
+}
+/*有限公司注册里的ul里的li下外边距10px*/
+.limited>ul>li{
+    margin-bottom: 5px;
+    width:140px;
+}
+/*所有分类弹出菜单右边的3幅图片的外框 上下左右外边距5px*/
+.server-list-left>div{
+    margin:5px;
+}
+/*所有分类弹出菜单右边的3幅图片 宽240px 高145px*/
+.server-list-left>div>a>img{
+    width:235px;
+    height:150px;
+    border: 1px solid transparent;
+}
+/*公共样式下边框1px 颜色#464646*/
+.borderbot{
+    border-bottom: 1px solid lightgray;
+}
+.server-list-box-right{
+    font-size: 14px;
+}
+/*红色样式*/
+.redfont{
+    color: #FF0000;
+}
+.server-list-right-top>div>span{
+    color:#000;
+}

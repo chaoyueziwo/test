@@ -1,0 +1,310 @@
+/*下单页面*/
+.martop60px{
+    margin-top: 0!important;
+}
+/*中间内容盒子*/
+.nav-box{
+    margin:0 auto;
+    width: 1200px;
+    margin-top: 15px;
+}
+/*中间区域里第一个div里的span标签里的a标记鼠标移入*/
+.nav-box>div:first-child>span a:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/**/
+.juhui-box>ul>li:last-child{
+    width: 38%;
+    font-size: 0;
+}
+/*进度条盒子*/
+.schedule{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    width: 33.33%;
+}
+/*进度条文本居中*/
+.schedule>div:first-child{
+    text-align: center;
+}
+/*进度条*/
+.schedule>p{
+    position: relative;
+    height: 3px;
+    background: #ddd;
+    margin-top: 15px;
+}
+/*进度条背景公共样式*/
+.bgcbcb4{
+    background: #1cbcb4!important;
+}
+/*进度条边框样式*/
+.borcbcb4{
+    border:3px solid #1cbcb4!important;
+}
+.cbcb4{
+    color: #1cbcb4!important;
+}
+/*订单盒子*/
+.order-box{
+    margin-top: 15px;
+}
+/*进度条里的数字*/
+.schedule>p>span{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+    background: #fff;
+    color: #ddd;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*所有服务下线*/
+.middleline{
+    border-top:1px solid #1cbcb4;
+    margin-top: 30px;
+}
+.order-box>div:first-child{
+    background:#f6f6f6;
+    font-size: 15px;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+.order-box>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.order-box>div:first-child>div>span{
+    display: inline-block;
+    vertical-align: top;
+}
+/*订单第一个div里的第一个div*/
+.order-box>div:first-child>div:first-child{
+    width: 60%;
+}
+/*订单第一个div里的最后一个div*/
+.order-box>div:first-child>div:last-child{
+    width: 38%;
+}
+/*服务名称，所选类型*/
+.order-box>div:first-child>div:first-child>span{
+    width: 44%;
+    text-align: center;
+}
+.order-box>div:first-child>div:first-child>span:last-child{
+    text-align: left;
+    margin-left: 31px;
+}
+.order-box>div:first-child>div:last-child>span{
+    width: 24%;
+    text-align: right;
+}
+/*订单明细*/
+.order-detail-box{
+    margin-bottom: 20px;
+}
+.order-detail{
+    border: 1px solid #ddd;
+    padding: 30px 0;
+}
+/*订单明细图片*/
+.order-photo{
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 15px 0 30px;
+}
+.order-detail>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.order-detail>div:first-child{
+    width: 60%;
+}
+.order-detail>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 39%;
+}
+.order-detail>div:first-child>div:last-child{
+    text-align: left;
+}
+.order-detail>div:last-child{
+    width: 39%;
+    font-size: 0;
+}
+.order-detail>div:last-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 23%;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.price{
+    font-size: 14px;
+    margin-left: 14px;
+}
+/*减号*/
+.min{
+    display: inline-block;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 18px;
+    line-height:27px;
+    font-family:宋体;
+    font-weight: bold;
+    color:#ddd;
+}
+/*加减鼠标移入鼠标变手指*/
+.min,.plus:hover{
+    cursor: pointer;
+}
+.count{
+    text-align: center;
+    width: 33px;
+    height: 23px;
+    border: 1px solid #ddd;
+}
+/*加号*/
+.plus{
+    display: inline-block;
+    vertical-align: top;
+    height: 25px;
+    width: 25px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    font-family:宋体;
+    font-weight: bold;
+    color:#333;
+}
+/*发票*/
+.invoice-box{
+    font-size: 14px;
+    width: 26%!important;
+    text-align: center!important;
+}
+.invoice-box>div:first-child{
+    font-size: 16px;
+    color:#d6623d;
+    margin-top: -13px;
+}
+.invoice-box>div:last-child{
+     margin-top: 10px;
+}
+.width27{
+    width: 27%!important;
+}
+/*删除按钮*/
+.delete{
+    font-size: 14px;
+    width: 17%!important;
+}
+.deleteall:hover{
+    cursor: pointer;
+}
+label:hover{
+    cursor: pointer;
+}
+/*优惠券*/
+.discounts{
+    text-align: right;
+    font-size: 0;
+}
+/*优惠券里的div*/
+.discounts>div{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-top: none;
+}
+.discounts>div:first-child{
+    padding: 3px 15px;
+}
+.discounts>div:last-child{
+    height: 25px;
+    border-left: none;
+    width:16%;
+    text-align: left;
+}
+.discounts>div:last-child>span{
+    line-height: 25px;
+    width: 48%;
+}
+.discounts>div:last-child>span:first-child{
+    margin-left: 10px;
+}
+/*下拉箭头*/
+.downico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    width: 15px;
+    background: url("../img/zcgs-9.png")no-repeat 75px -720px;
+}
+/*小计*/
+.total{
+    margin-top: 50px;
+    text-align: right;
+    color: #444;
+}
+.total>div>div>div{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    width:16%;
+}
+.alltotal{
+    font-size: 24px;
+    color: #d6623d;
+}
+/*提交订单*/
+.sub{
+    margin-top:30px;
+    text-align: right;
+}
+.sub>input{
+    padding: 5px 20px;
+    background: #d6623d;
+    color:#fff;
+    font-size: 18px;
+    border: none;
+}
+/*底部*/
+.font16{
+    font-size: 16px;
+}
+.footer-box-search-middle{
+    border-right: none;
+}
+.footer-box-search-right>div:first-child{
+    margin-left: 75px;
+}
+.footer-box-search-middle{
+    width: 40%;
+}
+.marleft93{
+    margin-left: 93px!important;
+}
+.marleft94{
+    margin-left: 94px!important;
+}

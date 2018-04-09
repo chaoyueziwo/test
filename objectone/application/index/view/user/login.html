@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员登录页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/indexmedia.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/top.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/menu.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/login.css">
+
+<body>
+<div id="container">
+    <!--头部-->
+
+        {include file="common/top" /}
+
+        <!--头部结束-->
+        <!--聚惠企业图标-->
+
+        <!--中间线-->
+        <div class="middleline"></div>
+        <!--中间内容-->
+        <div class="nav-box">
+            <!--内容导航栏-->
+            <div>
+                <!--位置图标-->
+                <span class="locationico"></span>
+                <span> <a href="#">首页</a> ></span>
+                <span> <a href="#">会员注册</a></span>
+            </div>
+            <!--登录盒子-->
+            <div class="login-box">
+                <div>
+                    <div>
+                        <span class="line"></span>
+                        <span class="font18">&nbsp;登录&nbsp;</span>
+                        <span class="line"></span>
+                    </div>
+
+                    <!--登录-->
+                    <div action="" onsubmit="return confirm();">
+                    <div class="login">
+                        <div class="maleft10">
+                            <span>账号</span>
+                            <input type="tel" name="mobile" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入手机号"   maxlength="13" id="mobile">
+                            <span class="d6623d" id="mob"><span class="pointico"></span>请输入手机号</span>
+                        </div>
+                        <div class="maleft10">
+                            <span>密码</span>
+                            <input type="password" name="password" placeholder="6到18位英文和数字的组合" maxlength="18" minlength="6" id="password">
+                            <span class="d6623d" id="pass"><span class="pointico"></span>请输入密码</span>
+                        </div>
+                        <div>
+                            <span>验证码</span>
+                            <input type="text" id="input1" name="verify" maxlength="5">
+                            <div class="verify-box" onclick="refreshVerify()">
+                               {:captcha_img()}
+                            </div>
+                            <span class="d6623d" id="ver"><span class="pointico"></span>验证码错误</span>
+                        </div>
+                        <!--立即登录-->
+                        <input  onclick="login()" type="submit" value="立即登录">
+                        <div>
+                            <a href="#">马上注册</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <a href="#">忘记密码?</a>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="loginphoto">
+                    <img src="__ROOT__/static/home/login/img/hyzx-07.png">
+                </div>
+            </div>
+        </div>
+     
+    </div>
+</div>
+   <!--底部-->
+        <div class="footer-box">
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP16046474号-16
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<script src="__ROOT__/static/home/login/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/home/login/js/menu.js"></script>
+<script src="__ROOT__/static/home/login/js/top.js"></script>
+<script src="__ROOT__/static/home/login/js/login.js"></script>
+<script type="text/javascript">
+     function refreshVerify() {
+        var ts = Date.parse(new Date())/1000;
+        $('#verify_img').attr("src", "__WEB__/captcha?id="+ts);
+      }
+
+    function login(){
+        //alert("login");
+        var mobile = $("#mobile").val();
+        var password = $("#password").val();
+        var verify = $("#input1").val();
+      var   url = "{:url('User/ajaxLogin')}"; 
+
+      $.ajax({  
+              type:'post',  
+              url:url,  
+              data:("mobile="+mobile+"&password="+password+"&verify="+verify),  
+              dataType:"json", 
+              jsonpCallback:"flightHandler", 
+              success:function(data){
+
+                console.log(data);
+
+                  if(data  ==  1){  
+        
+                      alert('操作成功');  
+                      window.history.back(-1); 
+
+                  }else if(data  ==  2){
+
+                      alert("该手机号不存在");
+
+                  }else{  
+        
+                    $("#ver").show();
+                  }  
+              }
+
+          });
+
+    }
+
+
+</script>
+</body>
+</html>

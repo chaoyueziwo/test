@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/index.css">
+    <title>管理侧边栏目</title>
+</head>
+<body>
+    <!--遮罩层-->
+    <div class="masks"></div>
+    <!--管理栏目片段-->
+        <div class="container">
+            <!--增加-->
+            <a href="{:url('Cebiantype/add')}">
+            <div>
+                <span>+</span>
+                <span>增加栏目</span>
+            </div>
+            </a>
+        </div>
+   <!--底部-->
+   <form action="{:url('Cebiantype/sort')}" method="post">
+       <div class="container-bottom">
+           <table id="tb_1">
+               <thead>
+               <tr>
+                   <th>序号</th>
+                   <th>ID</th>
+                   <th>顺序</th>
+                   <th>折叠</th>
+                   <th>栏目名称</th>
+                   <th>栏目标题</th>
+                   <th>操作</th>
+               </tr>
+               </thead>
+               <!--公司注册-->
+              {$re}
+           </table>
+       </div>
+       <div class="container-bottom-bottom">
+           <div>
+               <ul>
+                   <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+                   <li class="lineheight31">|</li>
+                   <li class="lineheight31"><label for="all">反选</label></li>
+                   <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+                   <li><input type="submit" value="更新顺序" class="update"></li>
+
+               </ul>
+           </div>
+       </div>
+   </form>
+
+
+   <script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+   <script src="__ROOT__/static/admin/houtaijs/index.js"></script>
+   <script src="__ROOT__/static/admin/houtaijs/zhuanti.js"></script>
+</body>
+</html>

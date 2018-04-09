@@ -1,0 +1,165 @@
+/*会员登录页*/
+/*友情链接高度原510px 改为150px*/
+.footer-box{
+    height: 150px;
+    margin-top: 80px;
+}
+/*所有服务下线*/
+.middleline{
+    border-top:1px solid #1cbcb4;
+}
+/*中间内容盒子*/
+.nav-box{
+    margin:0 auto;
+    width: 1200px;
+    margin-top: 15px;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*中间区域里第一个div里的span标签里的a标记鼠标移入*/
+.nav-box>div:first-child>span a:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/*登录盒子*/
+.login-box{
+    margin-top: 30px;
+    border:1px solid #ddd;
+}
+.login-box>div:first-child{
+    display: inline-block;
+    vertical-align: top;
+    width: 38%;
+    margin: 10% 5% 13% 10%;
+}
+.login-box>div:first-child>div:first-child{
+    margin-bottom: 20px;
+    margin-left: 62px;
+}
+/*右边距10px*/
+.maleft10{
+    margin-left: 10px;
+}
+.login>div{
+    margin-bottom: 20px;
+}
+.login-box>div:last-child{
+    display: inline-block;
+    vertical-align: top;
+    width: 34%;
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+/*登录线*/
+.line{
+    display: inline-block;
+    vertical-align: middle;
+    width: 90px;
+    border-top: 1px solid #ddd;
+}
+/*登录线外边距*/
+.marleft50{
+    margin-left: -50px;
+}
+/*字体18*/
+.font18{
+    font-size: 18px;
+}
+.login>div:last-child{
+   text-align: center;
+    margin-right: 80px;
+}
+.verify-box{
+    display: inline-block;
+    width: 95px;
+    height: 36px;
+    vertical-align: top;
+}
+.verify-box>img{
+    height: 100%;
+    width: 100%;
+}
+.login input[type="tel"]{
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+.login input[type="password"]{
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+.login input[type="text"]{
+    height: 30px;
+    padding-left: 10px;
+    margin-left: 15px;
+}
+.login input[type="submit"]{
+    border: none;
+    width: 250px;
+    height:35px;
+    background:#1cbcb4;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-left: 60px;
+}
+.login input[type="submit"]:hover{
+    cursor: pointer;
+}
+/*错误提示颜色*/
+.d6623d{
+    color:#FF0000;
+    display: none;
+    margin-left: 10px;
+    font-size: 12px;
+}
+/*错误提示感叹号*/
+.pointico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 0 -204px;
+}
+.login{
+   color:#a3a2a2;
+}
+/*刷新按钮*/
+.newico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 0 -226px;
+}
+.newico:hover{
+    cursor: pointer;
+}
+#checkCode{
+    height: 35px;
+    width: 75px;
+    color:#fff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align:top;
+    background:#1cbcb4;
+}
+#checkCode:hover{
+    cursor: pointer;
+}
+.loginphoto>img{
+    width: 100%;
+    border: 1px solid #ddd;
+}

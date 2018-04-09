@@ -1,0 +1,348 @@
+/*会员订单中心*/
+/*所有服务下线*/
+.middleline{
+    border-top:1px solid #1cbcb4;
+}
+/*中间内容盒子*/
+.nav-box{
+    margin:0 auto;
+    width: 1200px;
+    margin-top: 30px;
+    font-size: 0;
+}
+.nav-box>div{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+.nav-box>div:first-child{
+    width: 18%;
+}
+.nav-box>div:last-child{
+    margin-left: 2%;
+    width: 79.6%;
+}
+/*左边部分里的div*/
+.nav-box-left>div{
+    margin: 20px 10px;
+}
+.nav-box-left>div>div:first-child{
+    margin-left: 5px;
+}
+.nav-box-left>div>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.nav-box-left>div>div:first-child>div:last-child{
+    margin: 5px;
+}
+.nav-box-left>div>div:first-child>div:last-child>div:first-child{
+    margin-bottom: 5px;
+}
+.nav-box-left hr{
+    height:1px;
+    border:none;
+    border-top:1px dashed #ddd;"
+}
+.ico1{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px 3px;
+    margin-right:10px;
+}
+.ico2{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 2px -18px;
+    margin-right:10px;
+}
+.ico3{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -39px;
+    margin-right:10px;
+}
+.ico4{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -58px;
+    margin-right:10px;
+}
+.ico5{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -79px;
+    margin-right:10px;
+}
+.ico6{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -100px;
+    margin-right:10px;
+}
+.ico7{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -121px;
+    margin-right:10px;
+}
+.ico8{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -142px;
+    margin-right:10px;
+}
+.ico9{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -161px;
+    margin-right:10px;
+}
+.ico10{
+    display: inline-block;
+    vertical-align: top;
+    height: 16px;
+    width: 15px;
+    background: url("../img/hyzx-20180125-1527.png")no-repeat 1px -183px;
+    margin-right:10px;
+}
+/*新消息*/
+.news>span{
+    color:#FF0000;
+    margin-right: 30px;
+}
+.news,.server:hover{
+    cursor: pointer;
+}
+/*服务项*/
+.server>span{
+    color: #FF0000;
+}
+
+.new{
+    margin: 10px 0;
+}
+.new>p{
+    margin-bottom: 8px;
+}
+/*点击的菜单*/
+.new>p>span:hover{
+    cursor: pointer;
+}
+/*弹出的菜单*/
+.new>div{
+   margin-left: 25px;
+    margin-top: 5px;
+}
+.new>div>span{
+    color:#FF0000;
+}
+.new>div:hover{
+    cursor: pointer;
+}
+/*透明度50%*/
+.op{
+    opacity: 0.5;
+}
+/*订单中心*/
+.centre{
+  margin: 20px 10px;
+}
+/*订单中心里的首个div*/
+.centre>div:first-child{
+    font-size: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+/*全部订单*/
+.order-list{
+    border-bottom: 1px solid #ddd;
+    margin-bottom:10px;
+}
+.order-list>div{
+    display: inline-block;
+    vertical-align: top;
+    padding:10px 20px;
+    border-bottom: 3px solid transparent;
+}
+.order-list>div:hover{
+    cursor: pointer;
+}
+/*全部订单span字体颜色*/
+.order-list>div>span{
+   color:#FF0000;
+}
+/*标题*/
+.title{
+     background: #f6f6f6;
+    padding: 10px 0;
+}
+.title>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 32%;
+}
+.title>div:first-child{
+    width: 28%;
+    margin-left: 2%;
+}
+/*金额，状态，操作*/
+.title>div:last-child{
+    width: 35%;
+}
+/*金额，状态，操作里的div*/
+.title>div:last-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width:30%;
+}
+/*操作*/
+.title>div:last-child>div:last-child{
+    width: 31%;
+    text-align: center;
+}
+/*标题下面内容*/
+.title-list{
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+.title-list>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    font-size: 12px;
+}
+.title-list>div>div{
+    margin-bottom:10px;
+}
+.title-list>div:first-child{
+    width: 26%;
+    margin-left: 2%;
+}
+/*金额，状态，操作*/
+.title-list>div:last-child{
+    width: 41%;
+    font-size: 14px;
+    text-align: center;
+}
+/*金额，状态，操作里的div*/
+.title-list>div:last-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width:26%;
+    margin-top: 15px;
+}
+.title-list>div:last-child>div>div{
+    margin-bottom: 10px;
+}
+/*操作*/
+.title-list>div:last-child>.pay{
+    width: 44%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+}
+.title-list>div:first-child>div{
+    font-size: 14px;
+}
+.title-list>div:first-child>p:last-child{
+    margin-top: 5px;
+}
+/*颜色公共样式*/
+.orange{
+    color: #d6623d;
+}
+/*订单颜色样式*/
+.paycolor{
+    color: #a3a2a2;
+}
+/*边框有颜色付款*/
+.pay>a>div{
+    width: 95px;
+    height: 25px;
+    display: inline-block;
+    border:1px solid #df8a73;
+    line-height: 25px;
+    margin-bottom: 7px;
+}
+.pay>a>div:hover{
+    color:#fff;
+    background:#d6623d;
+}
+.pay>div>span>a{
+    color: #1cbcb4;
+}
+/*页码*/
+.page{
+    text-align: center;
+    margin: 30px 0;
+    font-size: 0;
+}
+.page>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-left: none;
+}
+/*上一页，下一页*/
+.page>p{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-left: none;
+}
+.page>p:hover{
+    cursor: pointer;
+    background: #1cbcb4;
+}
+.page>div:hover{
+    cursor: pointer;
+    background: #1cbcb4;
+}
+.page>p:first-child{
+    border-left:1px solid #ddd;
+}
+.page>span{
+    font-size: 14px;
+    line-height: 30px;
+    margin-left: 20px;
+}
+/*全部订单，待付款，待填写资料，服务中，已完成服务，待评价*/
+.nav-list2{
+     display: none;
+}
+.nav-list3{
+    display: none;
+}
+.nav-list4{
+    display: none;
+}
+.nav-list5{
+    display: none;
+}
+.nav-list6{
+    display: none;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/indexmedia.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/top.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/menu.css">
+    <link rel="stylesheet" href="__ROOT__/static/home/login/css/register.css">
+</head>
+<body>
+<div id="container">
+    <!--头部-->
+    <div class="container-box">
+        {include file="../application/index/view/userbase.html" /}
+        <!--头部结束-->
+        <!--聚惠企业图标-->
+
+        <!--中间线-->
+        <div class="middleline"></div>
+        <!--中间内容-->
+        <div class="nav-box">
+            <!--内容导航栏-->
+            <div>
+                <!--位置图标-->
+                <span class="locationico"></span>
+                <span> <a href="#">首页</a> ></span>
+                <span> <a href="#">会员注册</a></span>
+            </div>
+            <!--登录盒子-->
+            <form action="{:url('User/check')}" method="post" onsubmit="return confirm();">
+            <div class="register-box">
+                <div>
+                    <div>
+                        <span class="line"></span>
+                        <span class="font18">&nbsp;注册&nbsp;</span>
+                        <span class="line"></span>
+                    </div>
+                    <div class="maleft10">
+                        <span>手机号码</span>&nbsp;&nbsp;&nbsp;
+                        <input type="tel" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="请输入手机号"   maxlength="13" name="mobile" class="phone">
+                        <span class="d6623d"><span class="pointico"></span>请输入手机号</span>
+                    </div>
+                    <div class="maleft10">
+                        <a onclick="code()">获取验证码</a>
+                        <input type="text" maxlength="6" class="note" name="vmobile">
+                        <span class="d6623d"><span class="pointico"></span>请输入短信验证码</span>
+                    </div>
+                    <div class="maleft10">
+                        <span>常用邮箱 </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="email" name="mail" id="mazey">
+                        <span class="d6623d"><span class="pointico"></span>请输入您的常用邮箱</span>
+                    </div>
+                    <div class="maleft10">
+                        <span>姓名/称呼</span>&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="marleft15 named" name="nickname">
+                        <span class="d6623d"><span class="pointico"></span>请填写姓名或称呼</span>
+                    </div>
+                    <div class="maleft10">
+                        <span>设置密码</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="password" name="password" placeholder="6到18位英文和数字的组合" maxlength="18">
+                        <span class="d6623d"><span class="pointico"></span>请设置密码</span>
+                    </div>
+                    <div class="maleft10">
+                        <span>确认密码</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="password" name="password2" placeholder="6到18位英文和数字的组合" maxlength="18" class="verify">
+                        <span class="d6623d"><span class="pointico"></span>请确认密码</span>
+                    </div>
+                    <!--立即登录-->
+                    <input type="hidden" name="verify" class="hidd">
+                    <input type="submit" value="立即注册">
+                    <div class="reg">
+                        <span>*</span>注册即表示您同意并愿意遵守 <a href="#">《聚惠企业服务协议》</a>
+                    </div>
+                </div>
+                <div class="registerphoto">
+                    <div>已有账号，<a href="login.html" target="_blank">马上登录</a></div>
+                    <div><img src="__ROOT__/static/home/login/img/hyzx-07.png"></div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <!--底部-->
+        <div class="footer-box">
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP16046474号-16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__ROOT__/static/home/login/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/home/login/js/menu.js"></script>
+<script src="__ROOT__/static/home/login/js/top.js"></script>
+<script src="__ROOT__/static/home/login/js/register.js"></script>
+<script>
+var verify;
+function code(){
+    var mobile = $(".phone").val();
+      var url = '{:url("User/getRegisteCode")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("mobile="+mobile),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                
+                var ob = t;
+                eval("j="+ob[1]);
+                eval("n="+ob[0]);
+                console.log(j['nub']);
+              if(j['result'] != 1016){
+                
+              var verify = j['nub'];
+                $(".hidd").val(verify);
+                alert("发送成功");
+                }else{  
+                
+              alert("手机号码格式错误");
+                } 
+            }     
+        });
+}
+ //form表单绑定提交事件
+    function confirm(){
+        var mobile = $("input[type='tel']").val();
+        var note = $(".note").value;
+        var nub = mobile+not;
+    console.log(nub);
+        if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(mobile))){
+            $("input[type='tel']").siblings(".d6623d").show();
+            $("input[type='tel']").focus();
+            return false;
+        }else if (nub == verify){
+          $("input[type='tel']").siblings(".d6623d").show();
+            $("input[type='tel']").focus();
+            return false;  
+        }
+        else if($(".named").val()==""){
+            $(".named").siblings(".d6623d").show();
+            $(".named").focus();
+            return false;
+        }
+        else if($("input[type='password']").val()==""||$("input[type='password']").val().length<6){
+            $("input[type='password']").siblings(".d6623d").show();
+            $("input[type='password']").focus();
+            return false;
+        }
+        else if($(".verify").val()!=$("input[type='password']").val()||$(".verify").val()==""){
+            $(".verify").siblings(".d6623d").show();
+            $(".verify").focus();
+            return false;
+        }
+        else {
+            return true;
+        }
+}
+//只能输入手机
+function isMobile(obj){
+    reg=/^[1][3,4,5,7,8][0-9]{9}$/; 
+    if(!reg.test(obj)){
+        $(".phone").siblings(".d6623d").show();
+    }
+    else if($("input[type='tel']").val()==""||$("input[type='tel']").val()<11){
+        $(".phone").siblings(".d6623d").show();
+    }
+    else{
+        $(".phone").siblings(".d6623d").hide();
+    }
+}
+//手机验证码
+//邮箱验证码
+function isEmail(obj){
+    var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+   // var obj = document.getElementById("mazey");
+    if(obj.value === ""){ //输入不能为空
+　　　　 $("input[type='email']").siblings(".d6623d").show();
+　　　　return false;
+　　}else if(!reg.test(obj)){ //正则验证不通过，格式不对
+　　　　 $("input[type='email']").siblings(".d6623d").show();
+　　　　return false;
+　　}else{
+　　　　$("input[type='email']").siblings(".d6623d").hide();
+　　}
+   
+}
+(function(){
+    //手机号
+    $(".phone").blur(function(){
+        isMobile($(this).val());
+    });
+    //邮箱信息
+    $("input[type='email']").blur(function(){
+        isEmail($(this).val());
+    });
+    //姓名称呼
+    $(".named").blur(function(){
+        if($(this).val()==""){
+            $(this).siblings(".d6623d").show();
+        }
+        else{
+            $(this).siblings(".d6623d").hide();
+        }
+    });
+    //    密码
+    $("input[type='password']").blur(function(){
+        if($(this).val()==""||$(this).val().length<6){
+            $(this).siblings(".d6623d").show();
+        }else {
+            $(this).siblings(".d6623d").hide();
+        }
+    });
+//    确认密码
+    $(".verify").blur(function(){
+       var pass = $("input[type='password']").val();
+       var passThis = $(this).val();
+       if(passThis!=pass||passThis==""){
+           $(this).siblings(".d6623d").show();
+       }else {
+           $(this).siblings(".d6623d").hide();
+       }
+    });
+})();
+</script>
+</body>
+</html>

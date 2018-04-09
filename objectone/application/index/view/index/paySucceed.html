@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付成功</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/indexmedia.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/top.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/menu.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/order.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/succeed.css">
+</head>
+<body>
+<div id="container">
+    <!--头部-->
+    <div class="container-box">
+        <div class="container-box-top">
+            <!--头部-->
+            <ul>
+                <li class="cbcb4"><a href="#"  class="cbcb4">聚惠企业</a>&nbsp;&nbsp;</li>
+                <li class="fg">|&nbsp;&nbsp;专业的财税服务平台</li>
+                <li>&nbsp;&nbsp;<a href="#">登录</a>&nbsp;&nbsp;|</li>
+                <li>&nbsp;&nbsp;<a href="#">注册</a>&nbsp;&nbsp;|</li>
+                <li>&nbsp;&nbsp;<a href="#">我的订单</a>&nbsp;&nbsp;|</li>
+                <li class="wechartloginico">&nbsp;&nbsp;<a href="#"><span class="iphoneico">
+                    <div>
+                        <div>
+                            <img src="__ROOT__/static/product/img/sy-sjdlxljt-20180102-1609.png">
+                        </div>
+                        <div class="wechartlogin">
+                            <img src="__ROOT__/static/product/img/cyzx-xqy-ewm-20171227-1856.png">
+                        </div>
+                    </div>
+                </span>手机端登录</a>&nbsp;&nbsp;</li>
+                <li class="cbcb4">&nbsp;&nbsp;全国服务热线:400-718-9622</li>
+            </ul>
+        </div>
+        <!--头部结束-->
+        <!--聚惠企业图标-->
+        <div class="juhui-box">
+            <ul>
+                <a href="#">
+                    <li class="juhuiico">
+                    </li>
+                </a>
+                <li class="fg marlf20">
+                    <span><i>专注服务小微企业</i></span>
+                    <p>
+                        <span><span class="zizhiico"></span><b>资质认证</b></span>
+                        <span><span class="baoxianico"></span><b>保险赔付</b></span>
+                        <span><span class="shouhouico"></span><b>售后无忧</b></span>
+                    </p>
+                </li>
+                <!--订单进度-->
+                <li>
+                    <div class="schedule opacity5">
+                        <div class="cbcb4">确认信息 提交订单</div>
+                        <!--进度条-->
+                        <p class="bgcbcb4">
+                            <span class="borcbcb4 cbcb4"><b>1</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div class="cbcb4">在线支付 生成订单</div>
+                        <!--进度条-->
+                        <p class="bgcbcb4">
+                            <span class="borcbcb4 cbcb4"><b>2</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div class="opacity5">填写资料 开始办理</div>
+                        <!--进度条-->
+                        <p>
+                            <span><b>3</b></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!--头部结束-->
+        </div>
+        <!--中间线-->
+        <div class="middleline"></div>
+        <!--中间内容-->
+        <div class="nav-box">
+            <!--内容导航栏-->
+            <div>
+                <!--位置图标-->
+                <span class="locationico"></span>
+                <span> <a href="#">首页</a> ></span>
+                <span> <a href="#">付款结果</a></span>
+            </div>
+            <!--付款成功盒子-->
+            <div class="paysucceed-box">
+                <!--中间居中盒子-->
+               <div>
+                   <div class="yesico">
+                       <span></span>
+                       <span>恭喜您，您已付款成功</span>
+                   </div>
+                   <!--已付金额-->
+                   <div class="yetpay">
+                       已付金额 : <span class="money">&yen;<span>{$re.payedPrice}元</span></span>
+                       客服电话 : <span>400-7189-622</span>
+                   </div>
+                   <!--订单号-->
+                   <div class="number">
+                       <div>
+                           <div><b>订单号 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div class="ordernumber">{$re.orderId}</div>
+                       </div>
+                       <div>
+                           <div><b>购买服务 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div>{$productName}</div>
+                       </div>
+                       <div class="borleft">
+                           <div class="borleftnone"><b>所选类型 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div>
+                               <div>{$arr[0][0]['name']} : {$arrs[1]['name']}</div>
+                               <div>{$arr[0][1]['name']} : {$arrs[0]['name']}</div>
+                               {if condition="$arr[0][2] neq null"}
+                               <div>{$arr[0][2]['name']} : {$arrs[2]['name']}</div>
+                               {else/}
+                               {/if}
+                           </div>
+                       </div>
+                       <div>
+                           <div><b>购买数量 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div class="buycount">{$re.proQuantity}</div>
+                       </div>
+                       <div>
+                           <div><b>应付总额 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div>&yen;{$re.payPrice}元</div>
+                       </div>
+                       <div>
+                           <div><b>已付金额 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div>
+                               <b class="yetmoney">
+                                   &yen<span>{$re.payedPrice}</span>元
+                               </b>&nbsp;&nbsp;+&nbsp;&nbsp;
+                               <b class="coupon">
+                               <span>50</span>元优惠券
+                               </b>
+                           </div>
+                       </div>
+                       <div>
+                           <div><b>付款账户 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div class="account">139111111115</div>
+                       </div>
+                       <div>
+                           <div><b>付款日期 :&nbsp;&nbsp;&nbsp;</b></div>
+                           <div class="paytimen">{$re.payDate}</div>
+                       </div>
+                   </div>
+                   <!--最后一步-->
+                   <div class="finally">
+                       <div>
+                           <span></span>最后一步 : 在线填写资料
+                       </div>
+                       <p>办理此项业务需要您提供相关的办理资料，请您在线填写办理此业务所需资料。</p>
+                       <p> 在完成资料填写后，我们的工作人员方可第一时间为您开始办理相关业务。</p>
+                       <div class="go">
+                       <a href="#">
+                           <div>前往填写资料</div>
+                       </a>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <!--中间结束-->
+        <!--底部资质认证导航栏-->
+        <div class="footer-navbar">
+            <div>
+                <div>
+                    <div class="footernavico1"></div>
+                    <div>
+                        <div>资质认证</div>
+                        <div>服务商100%实名审核认证</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico2"></div>
+                    <div>
+                        <div>支付安全</div>
+                        <div>明码标价支付及信息安全</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico3"></div>
+                    <div>
+                        <div>保险赔付</div>
+                        <div>太平洋保险提供担保赔付</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico4"></div>
+                    <div>
+                        <div>售后无忧</div>
+                        <div>服务出问题客服经理全程跟进</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="footer-box martop60px">
+            <!--热门搜索框-->
+            <div class="footer-box-search">
+                <!--常见问题-->
+                <div class="footer-box-search-middle">
+                    <span><b>常见问题</b></span>
+                    <span class="marleft93"><b>售后相关</b></span>
+                    <span class="marleft94"><b>关于聚惠</b></span>
+                    <ul>
+                        <li><a href="#">新手帮助</a></li>
+                        <li><a href="#">注册公司</a></li>
+                        <li><a href="#">了解我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">支付帮助</a></li>
+                        <li><a href="#">注册商标</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                    </ul>
+                </div>
+                <!--服务支持-->
+                <div class="footer-box-search-right">
+                    <div>
+                        <span><b>服务支持</b></span>
+                        <p class="phonenum">400-718-9622</p>
+                        <p class="date">&nbsp;周一至周日8:00-22:00</p>
+                    </div>
+                    <!--在线咨询-->
+                    <div>
+                        <div class="font16"><b>在线咨询</b></div>
+                        <span class="qqconsult"><b>QQ在线咨询</b></span>
+                    </div>
+                    <div>
+                        <span class="font16"> &nbsp;<b>微信咨询</b></span>
+                        <!--微信图片-->
+                        <div class="wechart">
+                            <img src="__ROOT__/static/product/img/ewm-20171213-1651.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP16046474号-16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__ROOT__/static/product/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/product/js/menu.js"></script>
+<script></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/*头部公共样式*/
+body{
+    font-size: 14px;
+}
+/*公共样式*/
+a{
+    color:#424242;
+}
+.container-box .container-box-top>ul>li>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.container-box .container-box-top>ul>li>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*购物车数量颜色*/
+.shopcar>span{
+    color:#FF0000;
+}
+/*登录状态样式*/
+.container-box .container-box-top>ul>li>.loging{
+    display: none;
+}
+#container{
+    width:100%;
+}
+.searchfloat{
+    float: right;
+}
+/*登录开始的div盒子*/
+.container-box .container-box-top>ul>li:last-child{
+   float: right;
+}
+.container-box{
+    width:100%;
+    background-color: #f6f6f6;
+    height:30px;
+}
+/*搜索框*/
+.juhui-box>ul>li:last-child{
+    float: right;
+}
+.container-box .container-box-top{
+    width:1200px;
+    height:30px;
+    margin: 0 auto;
+}
+.container-box .container-box-top>ul>li{
+    line-height: 30px;
+    display:inline-block;
+    vertical-align: top;
+}
+/*手机图标*/
+.iphoneico{
+    vertical-align: top;
+    display: inline-block;
+    width:10px;
+    height:25px;
+    background:url("../img/image/sy-1.png")no-repeat 0 7px;
+    position: relative;
+}
+.iphoneico>div{
+    position: absolute;
+    background:#1cbbb4;
+    height:120px;
+    width:110px;
+    top:30px;
+    left:-10px;
+    z-index: 2;
+}
+.iphoneico>div>div:first-child{
+    height:15px;
+}
+.iphoneico>div>div:first-child>img{
+    margin: 10px 45px;
+}
+.wechartlogin{
+    height:90px;
+    width:92px;
+    margin: 5px 5px 5px 10px;
+}
+/*微信弹出框隐藏*/
+.wechartloginico>a>span>div{
+    display: none;
+}
+/*微信弹出框鼠标移入显示*/
+.wechartloginico:hover a>span>div{
+    display: block;
+}
+.juhui-box{
+    width:1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*右边距20*/
+.marlf20{
+    margin-left: 20px;
+}
+.juhui-box>ul>li>p>span{
+    display:inline-block;
+}
+/*宽85px*/
+.width85{
+    width:85px;
+    height:20px;
+}
+/*资质图标*/
+.zizhiico{
+    color: #a3a2a2;
+    vertical-align: top;
+    display:inline-block;
+    height:22px;
+    width:30px;
+    background: url("../img/images/sy-1.png")no-repeat 2px -47px;
+}
+/*保险赔付图标*/
+.baoxianico{
+    vertical-align: top;
+    display:inline-block;
+    height:22px;
+    width:30px;
+    background: url("../img/images/sy-1.png")no-repeat -23px -47px;
+}
+/*售后无忧图标*/
+.shouhouico{
+    vertical-align: top;
+    display:inline-block;
+    height:22px;
+    width:30px;
+    background: url("../img/images/sy-1.png")no-repeat -52px -47px;
+}
+.juhui-box>ul>li{
+    display:inline-block;
+    vertical-align: top;
+}
+.juhui-box>ul:first-child>li>p{
+    color:#a2a2a2;
+}
+.juhuiico{
+    display: inline-block;
+    vertical-align: top;
+    width:139px;
+    height:40px;
+    background:url("../img/image/sy-1.png")no-repeat -18px 0;
+}
+.juhui-box>ul>li:last-child>form{
+    line-height: 40px;
+}
+.juhui-box>ul>li:last-child>form>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.search-box{
+    line-height: 34px;
+    height:35px;
+    border:1px solid #1cbcb4;
+}
+.search-box>input{
+    border:none;
+    width:310px;
+    margin-left: 10px;
+}
+/*搜索图标*/
+.searchico{
+    float: right;
+    color:white;
+    text-align: center;
+    display: inline-block;
+    height:35px;
+    width:90px;
+    background:url("../img/images/sy-ss-20171204-1643.png")no-repeat 5px 0;
+}
+.searchico:hover{
+    cursor: pointer;
+}
+/*我要提问*/
+.ask{
+    line-height: 35px;
+    margin-left: 5px;
+    height:35px;
+    width:88px;
+    background-color:white;
+    border:1px solid #1cbcb4;
+    text-align: center;
+    color: #1cbcb4;
+}
+.ask:hover{
+    background:#1cbbb4;
+    color: #ffffff;
+    cursor: pointer;
+}
+/*所有服务列表盒子,设置相对定位*/
+.serve-box{
+    margin-top:30px;
+    position: relative;
+}
+/*所有服务分类图标*/
+.serveico{
+    vertical-align: top;
+    margin: 2px 5px 0 10px;
+    display: inline-block;
+    width:20px;
+    height:20px;
+    background:url("../img/images/sy-1.png")no-repeat 1px -21px;
+}
+/*头部导航栏字体颜色公共样式  设置相对定位*/
+.active{
+    color:#464646;
+    margin: 0 1.1%;
+    position: relative;
+}
+.active>a:hover{
+    color:#1cbcb4;
+}
+/*动态热图*/
+.hot{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -15px;
+    margin-top: -7px;
+}
+.hot>div{
+    height:10px;
+    width: 10px;
+    background: url("../img/images/cswd-dhdy-8.png")no-repeat 3px -429px;
+}
+/*弹出的子菜单绝对定位*/
+.activelist{
+    position: absolute;
+    opacity: 0.9;
+    width: 185px;
+    background: #ffffff;
+    top:39px;
+    left: -50px;
+    z-index: 4;
+    display: none;
+}
+.activelist>a:hover .activelist>div>div{
+    background: blue;
+}
+/*弹出的子菜单*/
+.activelist>div>div{
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/*头部所有服务首页单个样式*/
+.home{
+    width: 60px;
+    text-align: center;
+}
+.serve-box>ul>li{
+    padding:7px 5px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+/*知识库图标*/
+.knowico{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background:url("../img/images/sy-1.png")no-repeat -165px -210px;
+}
+
+/*创业特惠套餐*/
+.odds{
+    color:white;
+}
+/*所有服务里的ul的第一个li*/
+.serve-box>ul>li:first-child{
+    background-color: #1cbcb4;
+    color:white;
+    width:21.6%;
+}
+.serve-box>ul>li{
+    border-bottom: 3px solid transparent;
+}
+/*所有服务里的ul里的最后一个li*/
+.serve-box>ul>li:last-child{
+    background-color: #1cbcb4;
+    color: white;
+    border-radius: 10px;
+    height: 13px;
+    width: 125px;
+    text-align: center;
+    line-height: 17px;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+.serve-box>ul>li:last-child:hover{
+    background-color: #0d635f;
+}
+/*颜色*/
+.cbcb4{
+    color:#1cbcb4;
+}
+/*头部效果*/
+/*页面效果css*/
+.active:hover{
+    border-bottom:3px solid #1cbbb4;
+}
+/*列表弹出菜单栏里面图片鼠标移入添加边框1px solid #1cbbb4*/
+.server-list-left>div img:hover{
+    border:1px solid #1cbbb4;
+}
+/*弹出菜单栏里面a标签鼠标移入时字体样式为#1cbbb4*/
+.limited>ul>li>a:hover{
+    color:#1cbbb4;
+}
+/*头部结束*/

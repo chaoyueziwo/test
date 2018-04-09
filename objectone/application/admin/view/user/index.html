@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/index.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/usermanagement.css">
+    <title>用户管理</title>
+    <script type="text/javascript">
+        var chk = document.getElementsByName('chk');
+        function aa(){
+            for(var i=0; i<chk.length; i++){
+                chk[i].checked=true;
+            }
+        }
+        function bb(){
+            for(var i=0; i<chk.length; i++){
+                if(chk[i].checked){
+                    chk[i].checked=false;
+                }else{
+                    chk[i].checked=true;
+                }
+            }
+        }
+        function dels(){
+            var str='';
+            var box=document.getElementsByName('chk');
+            var aa=document.getElementById('aa');
+            for(var i=0;i<chk.length;i++){
+                if(chk[i].checked){
+                    str=str+chk[i].title+',';
+                }
+            }
+            str=str.substring(str.length-1,',');
+            //alert(str);die;
+            var ajax=new XMLHttpRequest();
+            ajax.onreadystatechange=function(){
+                if(ajax.readyState==4){
+                    document.getElementById('rep').innerHTML=ajax.responseText;
+                }
+            }
+            ajax.open('get','dels?id='+str);
+            ajax.send(null);
+        }
+
+
+        function operate(operateFlag){
+
+          var str='';
+          var box=document.getElementsByName('chk');
+
+          for(var i=0;i<chk.length;i++){
+              if(chk[i].checked){
+                  str=str+chk[i].title+'_';
+              }
+          }
+
+          var url = "";
+          if(operateFlag == 1){
+
+          }else if(operateFlag == 2){
+            url = "{:url('User/forbiden')}"; 
+          }else if(operateFlag == 3){
+            url = "{:url('User/start')}"; 
+          }else{
+            url = "{:url('User/dels')}"; 
+          }
+
+          if(operateFlag == 1){
+
+            
+
+          }else{
+
+
+              $.ajax({  
+                      type:'get',  
+                      url:url,  
+                      data:("idStr="+str),
+                      /*data: {vids:vid,vids1:vid1,prices:prices}, */
+                      dataType:"jsonp",
+                      jsonp:'callback', 
+                      //beforeSend: function(){  
+                      //    $("#span_content").text("数据处理中...");  
+                      //},  
+                      //success: function(msg){  
+                      //    $("#show").html(msg);  
+
+                      success:function(data){  
+
+                          if(data.status  ==  '1'){  
+                
+                              alert('操作成功');  
+                              window.location.reload();
+                          }else{  
+                
+                              alert('操作失败');  
+                          }  
+                      },
+
+                      error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                          alert('操作成功。');  
+                          window.location.reload();
+
+                      }
+
+                  });
+
+          }
+
+
+
+
+        }
+
+
+        function toStartPages(){
+
+            //self.location="{:url('User/index?isActive=1')}";
+            window.location.href="index?isActive=1"
+
+        }
+
+        function toForbidenPages(){
+
+            window.location.href="indexNoActive?isActive=0"
+            //self.location="{:url('User/add?isActive=0')}";
+
+        }
+
+
+    </script>
+    <style>
+        .pagination {
+    height: 40px;
+    padding: 0px 0px;
+}
+    </style>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks">
+    <!--弹窗新增组织-->
+    <form action="{:url('User/add')}" method="post" onsubmit="return confirm();">
+        <div class="tissue-box">
+            <div>
+                <span>增加用户</span>
+                <span class="close">&times;</span>
+            </div>
+            <!--弹窗中间内容-->
+            <div class="tissue-box-middle">
+                <!--左-->
+                <div class="tissue-box-middle-left">
+                    <div>登录手机 :</div>
+                    <div>登录密码 :</div>
+                    <div>确认密码 :</div>
+                    <div>用户名称 :</div>
+                    <div>所属组织 :</div>
+                    <div>权限角色 :</div>
+                    <div>职位 :</div>
+                    <div>组长 :</div>
+                    <div>备注 :</div>
+                </div>
+                <!--右-->
+                <div class="tissue-box-middle-right">
+                    <div>
+                        <input type="tel" name="mobile" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  maxlength="13" id="phone">
+                        <span class="orange">请填写手机号码</span></div>
+                    <div><input type="password" name="password" maxlength="16" class="check1"><span class="orange">请填写登录密码</span></div>
+                    <div><input type="password" maxlength="16" class="check2"><span class="orange">请确认登录密码</span></div>
+                    <div><input type="text" name="username"></div>
+                    <div>
+                        <select name="organizeId">
+                            <option value="0">无</option>
+                                       {volist name="re" id='vo'}
+                                        <option value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}|--{$vo['name']}</option>
+                                        {/volist}
+                        </select>
+                    </div>
+                    <div>
+                        <select name="rulerId">
+                            <option value="0">无</option>
+                        </select>
+                    </div>
+                    <div><input type="text" name="position"></div>
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" value="1" id="optionsRadios1" name="isLeader">是</label>
+                        <label class="radio-inline">
+                            <input type="radio" value="0" checked="" id="optionsRadios2" name="isLeader">否</label>
+                    </div>
+                    
+                    <div>
+                        <textarea name="description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--弹窗底部-->
+            <div class="tissue-box-bottom">
+                <div class="cancel">取消</div>
+                <input type="submit" value="保存">
+            </div>
+        </div>
+    </form>
+</div>
+<!--管理栏目片段-->
+<div class="container">
+    <!--增加-->
+    <div class="newplus">
+        <span>+</span>
+        <span>新增</span>
+    </div>
+</div>
+<!--底部-->
+<!-- <form action=""> -->
+<div class="container-bottom" id="rep">
+        <!--切换菜单-->
+        <div class="menu">
+            <div class="menubtn1" onclick="toStartPages()">开启</div>
+            <span>|</span>
+            <div class="menubtn2" onclick="toForbidenPages()">禁用</div>
+        </div>
+        <!--可拉伸表格-->
+        <table id="tb_1">
+           <tr>
+               <th class="width41"><input type="checkbox" class="all" name="kkk" id="k" onclick="aa()"><span>序号</span></th>
+               <th class="width38">用户名称</th>
+               <th class="width75">所属部门</th>
+               <th>权限角色</th>
+               <th>职位</th>
+               <th>手机</th>
+               <th>备注</th>
+           </tr>
+           {volist name="res" id='vo' key="k"}
+           <tr>
+               <td><input type="checkbox" name="chk" id="con" title="{$vo.id}"><span>{$vo.id}</span></td>
+               <td class="username">{$vo.username}</td>
+
+               {if condition=" ( $vo.name  eq '' ) "}
+                  <td class="section">无</td>
+               {else /}
+                  <td class="section">{$vo.name}</td>
+               {/if}
+
+<!-- <td class="section">{$vo.name}</td> -->
+               <td class="jurisdiction">{$vo.rulerId}</td>
+               <td>{$vo.position}</td>
+               <td>{$vo.mobile}</td>
+               <td>{$vo.description}</td>
+           </tr>
+           {/volist}
+           <!-- <tr align="center"><td colspan="7" >{$page}</td></tr> -->
+           </table>
+           <table id="tb_2">
+           <tr>
+               <th class="width41"><input type="checkbox" class="all" name="kkk" id="k" onclick="aa()"><span>序号</span></th>
+               <th class="width38">用户名称</th>
+               <th class="width75">所属部门</th>
+               <th>权限角色</th>
+               <th>职位</th>
+               <th>手机</th>
+               <th>备注</th>
+           </tr>
+           {volist name="res" id='vo' key="k"}
+           <tr>
+               <td><input type="checkbox" name="chk" id="con" title="{$vo.id}"><span>1</span></td>
+               <td class="username">{$vo.username}</td>
+               {if condition=" ( $vo.name  eq '' ) "}
+                  <td class="section">无</td>
+               {else /}
+                  <td class="section">{$vo.name}</td>
+               {/if}
+               <td class="jurisdiction">{$vo.rulerId}</td>
+               <td>{$vo.position}</td>
+               <td>{$vo.mobile}</td>
+               <td>{$vo.description}</td>
+           </tr>
+           {/volist}
+
+           <tr><td colspan="7"></td></tr>
+
+           </table>
+           
+</div>
+<!--浏览，编辑，分配-->
+    <div class="bottombtn">
+        <div onclick="operate(1)">编辑</div>
+        <!-- <div>转移</div> -->
+        <div onclick="operate(2)">禁用</div>
+        <!-- <div onclick="operate(3)">开启</div> -->
+        <div onclick="operate(4)">删除</div>
+    </div>
+
+<div class="container-bottom-bottom">
+    <div style="float: left;"> 
+        <ul>
+            <li class="lineheight31"><input type="checkbox" name="kkk" id="k" onclick="aa()"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31"><input type="checkbox" name="ddd" id="" onclick="bb()">反选</li>
+<!--             <li class="lineheight31">|</li>
+            <li class="lineheight31"><input type="button" value="删除"  onclick="dels()"></li> -->
+            <!--页码-->
+            <li class="fg"></li>
+            <!-- <li class="page">
+                <span>
+                共<span>{$lists->lastPage()}</span>页<span class="juse"> {$lists->total()} </span>条
+                </span>
+                <a class="marleft20"><span>上一页</span></a>
+                <a><span>1</span></a>
+                <a><span>2</span></a>
+                <a><span>3</span></a>
+                <a><span>4</span></a>
+                <a><span>5</span></a>
+                <a><span>下一页</span></a>
+              
+                </span>
+                <span class="marleft20">
+                    <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  maxlength="3">
+                    <span>跳转</span>
+                </span>
+            </li> -->
+        </ul>
+
+    </div>
+    <div style="float: right;">{$page}</div>
+</div>
+<!-- </form> -->
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/usermanagement.js"></script>
+</body>
+</html>

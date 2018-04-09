@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusmission.css">
+    <title>任务管理列表</title>
+    <style>
+    .container-middle-content>ul li:last-child {
+    margin-left: 10px;
+    border-left: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+.container-middle-content>ul li:first-child{
+    border:none;
+}
+.container-middle-content>ul{
+    border-left: 1px solid #ddd;
+}
+    #states{
+    display: inline-block;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 3px 5px 3px 0;
+    color: #000;
+    }
+    .maskss{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+/*新增任务弹窗*/
+.newly-boxx{
+    position:fixed;
+    height: 570px;
+    width: 710px;
+    top:50%;
+    left: 50%;
+    margin-top:-285px;
+    margin-left: -300px;
+    background: #fff;
+    display: none;
+}
+/*新增任务弹窗，编辑任务*/
+.newly-boxx>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+}
+/*关闭按钮*/
+.close{
+    font-size: 20px;
+    float: right;
+    line-height: 20px;
+}
+.newly-boxx-bottom>div:last-child>span,.close:hover{
+    cursor: pointer;
+}
+/*新增任务中间内容*/
+.newly-boxx-bottom{
+    margin: 20px 50px;
+    font-size: 14px;
+}
+.newly-boxx-bottom>div{
+    margin-bottom: 10px;
+}
+.newly-boxx-bottom>div>span{
+    display: inline-block;
+    width: 65px;
+    margin-right: 20px;
+}
+/*新增任务弹窗里的备注输入框textarea*/
+.newly-boxx textarea{
+    resize: none;
+    height: 195px;
+    width: 460px;
+    vertical-align: top;
+}
+/*新增任务弹窗*/
+.newly-boxx-bottom input[type="text"]{
+    width: 240px;
+    height: 30px;
+    padding-left: 10px;
+}
+.newly-boxx-bottom select{
+    width: 255px;
+    height: 30px;
+    padding-left: 10px;
+}
+/*新增任务checkbox*/
+.newly-boxx-bottom label{
+    vertical-align:top;
+}
+/*提示文字*/
+.newly-boxx-bottom .hint{
+    display: none;
+    margin-left: 10px;
+    color: #ff0000;
+}
+/*新增任务弹窗取消保存按钮盒子*/
+.newly-boxx-bottom>div:last-child{
+    margin-top: 50px;
+    text-align: center;
+}
+.newly-boxx-bottom>div:last-child>span{
+    display: inline-block;
+    vertical-align: top;
+    width: 88px;
+    height: 29px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 29px;
+}
+/*新增任务弹窗保存按钮*/
+.newly-boxx-bottom input[type="submit"]{
+    color:#fff;
+    background: #0183be;
+    padding: 5px 30px;
+    border: none;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks" style="display: none;">
+    <!--新增任务弹窗-->
+    <form action='{:url("Addrenwu/updateAdd","v=$v")}' method="post" onSubmit="return missionsubmit();">
+        <div class="newly-box">
+            <div>
+                <span>编辑任务</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    <span>任务名称 :</span>
+                    <input type="text" class="missionname" name="name" >
+                    <span class="hint">请输入任务名称</span>
+                </div>
+                <div>
+                    <span>任务状态 :</span>
+                    <input type="radio" id="yess" value="1" name="isShow" checked><label for="yess">启用</label>
+                    <input type="radio" id="noo" value="0" name="isShow"><label for="noo">禁用</label>
+                </div>
+                <div>
+                    <span>任务类别 :</span>
+                    
+                    <select name="typeId">
+                        {volist name="arr" id='vo'}
+                         <option value="{$vo.id}">{$vo['name']}</option>
+                        {/volist}
+                    </select>
+                </div>
+                <div>
+                    <span>所属部门 :</span>
+                    <select name="rulerId">
+                         {volist name="sec" id='vo'}
+                           <option value="{$vo.id}">{$vo['name']}</option>
+                           {/volist}
+                    </select>
+                </div>
+               <!--  <div>
+                   <span>推送信息 :</span>
+                   <input type="checkbox" id="message"><label for="message">短信</label>
+                   <input type="checkbox" id="mail"><label for="mail">邮件</label>
+                   <input type="checkbox" id="wechat"><label for="wechat">微信</label>
+               </div> -->
+                <div>
+                    <span class="textright">备注 :</span>
+                    <textarea name="content" ></textarea>
+                </div>
+                <div>
+                    <input type="hidden" name="keyId" value="{$id}">
+                    <span>取消</span>
+                    <input type="submit" value="保存">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="maskss" style="display: none;">
+    <!--新增任务弹窗-->
+    <form action='{:url("Addrenwu/updateSave","v=$v")}' method="post" >
+        <div class="newly-boxx">
+            <div>
+                <span>编辑任务</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-boxx-bottom">
+                <div>
+                    <span>任务名称 :</span>
+                    <input type="text" class="missionname" name="name" id="names" >
+                    <span class="hint">请输入任务名称</span>
+                </div>
+                <div>
+                    <span>任务状态 :</span>
+                    <input type="radio" id="yess" value="1" name="isShow" checked><label for="yess">启用</label>
+                    <input type="radio" id="noo" value="0" name="isShow"><label for="noo">禁用</label>
+                </div>
+                <div>
+                    <span>任务类别 :</span>
+                    
+                    <select name="typeId">
+                        {volist name="arr" id='vo'}
+                         <option value="{$vo.id}">{$vo['name']}</option>
+                        {/volist}
+                    </select>
+                </div>
+                <div>
+                    <span>所属部门 :</span>
+                    <select name="rulerId">
+                         {volist name="sec" id='vo'}
+                           <option value="{$vo.id}">{$vo['name']}</option>
+                           {/volist}
+                    </select>
+                </div>
+               <!--  <div>
+                   <span>推送信息 :</span>
+                   <input type="checkbox" id="message"><label for="message">短信</label>
+                   <input type="checkbox" id="mail"><label for="mail">邮件</label>
+                   <input type="checkbox" id="wechat"><label for="wechat">微信</label>
+               </div> -->
+                <div>
+                    <span class="textright">备注 :</span>
+                    <textarea name="content" id="texts"></textarea>
+                </div>
+                <div>
+                    <input type="hidden" name="keyId" value="{$id}">
+                    <input type="hidden" name="id" id="hidd">
+                    <span>取消</span>
+                    <input type="submit" value="保存">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+  <!--增加流程-->
+ <div id="container">
+         <div>增加流程</div>
+          <form action='{:url("Renwu/save","v=$v")}' method="post" onSubmit="return submitting();">
+         <div class="container-middle">
+             <div></div>
+             <div class="container-middle-content">
+                     <ul>
+                         <li>流程名称 :&nbsp;&nbsp;</li>
+                         <li class="marleft10">
+                             <input type="text" class="width370 columnname" name="name" value="{$re.name}">
+                              <input type="hidden" name="id" value="{$re.id}">
+                             <!--判断样式-->
+                         <span class="hint">请输入流程名称</span>
+                         </li>
+                     </ul>
+                     <!-- <ul>
+                         <li>所属服务 :&nbsp;&nbsp;</li>
+                         <li>
+                             <select class="height40" name="ptaskId">
+                                 {volist name="re" id='vo'}
+                                  <option value="{$vo['id']}">{$vo['name']}</option>
+                                 {/volist}
+                             </select>
+                         </li>
+                     </ul> -->
+                     <ul  class="caption">
+                         <li>状态 :&nbsp;&nbsp;</li>
+                         {if condition="$re['isShow'] heq 0"}
+                         <li>
+                             <input type="radio" name="isShow" value="1" id="yes" ><label for="yes">启用</label>
+                             <input type="radio" name="isShow" value="0" id="no" checked><label for="no">禁用</label>
+                             <input type="radio" name="isShow" value="2" id="draft"><label for="draft">设为草稿</label>
+                         </li>
+                         {elseif condition="$re['isShow'] heq 1"}
+                         <li>
+                             <input type="radio" name="isShow" value="1" id="yes" checked><label for="yes">启用</label>
+                             <input type="radio" name="isShow" value="0" id="no"><label for="no">禁用</label>
+                             <input type="radio" name="isShow" value="2" id="draft"><label for="draft">设为草稿</label>
+                         </li>
+                         {else/}
+                          <li>
+                             <input type="radio" name="isShow" value="1" id="yes" ><label for="yes">启用</label>
+                             <input type="radio" name="isShow" value="0" id="no"><label for="no">禁用</label>
+                             <input type="radio" name="isShow" value="2" id="draft" checked><label for="draft">设为草稿</label>
+                         </li>
+                         {/if}
+                     </ul>
+                     <ul  class="caption">
+                         <li class="height246">备注 :&nbsp;&nbsp;</li>
+                         <li>
+                             <textarea name="description">{$re.description}</textarea>
+                         </li>
+                     </ul>
+                     <ul class="caption">
+                         <li  class="height230">
+                             <div>任务管理 :&nbsp;&nbsp;</div>
+                             <div class="newly">新增任务</div>
+                         </li>
+                         <li>
+                             <!--任务列表-->
+                             <div class="mission-list">
+                                 <!--任务1-->
+                                  {volist name="res" id='vo' key="k" }
+                                  <div class="mission-list-list">
+                                  {if condition="$vo['isShow'] heq 0"}
+                                      
+                                      <div style="color: #ddd;">{$vo.name}</div>
+                                     {else /}
+                                      <div style="color: #000;">{$vo.name}</div>
+                                   {/if}  
+                                      <div>
+                                            {if condition="$vo['isShow'] heq 0"}
+                                            
+                                            <span onclick="state({$vo['id']})"  class="state">启用</span>
+                                            {else /}
+                                            <span onclick="state({$vo['id']})"  class="state">禁用</span>
+                                            {/if}
+                                          <span  onclick="update({$vo['id']})">修改</span>
+                                          <a class="del" href="javascript:if(confirm('确实要删除该内容吗?'))location='__URL__/del2/id/{$vo['id']}/keyId/{$id}'">删除</a>
+                                          <span class="sort-asc">上移</span>
+                                          <span class="sort-down">下移</span>
+                                      </div>
+                                  </div>
+                                 {/volist}
+                             </div>
+                         </li>
+                     </ul>
+             </div>
+         </div>
+    <div class="commit">
+       
+         <input type="submit" value="保存" >
+         <input type="reset" value="取消">
+    </div>
+         </form>
+    
+    
+ </div>
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/plusmission.js"></script>
+<script type="text/javascript">
+    function update(id){
+         var url = "{:url('Renwu/update2')}"; 
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                 
+                if(t != null){  
+                    $(".maskss").show();
+                    $(".newly-boxx").show();
+                   $("#hidd").val(id);
+                   $("#names").val(t.name);
+                   $("#texts").text(t.content);
+                 
+                }else{  
+      
+                    alert('修改失败');  
+                }  
+            }     
+        });
+    }
+    function state(id){
+         var url = '{:url("Renwu/state")}';
+
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               location=location ;
+                 
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+    }
+    function button(){
+        window.location.replace('{:url("Renwu/oper","v=$v")}');
+    }
+</script>
+</body>
+</html>

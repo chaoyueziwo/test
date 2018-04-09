@@ -1,0 +1,329 @@
+/*支付页*/
+.juhui-box>ul>li:last-child>div:first-child{
+    opacity:0.5;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*内容*/
+.nav-box-nav{
+    margin-top: 20px;
+    border:1px solid #ddd;
+}
+/*内容盒子里所有子元素div*/
+.nav-box-nav>div{
+    margin:30px 10px;
+}
+/*内容盒子里所有div里的所有div*/
+.nav-box-nav>div>div{
+    border-bottom: 1px solid #ddd;
+}
+/*内容的内容盒子里的所有div里的首个div里的所有div*/
+.nav-box-nav>div>div:first-child>div{
+    margin-left: 20px;
+}
+/*右边距50px*/
+.marleft65{
+    margin-left: 65px;
+}
+/*字体18*/
+.font18{
+    font-size: 18px;
+}
+/*左边距*/
+.maright50{
+    margin-right: 50px;
+}
+/*订单编号*/
+.order-num{
+    margin-right: 20px;
+}
+/*个人银行首个div*/
+.gerenbank>div:first-child{
+    margin: 30px 0 0 20px;
+}
+/*个人银行首个div里的首个span*/
+.gerenbank>div:first-child>span:first-child{
+    margin-right: 20px;
+    font-size: 18px;
+}
+/*支付成功图标*/
+.yesico{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url("../img/zcgs-9.png")no-repeat 7px -811px;
+}
+/*应付*/
+.should{
+    color:#444;
+    margin:50px 0 30px 0;
+}
+/*订单下拉图标*/
+.downnico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    width: 15px;
+    background: url("../img/cswd-dhdy-8.png")no-repeat 4px -85px;
+}
+/*订单详情*/
+.xiangqing:hover{
+    cursor: pointer;
+}
+/*订单弹出菜单详情*/
+.xiangqinglist{
+    margin-top: 10px;
+    display: none;
+}
+/*遮罩层*/
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background:rgba(0,0,0,.5);
+    display: none;
+}
+/*遮罩层内容*/
+.paylist{
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left:-290px;
+    margin-top: -145px;
+    width: 580px;
+    background: #fff;
+    display: none;
+}
+/*在线支付*/
+.payonline>div:first-child{
+    background: #f6f6f6;
+    color: #818181;
+    padding: 5px 0;
+}
+.payonline>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    line-height: 25px;
+}
+.payonline>div:first-child>div:first-child{
+    margin-left: 20px;
+}
+/*关闭按钮*/
+.closed{
+    text-align: right;
+    font-size: 20px;
+}
+.closed:hover{
+    cursor: pointer;
+}
+/*在线付款下面内容*/
+.payonline>div:last-child{
+    margin: 10% 14%;
+}
+.payonline>div:last-child>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*请在新打开的窗口完成支付*/
+.payonline>div:last-child>div:last-child{
+    margin: 5px 0 0 10px;
+}
+/*感叹号图标*/
+.plaintico{
+    height: 65px;
+    width: 65px;
+    background:url("../img/zcgs-9.png")no-repeat 0 -860px;
+}
+/*支付成功*/
+.paysucceed{
+    display: inline-block;
+    vertical-align: top;
+    color:#fff;
+    background:#1cbcb4;
+    padding: 10px 30px;
+    font-size: 18px;
+    margin: 20px 20px 20px 0;
+}
+/*支付遇到问题*/
+.payquestion{
+    display: inline-block;
+    vertical-align: top;
+    color:#000;
+    padding: 9px 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+/*返回选择其他支付方式文字点击.颜色为1cbcb4*/
+.close{
+    color:#1cbcb4;
+}
+.close:hover{
+    cursor: pointer;
+}
+/*如遇到超过限额无法支付*/
+.payonline>div:last-child>div:last-child>p:last-child{
+    margin-top: 5px;
+}
+/*微信支付*/
+.wechartpay{
+   display: none;
+}
+/*微信支付二维码*/
+.erweima{
+   text-align: center;
+    margin: 60px 0;
+}
+/*在线支付*/
+.wechartpay>div:first-child{
+    background: #f6f6f6;
+    color: #818181;
+    padding: 5px 0;
+}
+.wechartpay>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    line-height: 25px;
+}
+.wechartpay>div:first-child>div:first-child{
+    margin-left: 20px;
+}
+/*关闭按钮*/
+.closed{
+    text-align: right;
+    font-size: 20px;
+}
+/*关闭按钮鼠标移入*/
+.closed:hover{
+    cursor: pointer;
+}
+/*微信，支付宝*/
+.should>p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+/*颜色*/
+.d6623d{
+    color:#d6623d;
+    font-size: 24px;
+}
+/*支付宝支付*/
+.alipayi{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    height: 40px;
+    width: 12%;
+    margin-right: 15px;
+    line-height: 40px;
+    color: #444444;
+}
+.wechartic:hover{
+    cursor: pointer;
+}
+/*支付宝图标*/
+.alipayi>span:first-child{
+    height: 35px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/zcgs-9.png")no-repeat 7px -777px;
+}
+/*微信支付*/
+.wechartic{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    height: 40px;
+    width: 12%;
+    line-height: 40px;
+    color:#444444;
+}
+/*微信图标*/
+.wechartic>span:first-child{
+    height: 35px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../img/zcgs-9.png")no-repeat 7px -737px;
+}
+/*银行链接*/
+.bank{
+    margin: 10px 0 40px 0;
+}
+.bank>div{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin-left: 20px;
+    height: 45px;
+    width:12%;
+    text-align: center;
+    margin-top: 20px;
+}
+.martop5{
+    margin-top: 7%!important;
+}
+/*银行图片*/
+.bank>div>a>img{
+    margin-top: 5%;
+}
+.bank>div:last-child>a>img{
+    margin-top: 1%;
+}
+.self-help{
+    margin-top: 30px;
+    border-bottom: none!important;
+    margin-left: 20px;
+}
+.self-help>div:first-child{
+    color: #444444;
+}
+.self-help>div:first-child>span:first-child{
+    font-size: 18px;
+    margin-right: 20px;
+}
+/*支付平台*/
+.platform{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.platform>div{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    width: 46%;
+}
+.platform>div>div{
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px 0 25px 20px;
+}
+/*支付宝图片图片*/
+.platform>div:first-child>div:first-child{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+/*支付宝账号*/
+.platform>div:first-child>div:last-child{
+    margin-top: 40px;
+}
+.platform>div:last-child{
+    margin-left: 5%;
+}
+.self-help>p{
+    color:#ff4242;
+    margin-bottom: 5px;
+}

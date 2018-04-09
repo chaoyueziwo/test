@@ -1,0 +1,1432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/index.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/zhuanti.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/product.css">
+    <title>产品管理</title>
+    <style>
+    .pagination {
+    height: 40px;
+    padding: 0px 0px;
+}
+    </style>
+</head>
+<body>
+<!--管理栏目片段-->
+<div class="container">
+    <!--增加-->
+    <a href="__WEB__/admin/Product/index/id/{$id}">
+    <div>
+        <span>+</span>
+        <span>增加列表</span>
+    </div>
+    </a>
+</div>
+<!--底部-->
+<div class="container-bottom">
+    <!--固定定位-->
+    <!--遮罩层-->
+    <div class="maskbox"></div>
+    <!--右边弹出内容-->
+    <!-- <div class="checklist">
+        核款任务
+        <div class="check-box">
+            <div>
+                <span>客户资料</span>
+                <span class="close">&times;</span>
+            </div>
+            跟进任务
+            <div class="followtask-list">
+                跟进任务
+                <div class="follow1">
+                    <div>
+                    <span>任务跟进</span>
+                    <span class="followtask-list-close">&times;</span>
+                </div>
+                <form action="" onsubmit="return save();">
+                    <div class="followtask-list-bottom">
+                    <div>
+                        <div>
+                            <span>任务名称 : </span><span>核款</span>
+                            <span class="tasknumber">订单号 : </span>
+                            <span>1234567890123654</span>
+                        </div>
+                        款项审核
+                        <div>
+                            <span>款项审核 : </span>
+                            <div class="chose-box" id="chose-box2">
+                                <span>请选择</span>
+                                <span class="downarrows floatright"></span>
+                                弹窗
+                                <div>
+                                    已到账
+                                    <div class="arrive">核款已到账 ，金额无误</div>
+                                    未到账
+                                    <div class="nointo">核款未到账 ，需与客户核准</div>
+                                    金额有误
+                                    <div class="mistake">款项金额有误 ，需与客户核准</div>
+                                </div>
+                            </div>
+                            到账，未到账
+                            <span class="hint">请在 "任务反馈" 中填入<span>未到账</span>详情</span>
+                        </div>
+                        款项审核弹窗结束
+                        <div>
+                            <span>任务反馈 : </span>
+                            <textarea class="feedback"></textarea>
+                        </div>
+                        取消，保存
+                        <div>
+                            <input type="reset" value="取消" class="cancel">
+                            <input type="submit" value="保存" class="save">
+                        </div>
+                    </div>
+                </div>
+                </form>
+                </div>
+                分配任务
+                <div class="follow2">
+                    <div>
+                        <span>任务分配</span>
+                        <span class="followtask-list-close">&times;</span>
+                    </div>
+                    <form action="" onsubmit="return save();">
+                        <div class="followtask-list-bottom">
+                            <div>
+                                <div>
+                                    <span>任务名称 : </span><span>核款</span>
+                                    <span class="tasknumber">订单号 : </span>
+                                    <span>1234567890123654</span>
+                                </div>
+                                <div>
+                                    任务执行人 : <span class="taskexecutor"></span><span class="chosebtn">选择</span>
+                                </div>
+                                启用截止时间
+                                <div>
+                                    <input type="checkbox" id="jiezhi">
+                                    <label for="jiezhi">启用截止时间: </label>
+                                    <span class="cut-off-time"></span>
+                                    <span class="chosebtn1">选择</span>
+                                </div>
+                                启用任务加急
+                                <div>
+                                    <input type="checkbox" id="jiaji">
+                                    <label for="jiaji">启用任务加急: </label>
+                                    <div class="chose-box" id="chose-box1">
+                                        <span>请选择</span>
+                                        <span class="downarrows floatright"></span>
+                                        弹窗
+                                        <div>
+                                            紧急
+                                            <div>紧急</div>
+                                            非常紧急
+                                            <div>非常紧急</div>
+                                        </div>
+                                    </div>
+                                    到账，未到账
+                                    <span class="hint">请在 "任务反馈" 中填入<span>未到账</span>详情</span>
+                                </div>
+                                款项审核弹窗结束
+                                <div>
+                                    <span>说明备注 : </span>
+                                    <textarea class="feedback"></textarea>
+                                </div>
+                                取消，保存
+                                <div id="taskcancel">
+                                    <span class="cancel">取消</span>
+                                    <input type="submit" value="分配" class="allot">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    任务执行，截止时间弹窗
+                    <div class="choselist">
+                        任务执行人
+                        <div class="executes executes1">
+                             <div>
+                                 <span>选择执行人</span>
+                                 <span class="executes-close">&times;</span>
+                             </div>
+                             <div>
+                                 <div>
+                                     所有部门
+                                     部门 :<div class="allsection"><span>所有部门</span><span class="downarrows arrowsfloat"></span>
+                                     部门
+                                     <div class="department">
+                                         <div class="all">所有部门</div>
+                                         <div class="accountant">会计部</div>
+                                         <div class="industry">工商部</div>
+                                         <div class="finance">财务部</div>
+                                         <div class="market">市场部</div>
+                                         <div class="manager">总经办</div>
+                                         <div class="tax">税务部</div>
+                                         <div class="legwork">外勤部</div>
+                                         <div class="layout">企划部</div>
+                                         <div class="hr">人力资源部</div>
+                                     </div>
+                                     </div>
+                                 </div>
+                                 <div>
+                                     成员
+                                     成员 :
+                                     <div class="member">
+                                         <p>
+                                             <input type="text" maxlength="10">
+                                             <span class="searchico"></span>
+                                         </p>
+                                         <div class="legworklist">
+                                             <span>(外勤部)</span><span>李寻欢</span>
+                                         </div>
+                                         <div class="industrylist">
+                                             <span>(工商部)</span><span>刘亦菲</span>
+                                         </div>
+                                         <div class="legworklist">
+                                             <span>(外勤部)</span><span>胡歌</span>
+                                         </div>
+                                         <div class="marketlist">
+                                             <span>(市场部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="accountantlist">
+                                             <span>(会计部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="accountantlist">
+                                             <span>(会计部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="financelist">
+                                             <span>(财务部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="financelist">
+                                             <span>(财务部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="managerlist">
+                                             <span>(总经办)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="taxlist">
+                                             <span>(税务部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="layoutlist">
+                                             <span>(企划部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="marketlist">
+                                             <span>(市场部)</span><span>刘德华</span>
+                                         </div>
+                                         <div class="hrlist">
+                                             <span>(人力资源部)</span><span>刘德华</span>
+                                         </div>
+                                      </div>
+                                 </div>
+                                 取消，确认按钮
+                                 <div>
+                                     <span class="executorcancel">取消</span>
+                                     <span class="executoraffirm">确认</span>
+                                 </div>
+                             </div>
+                        </div>
+                        设置截止时间
+                        <div class="executes executes2">
+                            <div>
+                                <span>设置截止时间</span>
+                                <span class="executes-close">&times;</span>
+                            </div>
+                            <div>
+                                <div>
+                                    时间表
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">时间: </label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" class="layui-input" id="test5" placeholder="请选择截止时间">
+                                        </div>
+                                    </div>
+                                </div>
+                                取消，确认按钮
+                                <div>
+                                    <span class="executorcancel">取消</span>
+                                    <span class="executoraffirm">确认</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="check-bottom">
+               左边
+               <div class="check-bottom-left">
+                   <div>
+                       <div>
+                          <span class="nameico"></span>
+                          客户 - <span class="">深圳市聚惠企业登记代理有限公司</span>
+                       </div>
+                       客户，所购服务，订单状态，所选类型
+                       <div class="check-bottom-left-top">
+                           <div>
+                               <div class="marleft78">
+                                   等级 : <span>普通客户</span>
+                               </div>
+                               <div class="marleft50">
+                                   长期订单 : <span>服务中</span><span class="newscount">(5)</span>
+                                   <span>总</span><span class="newscount">(7)</span>
+                               </div>
+                               <div class="marleft78">
+                                   备注 : <span>深圳市聚惠企业登记代理有限公司</span>
+                               </div>
+                           </div>
+                           <div>
+                               <div>
+                                   订单状态 : <span class="orange">服务中</span>
+                               </div>
+                               <div>
+                                   单次订单 : <span>服务中</span><span class="newscount">(2)</span>
+                                   <span>总</span><span class="newscount">(5)</span>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   客户资料，联系人，订单，跟进记录，更多，编辑资料
+                   <div class="correlation">
+                       <div>
+                          <div class="add correlationbtn1">客户资料</div>
+                          <div class="correlationbtn2">联系人<span class="newscount">(3)</span></div>
+                          <div class="correlationbtn3">订单<span class="newscount">(5)</span></div>
+                          <div class="correlationbtn4">跟进记录</div>
+                          <div class="correlationbtn5">
+                              更多<span class="downarrows"></span>
+                          下拉菜单
+                              <div class="morelist">
+                                   <div>
+                                       1
+                                   </div>
+                                  <div>
+                                      2
+                                  </div>
+                                  <div>
+                                      3
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="correlationbtn6 data"><div>编辑资料</div></div>
+                       </div>
+                   </div>
+                   客户资料
+                   <div class="correlationlist1 correlationlist">
+                       客户资料
+                       <div class="paymessage">
+                       <p>
+                           <span class="vertical"></span><span>&nbsp;基本信息</span><span class="down"></span>
+                       </p>
+                       <div class="paymessageleft">
+                           <div class="orderlist">
+                               <div>客户名称 : </div>
+                               <div class="ordernumber">深圳市聚惠企业登记代理有限公司</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>等级 : </div>
+                               <div>普通客户</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>付款方式 : </div>
+                               <div class="paymethod">微信支付</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>客户会员号 : </div>
+                               <div>123456987652</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>区域 : </div>
+                               <div>广东省-深圳市-宝安区</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>公司电话 : </div>
+                               <div>0755-82558633</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>公司地址 : </div>
+                               <div class="width140">深圳市龙华区清湖福泉新城龙华街道285号</div>
+                           </div>
+                           <div class="orderlist martop0">
+                               <div>备注 : </div>
+                               <div>深圳市聚惠企业登记代理有限公司</div>
+                           </div>
+                       </div>
+                       右
+                       <div class="paymessageright">
+                           <div class="orderlist">
+                               <div>来源 : </div>
+                               <div>网络推广</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>订单状态 : </div>
+                               <div>服务中</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>客户类型 : </div>
+                               <div>个体户</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>收单地址 : </div>
+                               <div class="width140">深圳市龙华区清湖福泉新城龙华街道285号</div>
+                           </div>
+                           <div class="orderlist">
+                               <div>公司官网 : </div>
+                               <div><a href="http://www.baidu.com">www.baidu.com</a></div>
+                           </div>
+                           <div class="orderlist">
+                               <div>企业登记信息 : </div>
+                               <div>查看详情</div>
+                           </div>
+                       </div>
+                   </div>
+                       服务信息
+                       <div class="paymessage">
+                       <p>
+                           <span class="vertical"></span><span>&nbsp;服务信息</span><span class="down"></span>
+                       </p>
+                       <div class="paymessageleft">
+                           <div class="orderlist">
+                               <div>长期订单 : </div>
+                               <div>
+                                   <span>服务中</span><span class="newscount">(5)</span>
+                                   <span>总</span><span class="newscount">(7)</span>
+                               </div>
+                           </div>
+                           <div class="orderlist">
+                               <div>累计收款总额 : </div>
+                               <div>&yen;<span>3800.00元</span></div>
+                           </div>
+                       </div>
+                       <div class="paymessageright">
+                           <div class="orderlist">
+                               <div>单次订单 : </div>
+                               <div>
+                                   <span>服务中</span><span class="newscount">(2)</span>
+                                   <span>总</span><span class="newscount">(5)</span>
+                               </div>
+                           </div>
+                           <div class="orderlist">
+                               <div>累计欠款总额 : </div>
+                               <div>&yen;<span>2,0000</span>元</div>
+                           </div>
+                       </div>
+                   </div>
+                       资料录入记录
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;资料录入记录</span><span class="down"></span>
+                           </p>
+                           <div class="paymessageleft">
+                               <div class="orderlist">
+                                   <div>创建用户 : </div>
+                                   <div>市场部 - 郑晓霞</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>最近修改用户 : </div>
+                                   <div>工商部 - 袁胜红</div>
+                               </div>
+                           </div>
+                           <div class="paymessageright">
+                               <div class="orderlist">
+                                   <div>创建时间 : </div>
+                                   <div>2018-1-30 17:29:54</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>最近修改时间 : </div>
+                                   <div>2018-1-30 17:30:44</div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   联系人
+                   <div class="correlationlist2 correlationlist">
+                       联系人
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;客户方主要对接人</span><span class="down"></span>
+                           </p>
+                           弹窗，有边框
+                           <div class="paymessage-list">
+                               <div>
+                                   <div>联系人 - 李小龙</div>
+                                   <div>
+                                       <span></span><span>填写资料</span><span></span><span>删除</span>
+                                   </div>
+                               </div>
+                               <div class="paymessage-list-nav">
+                                   左
+                                   <div class="nav-list">
+                                       <div>
+                                           <div>联系人姓名 : </div>
+                                           <div>李小龙</div>
+                                       </div>
+                                       <div>
+                                           <div>职位 : </div>
+                                           <div>总经理</div>
+                                       </div>
+                                       <div>
+                                           <div>手机 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div>Q Q : </div>
+                                           <div>790204870</div>
+                                       </div>
+                                       <div>
+                                           <div>邮箱 : </div>
+                                           <div>790204870@qq.com</div>
+                                       </div>
+                                   </div>
+                                   右
+                                   <div class="nav-list">
+                                       <div class="marbottom0">
+                                           <div>所属公司 : </div>
+                                           <div class="width165">深圳市聚惠企业登记代理有限公司</div>
+                                       </div>
+                                       <div>
+                                           <div>决策类型 : </div>
+                                           <div>决策人</div>
+                                       </div>
+                                       <div>
+                                           <div>微信 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div></div>
+                                           <div><img src="__ROOT__/static/admin/img/ewm.png"></div>
+                                       </div>
+                                   </div>
+                               </div>
+                               标签，备注
+                               <div class="nav-list-bottom">
+                                   <div>
+                                       <div>标签 : </div>
+                                       <div class="label">
+                                           <span>性格温和</span>
+                                           <span>时间观念强</span>
+                                           <span>人很实在</span>
+                                           <span>比较配合</span>
+                                           <span>好说话</span>
+                                       </div>
+                                   </div>
+                                   备注
+                                   <div>
+                                       <div>备注 : </div>
+                                       <div class="width440">
+                                        专利是专利权的简称，指专利权人对发明创造享有的专利权，专利权是一种专有权，这种权利具有独占的排他性；非专利权人要想使用他人的专项技术，必须依法征得专利权人的授权或许可。
+                                       </div>
+                                   </div>
+                               </div>
+                               更多相关服务，相关跟进记录弹窗盒子
+                               <div class="morepop-up">
+                                    更多相关信息点击弹窗
+                                    <div class="paymessage">
+                                   <p><span class="down"></span><span>&nbsp;更多相关服务</span></p>
+                               </div>
+                                    相关跟进记录点击弹窗
+                                    <div class="paymessage">
+                                        <p><span class="down"></span><span>&nbsp;相关跟进记录</span></p>
+                                        相关跟进记录下拉内容公共样式
+                                        <div class="record">
+                                         第一部分联系人
+                                             <div>
+                                                 <p>
+                                                     <span>15天前</span>
+                                                     <span>人力资源部 - 慕容 云海</span>
+                                                 </p>
+                                                 <div class="lineheight25">
+                                                    我司工作人员会把您的资料提交给注册地管辖的工商局，如工商局有特定要求,我司工作人员会提前两天通知。时间审核在5-7个工作日。
+                                                 </div>
+                                                 3张付款截图
+                                                 <div class="threephoto">
+                                                     付款截图1
+                                                     <div class="payphoto">
+                                                         <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                     </div>
+                                                     付款截图2
+                                                     <div class="payphoto">
+                                                         <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                     </div>
+                                                     付款截图3
+                                                     <div class="payphoto">
+                                                         <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                     </div>
+                                                     截图
+                                                     遮罩层
+                                                     <div class="screenshot">
+                                                         放大的图片
+                                                         <div>
+                                                             <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                                             关闭按钮
+                                                             <div class="closed"></div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                                 文件下载
+                                                 <div>
+                                                     附件 ：<span>工商局有特定要求</span>
+                                                     <span class="fileico"></span><span class="filename">zip</span>
+                                                     <a href="__ROOT__/static/admin/juhui.sql" download="juhui.sql" class="download">下载</a>
+                                                 </div>
+                                             </div>
+                                             所联系人
+                                             <div class="contacts">
+                                                 <div class="width25">
+                                                     <div>所联系人 : <span>李小龙</span></div>
+                                                     <div>跟进方式 : <span>电话</span></div>
+                                                 </div>
+                                                 <div class="width38">
+                                                     <div class="marleft12">订单号 : <span>12345678995432</span></div>
+                                                     <div>所购服务 : <span>有限公司注册</span></div>
+                                                 </div>
+                                                 <div>
+                                                     <div>所属任务 : <span>跟进客户付款</span></div>
+                                                     <div>任务类型 : <span>跟进客户付款</span></div>
+                                                 </div>
+                                             </div>
+                                        第二部分记录
+                                            <div>
+                                                <p>
+                                                    <span>15天前</span>
+                                                    <span>人力资源部 - 慕容 云海</span>
+                                                </p>
+                                                <div class="lineheight25">
+                                                    我司工作人员会把您的资料提交给注册地管辖的工商局，如工商局有特定要求,我司工作人员会提前两天通知。时间审核在5-7个工作日。
+                                                </div>
+                                                3张付款截图
+                                                <div class="threephoto">
+                                                    付款截图1
+                                                    <div class="payphoto">
+                                                        <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                    </div>
+                                                    付款截图2
+                                                    <div class="payphoto">
+                                                        <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                    </div>
+                                                    付款截图3
+                                                    <div class="payphoto">
+                                                        <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                    </div>
+                                                    截图
+                                                    遮罩层
+                                                    <div class="screenshot">
+                                                        放大的图片
+                                                        <div>
+                                                            <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                                            关闭按钮
+                                                            <div class="closed"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                文件下载
+                                                <div>
+                                                    附件 ：<span>工商局有特定要求</span>
+                                                    <span class="fileico"></span><span class="filename">zip</span>
+                                                    <a href="__ROOT__/static/admin/juhui.sql" download="juhui.sql" class="download">下载</a>
+                                                </div>
+                                            </div>
+                                            所联系人
+                                            <div class="contacts">
+                                                <div class="width25">
+                                                    <div>所联系人 : <span>李小龙</span></div>
+                                                    <div>跟进方式 : <span>电话</span></div>
+                                                </div>
+                                                <div class="width38">
+                                                    <div class="marleft12">订单号 : <span>12345678995432</span></div>
+                                                    <div>所购服务 : <span>有限公司注册</span></div>
+                                                </div>
+                                                <div>
+                                                    <div>所属任务 : <span>跟进客户付款</span></div>
+                                                    <div>任务类型 : <span>跟进客户付款</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                       其他联系人
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;其他联系人</span><span class="down"></span>
+                           </p>
+                           弹窗，有边框，联系人1
+                           <div class="paymessage-list">
+                               <div>
+                                   <div>联系人 - 李小龙</div>
+                                   <div>
+                                       <span></span><span>填写资料</span><span></span><span>删除</span>
+                                   </div>
+                               </div>
+                               <div class="paymessage-list-nav">
+                                   左
+                                   <div class="nav-list">
+                                       <div>
+                                           <div>联系人姓名 : </div>
+                                           <div>李小龙</div>
+                                       </div>
+                                       <div>
+                                           <div>职位 : </div>
+                                           <div>总经理</div>
+                                       </div>
+                                       <div>
+                                           <div>手机 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div>Q Q : </div>
+                                           <div>790204870</div>
+                                       </div>
+                                       <div>
+                                           <div>邮箱 : </div>
+                                           <div>790204870@qq.com</div>
+                                       </div>
+                                   </div>
+                                   右
+                                   <div class="nav-list">
+                                       <div class="marbottom0">
+                                           <div>所属公司 : </div>
+                                           <div class="width165">深圳市聚惠企业登记代理有限公司</div>
+                                       </div>
+                                       <div>
+                                           <div>决策类型 : </div>
+                                           <div>决策人</div>
+                                       </div>
+                                       <div>
+                                           <div>微信 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div></div>
+                                           <div><img src="__ROOT__/static/admin/img/ewm.png"></div>
+                                       </div>
+                                   </div>
+                               </div>
+                               标签，备注
+                               <div class="nav-list-bottom">
+                                   <div>
+                                       <div>标签 : </div>
+                                       <div class="label">
+                                           <span>性格温和</span>
+                                           <span>时间观念强</span>
+                                           <span>人很实在</span>
+                                           <span>比较配合</span>
+                                           <span>好说话</span>
+                                       </div>
+                                   </div>
+                                   备注
+                                   <div>
+                                       <div>备注 : </div>
+                                       <div class="width440">
+                                           专利是专利权的简称，指专利权人对发明创造享有的专利权，专利权是一种专有权，这种权利具有独占的排他性；非专利权人要想使用他人的专项技术，必须依法征得专利权人的授权或许可。
+                                       </div>
+                                   </div>
+                               </div>
+                               更多相关服务，相关跟进记录弹窗盒子
+                               <div class="morepop-up">
+                                   更多相关信息点击弹窗
+                                   <div class="paymessage">
+                                       <p><span class="down"></span><span>&nbsp;更多相关服务</span></p>
+                                   </div>
+                                   相关跟进记录点击弹窗
+                                   <div class="paymessage">
+                                       <p><span class="down"></span><span>&nbsp;相关跟进记录</span></p>
+                                       相关跟进记录下拉内容公共样式
+                                       <div class="record">
+                                           第一部分联系人
+                                           <div>
+                                               <p>
+                                                   <span>15天前</span>
+                                                   <span>人力资源部 - 慕容 云海</span>
+                                               </p>
+                                               <div class="lineheight25">
+                                                   我司工作人员会把您的资料提交给注册地管辖的工商局，如工商局有特定要求,我司工作人员会提前两天通知。时间审核在5-7个工作日。
+                                               </div>
+                                               3张付款截图
+                                               <div class="threephoto">
+                                                   付款截图1
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   付款截图2
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   付款截图3
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   截图
+                                                   遮罩层
+                                                   <div class="screenshot">
+                                                       放大的图片
+                                                       <div>
+                                                           <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                                           关闭按钮
+                                                           <div class="closed"></div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               文件下载
+                                               <div>
+                                                   附件 ：<span>工商局有特定要求</span>
+                                                   <span class="fileico"></span><span class="filename">zip</span>
+                                                   <a href="__ROOT__/static/admin/juhui.sql" download="juhui.sql" class="download">下载</a>
+                                               </div>
+                                           </div>
+                                           所联系人
+                                           <div class="contacts">
+                                               <div class="width25">
+                                                   <div>所联系人 : <span>李小龙</span></div>
+                                                   <div>跟进方式 : <span>电话</span></div>
+                                               </div>
+                                               <div class="width38">
+                                                   <div class="marleft12">订单号 : <span>12345678995432</span></div>
+                                                   <div>所购服务 : <span>有限公司注册</span></div>
+                                               </div>
+                                               <div>
+                                                   <div>所属任务 : <span>跟进客户付款</span></div>
+                                                   <div>任务类型 : <span>跟进客户付款</span></div>
+                                               </div>
+                                           </div>
+                                           第二部分记录
+                                           <div>
+                                               <p>
+                                                   <span>15天前</span>
+                                                   <span>人力资源部 - 慕容 云海</span>
+                                               </p>
+                                               <div class="lineheight25">
+                                                   我司工作人员会把您的资料提交给注册地管辖的工商局，如工商局有特定要求,我司工作人员会提前两天通知。时间审核在5-7个工作日。
+                                               </div>
+                                               3张付款截图
+                                               <div class="threephoto">
+                                                   付款截图1
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   付款截图2
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   付款截图3
+                                                   <div class="payphoto">
+                                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                                   </div>
+                                                   截图
+                                                   遮罩层
+                                                   <div class="screenshot">
+                                                       放大的图片
+                                                       <div>
+                                                           <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                                           关闭按钮
+                                                           <div class="closed"></div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                               文件下载
+                                               <div>
+                                                   附件 ：<span>工商局有特定要求</span>
+                                                   <span class="fileico"></span><span class="filename">zip</span>
+                                                   <a href="__ROOT__/static/admin/juhui.sql" download="juhui.sql" class="download">下载</a>
+                                               </div>
+                                           </div>
+                                           所联系人
+                                           <div class="contacts">
+                                               <div class="width25">
+                                                   <div>所联系人 : <span>李小龙</span></div>
+                                                   <div>跟进方式 : <span>电话</span></div>
+                                               </div>
+                                               <div class="width38">
+                                                   <div class="marleft12">订单号 : <span>12345678995432</span></div>
+                                                   <div>所购服务 : <span>有限公司注册</span></div>
+                                               </div>
+                                               <div>
+                                                   <div>所属任务 : <span>跟进客户付款</span></div>
+                                                   <div>任务类型 : <span>跟进客户付款</span></div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           弹窗，有边框，联系人2
+                           <div class="paymessage-list">
+                               <div>
+                                   <div>联系人 - 李小龙</div>
+                                   <div>
+                                       <span></span><span>填写资料</span><span></span><span>删除</span>
+                                   </div>
+                               </div>
+                               <div class="paymessage-list-nav">
+                                   左
+                                   <div class="nav-list">
+                                       <div>
+                                           <div>联系人姓名 : </div>
+                                           <div>李小龙</div>
+                                       </div>
+                                       <div>
+                                           <div>职位 : </div>
+                                           <div>总经理</div>
+                                       </div>
+                                       <div>
+                                           <div>手机 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div>Q Q : </div>
+                                           <div>790204870</div>
+                                       </div>
+                                       <div>
+                                           <div>邮箱 : </div>
+                                           <div>790204870@qq.com</div>
+                                       </div>
+                                   </div>
+                                   右
+                                   <div class="nav-list">
+                                       <div class="marbottom0">
+                                           <div>所属公司 : </div>
+                                           <div class="width165">深圳市聚惠企业登记代理有限公司</div>
+                                       </div>
+                                       <div>
+                                           <div>决策类型 : </div>
+                                           <div>决策人</div>
+                                       </div>
+                                       <div>
+                                           <div>微信 : </div>
+                                           <div>18574435259</div>
+                                       </div>
+                                       <div>
+                                           <div></div>
+                                           <div><img src="__ROOT__/static/admin/img/ewm.png"></div>
+                                       </div>
+                                   </div>
+                               </div>
+                               标签，备注
+                               <div class="nav-list-bottom">
+                                   <div>
+                                       <div>标签 : </div>
+                                       <div class="label">
+                                           <span>性格温和</span>
+                                           <span>时间观念强</span>
+                                           <span>人很实在</span>
+                                           <span>比较配合</span>
+                                           <span>好说话</span>
+                                       </div>
+                                   </div>
+                                   备注
+                                   <div>
+                                       <div>备注 : </div>
+                                       <div class="width440">
+                                           专利是专利权的简称，指专利权人对发明创造享有的专利权，专利权是一种专有权，这种权利具有独占的排他性；非专利权人要想使用他人的专项技术，必须依法征得专利权人的授权或许可。
+                                       </div>
+                                   </div>
+                               </div>
+                               更多相关服务，相关跟进记录弹窗盒子
+                               <div class="morepop-up">
+                                   更多相关信息点击弹窗
+                                   <div class="paymessage">
+                                       <p><span class="down"></span><span>&nbsp;更多相关服务</span></p>
+                                   </div>
+                                   相关跟进记录点击弹窗
+                                   <div class="paymessage">
+                                       <p><span class="down"></span><span>&nbsp;相关跟进记录</span></p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   订单
+                   <div class="correlationlist3 correlationlist">
+                       订单
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;付款信息</span><span class="down"></span>
+                           </p>
+                           <div class="paymessageleft">
+                               <div class="orderlist">
+                                   <div>订单号 : </div>
+                                   <div class="ordernumber">1234567890123123</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>应付总额 : </div>
+                                   <div><span>1234</span>元</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款方式 : </div>
+                                   <div class="paymethod">微信支付</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款账号 : </div>
+                                   <div>1234567890123456</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款单位(人) : </div>
+                                   <div>深圳市众诚知识产权有限公司</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款截图 :</div>
+                                   <div class="payphoto">
+                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                   </div>
+                                   截图
+                                   遮罩层
+                                   <div class="screenshot">
+                                       放大的图片
+                                       <div>
+                                           <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                           关闭按钮
+                                           <div class="closed"></div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="paymessageright">
+                               <div class="orderlist">
+                                   <div>所购服务 : </div>
+                                   <div>有限公司注册</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>已付总额 : </div>
+                                   <div><span>1200</span>元+<span>34元优惠券</span></div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款日期 : </div>
+                                   <div>2018-1-24 <span>11:40:33</span></div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款单号 : </div>
+                                   <div class="paynumber">987654321941514151753</div>
+                               </div>
+                           </div>
+                       </div>
+                       订单负责人
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;订单负责人</span><span class="down"></span>
+                           </p>
+                           <div class="paymessageleft">
+                               <div class="orderlist">
+                                   <div>接单人员 : </div>
+                                   <div>市场部 - 郑晓霞</div>
+                               </div>
+                           </div>
+                           <div class="paymessageright">
+                               <div class="orderlist">
+                                   <div>客户人员 : </div>
+                                   <div>市场部 - 郑晓霞</div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   跟进记录
+                   <div class="correlationlist4 correlationlist">
+                       跟进记录
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;付款信息</span><span class="down"></span>
+                           </p>
+                           <div class="paymessageleft">
+                               <div class="orderlist">
+                                   <div>订单号 : </div>
+                                   <div class="ordernumber">1234567890123987</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>应付总额 : </div>
+                                   <div><span>1234</span>元</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款方式 : </div>
+                                   <div class="paymethod">微信支付</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款账号 : </div>
+                                   <div>1234567890123456</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款单位(人) : </div>
+                                   <div>深圳市众诚知识产权有限公司</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款截图 :</div>
+                                   <div class="payphoto">
+                                       <img src="__ROOT__/static/admin/img/sy-0002_01.png">
+                                   </div>
+                                   截图
+                                   遮罩层
+                                   <div class="screenshot">
+                                       放大的图片
+                                       <div>
+                                           <img src="__ROOT__/static/admin/img/zsk-xqy-yyzz-20171129-1433.png">
+                                           关闭按钮
+                                           <div class="closed"></div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="paymessageright">
+                               <div class="orderlist">
+                                   <div>所购服务 : </div>
+                                   <div>有限公司注册</div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>已付总额 : </div>
+                                   <div><span>1200</span>元+<span>34元优惠券</span></div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款日期 : </div>
+                                   <div>2018-1-24 <span>11:40:33</span></div>
+                               </div>
+                               <div class="orderlist">
+                                   <div>付款单号 : </div>
+                                   <div class="paynumber">987654321941514151753</div>
+                               </div>
+                           </div>
+                       </div>
+                       订单负责人
+                       <div class="paymessage">
+                           <p>
+                               <span class="vertical"></span><span>&nbsp;订单负责人</span><span class="down"></span>
+                           </p>
+                           <div class="paymessageleft">
+                               <div class="orderlist">
+                                   <div>接单人员 : </div>
+                                   <div>市场部 - 郑晓霞</div>
+                               </div>
+                           </div>
+                           <div class="paymessageright">
+                               <div class="orderlist">
+                                   <div>客户人员 : </div>
+                                   <div>市场部 - 郑晓霞</div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   更多
+               </div>
+               右边
+                <div class="check-bottom-right">
+                    <div>
+                        <div class="cut-off-top">
+                            <div>距离上次跟进还有 <span class="one">90</span> 天以上</div>
+                            <div class="font12">
+                                上次跟进时间 : <span>2018-1-22 12:03:24</span>
+                            </div>
+                            跟进任务
+                            <div class="followtask">
+                                <span class="followbtn">+ 客户跟进</span>
+                                <span class="allotbtn">更多</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cut-off-bottom">
+                        <div>
+                            <span>客户主要对接人</span>
+                            <span class="down"></span>
+                            <span>修改对接人</span>
+                        </div>
+                        下拉菜单
+                        <div class="cut-off-bottom-list">
+                            <div>
+                                姓名 : <span>李小龙(总经理)</span>
+                            </div>
+                            <div>
+                                手机 : <span>18574435965</span>
+                            </div>
+                            <div>
+                                微信 : <span>18574435965</span>
+                            </div>
+                            <div>
+                                Q Q : <span>790204870</span>
+                            </div>
+                            <div class="site">
+                                <div>
+                                    <div>地址 : </div>
+                                    <div>深圳市龙华区清湖福泉新城龙华街道285号</div>
+                                </div>
+                            </div>
+                            <div class="label">
+                                标签 :&nbsp;
+                                <span>性格温和</span>
+                                <span>时间观念强</span>
+                                <span>人很实在</span>
+                                <span>比较配合</span>
+                                <span>好说话</span>
+                            </div>
+                            <div class="remarks">
+                                <div>备注 : </div>
+                                <div>深圳市聚惠企业登记代理有限公司。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--切换菜单-->
+    <div class="menu">
+        <div class="menubtn1">已发布<span></span></div>
+        <span>|</span>
+        <div class="menubtn2">待审核<span>({$nubw})</span></div>
+        <span>|</span>
+        <div class="menubtn3">草稿<span>({$nubc})</span></div>
+        <span>|</span>
+        <div class="menubtn4">已停用<span>({$nubt})</span></div>
+        <span>|</span>
+    </div>
+        <!--可拉伸表格-->
+        <table id="tb_1" class="tb">
+        <tr>
+            <th class="width41">序号</th>
+            <th class="width38">顺序</th>
+            <th class="width75">产品名称</th>
+            <th>SEO标题</th>
+            <th>任务流程</th>
+            <th>订单数</th>
+            <th>操作</th>
+        </tr>
+        {volist name="re" id='vo' key="k"}
+        <tr>
+            <td><input type="checkbox" class="in1"></td>
+            <td>{$vo.id}</td>
+            <td class="rank">
+                <span>{$vo.name}</span>
+            </td>
+            <td>{$vo.seoTitle}</td>
+            <td>{$vo.taskName}</td>
+            <td>0</td>
+            <td><a href="javascript:if(confirm('确实要删除该内容吗?'))location='__URL__/del/id/{$vo.id}/pid/{$id}'">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}/pid/{$id}">修改</a>
+           
+            </td>
+        </tr>
+        {/volist}
+       
+    </table>
+        <!--可拉伸表格-->
+        <table id="tb_2" class="tb">
+        <tr>
+            <th class="width41">序号</th>
+            <th class="width38">顺序</th>
+            <th class="width75">产品名称</th>
+            <th>SEO标题</th>
+            <th>任务流程</th>
+            <th>订单数</th>
+            <th>操作</th>
+        </tr>
+        {volist name="rew" id='vo' key="k"}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{$vo.id}</td>
+            <td class="rank">
+                <span>{$vo.name}</span>
+            </td>
+            <td>{$vo.seoTitle}</td>
+            <td>{$vo.taskName}</td>
+            <td class="check">0</td>
+            <td><a href="javascript:if(confirm('确实要删除该内容吗?'))location='__URL__/del/id/{$vo.id}/pid/{$id}'">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}/pid/{$id}">修改</a>
+            
+            </td>
+        </tr>
+        {/volist}
+        
+    </table>
+        <!--可拉伸表格-->
+        <table id="tb_3" class="tb">
+            <tr>
+                <th class="width41">序号</th>
+                <th class="width38">顺序</th>
+                <th class="width75">产品名称</th>
+                <th>SEO标题</th>
+                <th>任务流程</th>
+                <th>订单数</th>
+                <th>操作</th>
+            </tr>
+           {volist name="rec" id='vo' key="k"}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{$vo.id}</td>
+            <td class="rank">
+                <span>{$vo.name}</span>
+            </td>
+            <td>{$vo.seoTitle}</td>
+            <td>{$vo.taskName}</td>
+            <td class="check">0</td>
+            <td><a href="javascript:if(confirm('确实要删除该内容吗?'))location='__URL__/del/id/{$vo.id}/pid/{$id}'">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}/pid/{$id}">修改</a>
+            
+            </td>
+        </tr>
+        {/volist}
+    </table>
+        <!--可拉伸表格-->
+        <table id="tb_4" class="tb">
+        <tr>
+            <th class="width41">序号</th>
+            <th class="width38">顺序</th>
+            <th class="width75">产品名称</th>
+            <th>SEO标题</th>
+            <th>任务流程</th>
+            <th>订单数</th>
+            <th>操作</th>
+        </tr>
+          {volist name="ret" id='vo' key="k"}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{$vo.id}</td>
+            <td class="rank">
+                <span>{$vo.name}</span>
+            </td>
+            <td>{$vo.seoTitle}</td>
+            <td>{$vo.taskName}</td>
+            <td class="check">0</td>
+            <td><a href="javascript:if(confirm('确实要删除该内容吗?'))location='__URL__/del/id/{$vo.id}/pid/{$id}'">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}/pid/{$id}">修改</a>
+            
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+    <!--底部隐藏按钮-->
+    <div class="bottombtn">
+        <select name="audit" id="audit">
+            <option value="">审核</option>
+            <option value="">待审核</option>
+            <option value="">草稿</option>
+            <option value="">停用</option>
+        </select>
+        <div class="auditbtn">审核</div>
+        <select name="top" id="top">
+        <option value="0">不推荐</option>
+          <option value="1">1级推荐</option>
+          <option value="2">2级推荐</option>
+          <option value="3">3级推荐</option>
+          <option value="4">4级推荐</option>
+          <option value="5">5级推荐</option>
+          <option value="6">6级推荐</option>
+          <option value="7">7级推荐</option>
+          <option value="8">8级推荐</option>
+          <option value="9">9级推荐</option>
+        </select>
+        <div class="topbtn">置顶</div>
+        <select name="recommend" id="recommend">
+            <option value="0">不置顶</option>
+              <option value="1">1级置顶</option>
+              <option value="2">2级置顶</option>
+              <option value="3">3级置顶</option>
+              <option value="4">4级置顶</option>
+              <option value="5">5级置顶</option>
+              <option value="6">6级置顶</option>
+              <option value="7">7级置顶</option>
+              <option value="8">8级置顶</option>
+              <option value="9">9级置顶</option>
+        </select>
+        <div class="recommendbtn">推荐</div>
+        <select name="topnews" id="topnews">
+            <option value="0">非头条</option>
+              <option value="1">1级头条</option>
+              <option value="2">2级头条</option>
+              <option value="3">3级头条</option>
+              <option value="4">4级头条</option>
+              <option value="5">5级头条</option>
+              <option value="6">6级头条</option>
+              <option value="7">7级头条</option>
+              <option value="8">8级头条</option>
+              <option value="9">9级头条</option>
+        </select>
+        <div class="topnewsbtn">头条</div>
+        <div>转移</div>
+        <div>删除</div>
+        <div>查重</div>
+    </div>
+<div class="container-bottom-bottom" id="page1">
+    <div style="float: left;">
+        <ul>
+            <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31"><label for="all">反选</label></li>
+            <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+           <!--  <li><input type="submit" class="update" value="批量修改"></li> -->
+        </ul>
+    </div>
+    <div style="float: right;" >
+      <form action='{:url("Product/oper","id=$id")}' method="post" >
+      <span class="marleft20">
+          <input type="text" name="branches" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+           " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  class="branches">
+          <input type="hidden" name="v" value="1">
+          <input type="submit" value="跳转" class="sub">
+       </span>
+      </form>
+     </div>
+    <div style="float: right;" >{$page}</div>
+</div>
+<div class="container-bottom-bottom" id="page2">
+    <div style="float: left;">
+        <ul>
+            <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31"><label for="all">反选</label></li>
+            <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+            <!-- <li><input type="submit" class="update" value="批量修改"></li> -->
+        </ul>
+    </div>
+    <div style="float: right;" >
+      <form action='{:url("Product/oper","id=$id")}' method="post" >
+      <span class="marleft20">
+          <input type="text" name="branches" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+           " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  class="branches">
+          <input type="hidden" name="v" value="2">
+          <input type="submit" value="跳转" class="sub">
+       </span>
+      </form>
+     </div>
+    <div style="float: right;" >{$page2}</div>
+</div>
+<div class="container-bottom-bottom" id="page3">
+    <div style="float: left;">
+        <ul>
+            <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31"><label for="all">反选</label></li>
+            <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+            <!-- <li><input type="submit" class="update" value="批量修改"></li> -->
+        </ul>
+    </div>
+    <div style="float: right;" >
+      <form action='{:url("Product/oper","id=$id")}' method="post" >
+      <span class="marleft20">
+          <input type="text" name="branches" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+           " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  class="branches">
+          <input type="hidden" name="v" value="3">
+          <input type="submit" value="跳转" class="sub">
+       </span>
+      </form>
+     </div>
+    <div style="float: right;">{$page3}</div>
+</div>
+<div class="container-bottom-bottom" id="page4">
+    <div style="float: left;">
+        <ul>
+            <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31"><label for="all">反选</label></li>
+            <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+            <!-- <li><input type="submit" class="update" value="批量修改"></li> -->
+        </ul>
+    </div>
+    <div style="float: right;" >
+      <form action='{:url("Product/oper","id=$id")}' method="post" >
+      <span class="marleft20">
+          <input type="text" name="branches" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+           " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  class="branches">
+          <input type="hidden" name="v" value="4">
+          <input type="submit" value="跳转" class="sub">
+       </span>
+      </form>
+     </div>
+    <div style="float: right;">{$page4}</div>
+</div>
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/product.js"></script>
+</body>
+</html>

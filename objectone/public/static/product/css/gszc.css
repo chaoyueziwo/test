@@ -1,0 +1,1018 @@
+/*产品展销展示页*/
+/*中间内容盒子*/
+.nav-box{
+    margin:0 auto;
+    width: 1200px;
+    margin-top: 15px;
+}
+/*中间区域里第一个div里的span标签里的a标记鼠标移入*/
+.nav-box>div:first-child>span a:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/*所有服务下线*/
+.middleline{
+    border-top:1px solid #1cbcb4;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*付费图片链接*/
+.pay-box{
+    margin-top: 15px;
+}
+/*付费图片里的div*/
+.pay-box>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*付费图片右侧*/
+.pay-box-right{
+    margin-left: 10px;
+    width: 56%;
+}
+.pay-box-right>div:first-child{
+    margin-left: 8px;
+}
+/*图片右边头部字体第一个span*/
+.pay-box-right>div:first-child>span:first-child{
+    font-size: 24px;
+}
+.pay-box-right>p{
+    margin: 10px 10px;
+}
+.fast{
+    padding:2px 5px;
+    background: #1cbbb4;
+    color:#fff;
+    margin: 0 5px;
+    font-size: 13px;
+}
+/*服务价格*/
+.serverprice{
+ border-bottom: 1px solid #ddd;
+}
+.serverprice>ul>li{
+    display: inline-block;
+}
+/*支付图片右边公司内容公共样式a标签里的li设置相对定位*/
+.serverprice>ul>a>li{
+    display: inline-block;
+    position: relative;
+}
+
+.serverprice>ul:first-child{
+    padding:10px 0;
+    background: #f6f6f6;
+}
+/*服务价格红色字体里的字体*/
+.serverprice>ul:first-child>li:last-child>span:first-child{
+   font-size: 24px;
+    color:#FF0000;
+    vertical-align: sub;
+    margin: 0 10px;
+}
+.serverprice>ul>li:first-child{
+    margin-left: 10px;
+}
+/*公司类型的ul*/
+.companytype{
+    margin-top: 15px;
+}
+.companytype>a>li{
+    padding:5px 10px;
+    border:1px solid #ddd;
+    margin-right: 10px;
+}
+/*服务价格里面边框鼠标移入*/
+.companytype>a>li:hover{
+    border: 1px solid #1cbcb4;
+}
+.serverprice>div>a>span{
+    border:1px solid #1cbcb4;
+    padding:10px 50px;
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 16px;
+}
+/*立即购买*/
+.serverprice>div>a:first-child>span{
+    background: #1cbcb4;
+    color: #fff;
+    margin: 0 30px 0 90px;
+}
+/*立即咨询*/
+.serverprice>div>a:last-child>span{
+    color:#1cbcb4;
+}
+/*服务介绍里的图片*/
+#server>div>img{
+    width: 100%;
+}
+/*左浮动*/
+.floatright{
+    float:right;
+}
+/*服务保障*/
+.pay-box-right>p:last-child{
+   font-size: 13px;
+    margin: 0 0 0 32px;
+    line-height: 20px;
+}
+/*保护伞图标*/
+.yushanico{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: url("../img/zcgs-9.png")no-repeat 1px -21px;
+    vertical-align: middle;
+}
+.pay-box-p{
+    margin: 10px 0 0 10px!important;
+}
+/*选择区域 设置相对定位*/
+.region{
+    border: 1px solid #ddd;
+    padding:5px 10px;
+    color:#8e8e8e;
+    display: inline-block;
+    position: relative;
+}
+/*地址内容绝对定位*/
+.region-box{
+    position: absolute;
+    top: 29px;
+    left: -1px;
+    width:338px;
+    border: 1px solid #1cbcb4;
+    /*z-index: -1;*/
+    background: #fff;
+    display: none;
+}
+
+.region:hover{
+    border: 1px solid #1cbcb4;
+    border-bottom:1px solid transparent;
+}
+.region:hover .region-box{
+    display: block;
+}
+.regiondown{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+   background: url("../img/zcgs-9.png")no-repeat -27px 7px;
+}
+/*地区内的div*/
+.region-box>div:first-child{
+    margin:5px;
+    font-size: 0;
+}
+/*3个地区*/
+.region-box>div:first-child>div{
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    width:80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-top: 3px solid transparent;
+}
+.region-list-1{
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+.region-list-2{
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.region-list-3{
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+/*地区盒子*/
+.regionchose{
+    margin-left:25px;
+    margin-bottom: 15px;
+}
+.regionchose>div{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+}
+.regionchose>div:hover{
+    cursor: pointer;
+    color:#1cbcb4;
+}
+.r2,.r3{
+    display: none;
+}
+/*省市区三个地方的div鼠标移入变手指头*/
+.region-list-1,.region-list-2,.region-list-3{
+    cursor: pointer;
+}
+/*三角形*/
+.triangle-bottomright{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #1cbcb4;
+    border-left: 10px solid transparent;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+.related{
+    margin-top: 30px;
+}
+.related>div{
+    display: inline-block;
+    vertical-align:top;
+}
+.related-left{
+    border:1px solid #ddd;
+    width: 20%;
+    height: 870px;
+}
+.related-left>div:first-child{
+    background:#f6f6f6;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.related-left>div:last-child>ul{
+    margin-top: 20px;
+}
+.related-left>div:last-child>ul>a>li{
+    margin-left: 50px;
+    margin-bottom: 5px;
+}
+.related-left>div:last-child>ul>li:first-child{
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.related-left>div:last-child>ul>li:first-child>span:first-child{
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    text-align: center;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    line-height: 15px;
+    margin-left: 20px;
+    margin-right: 8px;
+    font-family: 宋体;
+}
+/*相关服务+-按钮鼠标移入*/
+.related-left>div:last-child>ul>li:first-child:hover{
+    cursor: pointer;
+}
+.related-left>div:last-child>ul:last-child{
+    margin-bottom: 20px;
+}
+/*右边盒子*/
+.related-right{
+    margin-left: 15px;
+    width:78%;
+}
+/*首个div*/
+.related-right>div:first-child{
+    font-size: 0;
+    background: #f6f6f6;
+    border: 1px solid #ddd;
+}
+/*第一个div里的div设为行内快*/
+.related-right>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*服务介绍，办理流程*/
+/*首个div里的首个div里的a标签里的div*/
+.related-right>div:first-child>div:first-child>a>div{
+    display: inline-block;
+    border-top:2px solid transparent;
+    padding:10px 20px;
+    background: #f6f6f6;
+    font-size: 16px;
+}
+.appra{
+    padding:10px 23.5px!important;
+}
+/*首个div里的最后个div里的a标签里的span*/
+.related-right>div:first-child>div:last-child>a>span{
+    font-size: 16px;
+    display: inline-block;
+    padding: 11px 27px;
+    vertical-align: top;
+    font-family: 黑体;
+    border: 1px solid #1cbcb4;
+}
+/*立即购买*/
+.promptly{
+    background:#1cbcb4;
+    color:#fff;
+}
+/*在线咨询*/
+.callonline{
+    color: #1cbcb4;
+    padding: 11px 28.5px!important;
+    background: #fff;
+}
+#process{
+    width: 99.7%;
+    border: 1px solid #ddd;
+    margin-top: 30px;
+}
+#process>div:first-child{
+    padding:10px 0 10px 20px;
+    background: #f6f6f6;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+/*办理流程里的切换菜单*/
+.process-menu{
+    margin: 20px;
+    width: 96%;
+}
+.process-menu>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.process-menu>div:first-child{
+    width: 20%;
+}
+.process-menu>div:first-child>div{
+    padding:10px 15px;
+    display: inline-block;
+    background: #f6f6f6;
+    border: 1px solid #ddd;
+}
+.process-menu>div:first-child>div:first-child{
+    background: #fff;
+}
+.process-menu>div:first-child>div:hover{
+    cursor: pointer;
+}
+/*切换内容盒子*/
+.process-menu>div:last-child{
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    height: 260px;
+    width:78%;
+}
+/*办理流程里的切换点击公共样式下外边距15px*/
+.marbottom15{
+    margin-bottom: 14px;
+}
+.process-menu>div:last-child>div>p{
+    margin: 6px 0;
+}
+#server1{
+    width:96%;
+    height:90%;
+    margin: 10px 10px 10px 20px;
+    overflow-y: scroll;
+    display: block;
+}
+.process-menu>div:last-child>div{
+    width:96%;
+    height:90%;
+    margin: 10px 10px 10px 20px;
+    overflow-y: scroll;
+    display: none;
+}
+/*注意事项*/
+.attention{
+    margin:0 10px;
+    border-top: 1px solid #ddd;
+}
+.attention>div:first-child{
+    margin: 20px 0 20px 10px;
+    font-size: 16px;
+}
+.attention>p{
+    margin: 10px 0 10px 25px;
+}
+/*注意事项图标*/
+.attentionico{
+    vertical-align: sub;
+    display: inline-block;
+    height:25px;
+    width: 25px;
+    background: url("../img/zcgs-9.png")no-repeat 1px -42px;
+}
+/*黑三角形*/
+.triangle-right{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #000;
+    border-bottom: 5px solid transparent;
+}
+/*下外边距30px*/
+.marbottom30{
+    margin-bottom: 30px!important;
+}
+/*用户评价*/
+#appraise{
+    margin-top: 30px;
+    border:1px solid #ddd;
+}
+#appraise>div:first-child{
+    background: #f6f6f6;
+    font-size: 16px;
+    padding:10px 0 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+/*好评率*/
+.good{
+    margin: 20px 20px 30px 20px;
+    width: 96%;
+    font-size: 0;
+}
+.good>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    width: 49%;
+}
+/*好评率盒子*/
+.good>div:first-child{
+    border-right: 1px solid #ddd;
+}
+/*好评率盒子里的div*/
+.good>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*好评率*/
+.good>div:first-child>div:first-child{
+    width: 30%;
+}
+/*好评率里的p标签*/
+.good>div:first-child>div:first-child>p{
+    text-align: center;
+    margin-left: 20px;
+}
+/*好评率红色大字*/
+.good>div:first-child>div:first-child>p:first-child{
+    font-size: 40px;
+    color:#FF0000;
+    margin-top: 10px;
+}
+/*好评率字体*/
+.good>div:first-child>div:first-child>p:last-child{
+    font-size: 18px;
+    font-family: 黑体;
+    color: #464646;
+    margin: 5px 0 20px 20px;
+}
+/*好评率右边进度条*/
+.good>div:first-child>div:last-child{
+    width: 69%;
+    font-size: 16px;
+}
+.good>div:first-child>div:last-child>div{
+    margin-top: 15px;
+    margin-left: 40px;
+}
+/*谷歌进度条已完成的背景颜色*/
+progress::-webkit-progress-value{
+    background: #FF0000;
+}
+/*谷歌浏览器 进度条未完成的背景颜色*/
+progress::-webkit-progress-bar{
+    background: #e5e5e5;
+}
+/*兼容火狐已完成进度条颜色*/
+progress::-moz-progress-bar{
+    background: #FF0000;
+}
+.progress{
+    background: #e5e5e5;
+    color:#FF0000;
+    width: 120px;
+    height: 12px;
+    vertical-align: middle;
+}
+/*好评下外边距20px*/
+.good3{
+    margin-bottom: 20px;
+}
+/*客户印象*/
+.impress{
+    margin-left: 30px;
+    height: 120px;
+    overflow: hidden;
+}
+.impress>p{
+    font-size: 16px;
+}
+.impress>span{
+    display: inline-block;
+    vertical-align: top;
+    padding:2px 5px;
+    background:#ffebba;
+    font-family: 黑体;
+    margin: 10px 5px 0 0;
+}
+/*全部评论链接*/
+.comment>div:first-child{
+   background:#f6f6f6;
+    padding: 10px 0;
+    font-size: 16px;
+}
+.comment>div:first-child>span{
+    margin-left: 30px;
+}
+.comment>div:first-child>span:hover{
+    cursor: pointer;
+}
+/*评论详情*/
+.comment-details{
+    padding:10px 0 10px 30px;
+    border-bottom: 1px solid #ddd;
+}
+.comment-details>span{
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+}
+/*评论2,3,4隐藏*/
+.comment>.details1{
+    display: block;
+}
+.details{
+    display: none;
+}
+/*文本居右加宽度21%*/
+.textright{
+    text-align: right;
+    width:21%;
+}
+/*最后一个span*/
+.comment-details>span:last-child{
+    text-align: center;
+}
+/*文本居中*/
+.textcenter{
+    text-align: center;
+}
+/*评论展示页*/
+.commentshow{
+    border-bottom: 1px solid #ddd;
+}
+/*评论展示页里的div*/
+.commentshow>div{
+    margin: 10px 0 10px 30px;
+}
+/*评论展示里的div里的div*/
+.commentshow>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*评论展示里的div里的首个div*/
+.commentshow>div>div:first-child{
+    width: 50%;
+}
+/*评论展示里的div的最后一个div*/
+.commentshow>div>div:last-child{
+    text-align: center;
+    margin:10px;
+    width: 21%;
+}
+.commentshow>div>div>span{
+    font-size: 13px;
+    font-family: 宋体;
+    color: #929292;
+    margin: 20px 30px 20px 0;
+    display: inline-block;
+}
+.commentshow>div>div>p:last-child{
+    margin-bottom: 15px;
+}
+/*评论小标签字体 背景颜色*/
+.commentshow>div>div>p:last-child>span{
+    display: inline-block;
+    vertical-align: top;
+   font-size: 14px;
+    font-family:黑体;
+    background: #ffebba;
+    padding: 2px 5px;
+    margin: 10px 5px 0 0;
+}
+/*服务者回复*/
+.reply{
+    background:#f6f6f6;
+    font-size: 13px;
+    font-family: 宋体;
+    padding: 5px 10px;
+    line-height: 18px;
+    margin: 15px 0 5px 0;
+}
+/*回复日期*/
+.reply>span:last-child{
+    color:#929292;
+    margin-left: 20px;
+}
+/*客户评论*/
+.clientreply{
+    font-family: 宋体;
+    line-height: 25px;
+}
+/*评论星级*/
+.star{
+    margin: 58px 0 0 80px;
+    width:100px;
+    height: 20px;
+    background: url("../img/star.png")no-repeat -20px 0;
+}
+/*服务专员头像*/
+.commentshow>div>div:last-child>div{
+    margin-top: 5px;
+}
+/*页码*/
+.details>div:last-child{
+    padding:25px;
+    font-size: 0;
+    text-align: center;
+}
+.page>span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 7px 14px;
+    font-family: 宋体;
+    border-right: none;
+}
+.page>.pagedown{
+    border-right: 1px solid #ddd;
+}
+.page>span:hover{
+    cursor: pointer;
+}
+.page>div{
+    display: inline-block;
+    vertical-align: -22px;
+    font-size: 14px;
+    font-family: 宋体;
+    margin-left: 20px;
+    border:none;
+}
+/*服务保障*/
+.safeguard1{
+    border: 1px solid #ddd;
+    margin-top: 30px;
+}
+/*服务保障里的第一个div*/
+.safeguard1>div:first-child{
+    background: #f6f6f6;
+    font-size: 16px;
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+/*清除开具发票下外边框*/
+.safeguard1>div:last-child{
+    border-bottom: none;
+}
+/*服务保障里的我们的承诺*/
+.wepromise{
+    border-bottom:1px solid #ddd;
+    margin:30px 5px 0 5px;
+}
+.wepromise>span{
+    font-size: 16px;
+    font-family: 黑体;
+    color:#1cbcb4;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*我们的承诺*/
+.wepromiseico1{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -139px;
+}
+/*投诉渠道*/
+.wepromiseico2{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -180px;
+}
+/*处理流程*/
+.wepromiseico3{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -220px;
+}
+/*平台保险*/
+.wepromiseico4{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -261px;
+}
+/*开具发票*/
+.wepromiseico5{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -301px;
+}
+/*第一个span*/
+.wepromise>span:first-child{
+    margin:0 5px 0 20px;
+}
+/*所有div*/
+.wepromise>div{
+    margin-left:65px;
+    margin-top: 10px;
+    font-family: 宋体;
+}
+/*最后一个div*/
+.wepromise>div:last-child{
+    margin-bottom: 30px;
+}
+/*图标位置的div*/
+.wepromise>.marleft30px{
+    margin-left: 30px;
+}
+/*常见问题*/
+#question{
+    border: 1px solid #ddd;
+    margin-top: 30px;
+}
+#question>div:first-child{
+    background: #f6f6f6;
+    font-size: 16px;
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+/*全部问题*/
+.allquestion{
+    padding:10px 0;
+}
+.allquestion>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    margin-left: 30px;
+}
+.allquestion>div:hover{
+    cursor: pointer;
+}
+/*常见问题切换的内容*/
+.allquestionlist{
+    font-family: 宋体;
+    margin: 0 5px;
+}
+.allquestionlist>div:first-child{
+    background:#f6f6f6;
+    border-top: 1px solid #ddd;
+    padding: 5px 25px;
+}
+/*问题详情*/
+.question-details{
+    border-bottom: 1px solid #ddd;
+}
+.question-details>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*左边*/
+.question-details>div:first-child{
+    width: 70%;
+}
+/*右边*/
+.question-details>div:last-child{
+    width: 26%;
+    text-align: right;
+    margin-top: 45px;
+}
+.question-details>div:last-child>span{
+    cursor: pointer;
+}
+.question-details>div:first-child>p:first-child{
+    margin: 20px 0 0 28px;
+}
+.question-details>div:first-child>p:last-child{
+    margin: 5px 0 20px 28px;
+    line-height: 22px;
+}
+/*点赞图标*/
+.praiseico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    width: 18px;
+    background: url("../img/cswd-dcny-7.png")no-repeat 2px -532px;
+}
+/*常见问题页码*/
+.questionpage{
+    font-size: 0;
+    text-align: right;
+    padding: 25px 15px;
+}
+/*页面鼠标移入*/
+.questionpage>span:hover{
+    cursor: pointer;
+}
+.questionpage>span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 7px 14px;
+    font-family: 宋体;
+    border-right: none;
+}
+.questionpage>div{
+    display: inline-block;
+    vertical-align: -22px;
+    font-size: 14px;
+    font-family: 宋体;
+    margin-left: 10px;
+    border: none;
+
+}
+.questionpage>.question-pagedown{
+    border-right: 1px solid #ddd;
+}
+#question>.allquestionlistlist1{
+    display: block;
+}
+/*隐藏切换所有问题*/
+.allquestionlist{
+    display: none;
+}
+.aboutico1{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -362px;
+}
+.aboutico2{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -404px;
+}
+.aboutico3{
+    height: 35px;
+    width: 35px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -445px;
+}
+.wepromise>div>b{
+    line-height: 25px;
+}
+.swiper-container-horizontal>img{
+    width: 100%;
+}
+/*左外边距65px,宽度定为87%*/
+.marleft65{
+    margin-left: 65px!important;
+    width: 87%;
+}
+.marleft65 img{
+    width: 100%;
+}
+/*右箭头*/
+#triangle-facing-right{
+    display: inline-block;
+    border-right:  8px solid;
+    border-bottom: 8px solid;
+    width: 25px;
+    height: 25px;
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    right: 35px;
+    opacity: 0.5;
+    background: none;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#triangle-facing-right,#triangle-facing-left:hover{
+    cursor:pointer;
+}
+/*左箭头*/
+#triangle-facing-left{
+    display: inline-block;
+    border-left: 8px solid;
+    border-bottom: 8px solid;
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 35px;
+    opacity: 0.5;
+    background: none;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+/*轮播楼层样式*/
+#louceng{
+    background: #000;
+    padding: 15px;
+    bottom: 4px;
+    opacity: 0.5;
+    text-align: right;
+}
+/*轮播楼层*/
+#louceng>span{
+    border:1px solid #fff;
+    background: #fff;
+}
+/*轮播楼层最后一个span*/
+#louceng>span:last-child{
+    margin-right: 50px;
+}
+/*轮播图片底部字体*/
+.lunbofont{
+    position: absolute;
+    font-size: 16px;
+    color: #fff;
+    bottom: 20px;
+    z-index: 12;
+    left: 25px;
+}
+/*底部资质认证导航栏*/
+.footer-navbar{
+    margin-top: 30px;
+    background: #f6f6f6;
+}
+.footernavico1{
+    height: 50px;
+    width: 50px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -526px;
+}
+.footernavico2{
+    height: 50px;
+    width: 50px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -575px;
+}
+.footernavico3{
+    height: 50px;
+    width: 50px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -625px;
+}
+.footernavico4{
+    height: 50px;
+    width: 50px;
+    background: url("../img/zcgs-9.png")no-repeat 0 -675px;
+}
+.footer-navbar>div{
+    width: 1200px;
+    margin: 0 auto;
+    padding:20px 0;
+    font-size: 0;
+}
+/*底部4个导航栏*/
+.footer-navbar>div>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    border-right: 1px solid #ddd;
+    padding: 30px 30px 30px 42px;
+}
+/*售后无忧取消右边框*/
+.footer-navbar>div>div:last-child{
+    border-right: none;
+}
+.footer-navbar>div>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*资质认证，服务商100%实名审核认证*/
+.footer-navbar>div>div>div:last-child{
+    margin-left: 10px;
+}
+/*资质认证*/
+.footer-navbar>div>div>div:last-child>div:first-child{
+   font-size: 24px;
+    font-family: 黑体;
+}
+.footer-navbar>div>div>div:last-child>div:last-child{
+    color:#525151;
+    margin-top: 3px;
+}
+/*清除底部上外边距60px 设为0*/
+#container .martop60px{
+   margin-top: 0;
+}
+/*立即购买，在线咨询*/
+#promptlybox{
+    display: none;
+}

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusmission.css">
+    <title>任务管理列表</title>
+    <style>
+    .caption textarea{resize: none;
+        width: 370px;
+        height: 150px;
+        margin-top: 10px;
+    }
+    .container-middle-content>ul:first-child>span
+      {display:none}
+    .container-middle-content>ul:first-child>li:last-child{
+      display: inline-block;
+    }
+    </style>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks">
+    <!--新增任务弹窗-->
+    <form action="" onSubmit="return missionsubmit();">
+        <div class="newly-box">
+            <div>
+                <span>编辑任务</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    <span>任务名称 :</span>
+                    <input type="text" class="missionname">
+                    <span class="hint">请输入任务名称</span>
+                </div>
+                <div>
+                    <span>任务状态 :</span>
+                    <input type="radio" id="yess" name="yess" checked><label for="yess">启用</label>
+                    <input type="radio" id="noo" name="yess"><label for="noo">禁用</label>
+                </div>
+                <div>
+                    <span>任务类别 :</span>
+                    <select name="">
+                        <option value="跟单">跟单</option>
+                        <option value="填写资料">填写资料</option>
+                    </select>
+                </div>
+                <div>
+                    <span>所属部门 :</span>
+                    <select name="">
+                        <option value="所有部门">所有部门</option>
+                    </select>
+                </div>
+                <div>
+                    <span>推送信息 :</span>
+                    <input type="checkbox" id="message"><label for="message">短信</label>
+                    <input type="checkbox" id="mail"><label for="mail">邮件</label>
+                    <input type="checkbox" id="wechat"><label for="wechat">微信</label>
+                </div>
+                <div>
+                    <span class="textright">备注 :</span>
+                    <textarea name="" id=""></textarea>
+                </div>
+                <div>
+                    <span>取消</span>
+                    <input type="submit" value="保存">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+  <!--增加栏目-->
+ <div id="container">
+         <div>增加流程</div>
+         <form action='{:url("Renwu/add","v=$v")}' method="post" onSubmit="return submitting();">
+         <div class="container-middle">
+             <div></div>
+             <div class="container-middle-content">
+                     <ul>
+                         <li>流程名称 :&nbsp;&nbsp;</li>
+                         <li class="marleft10">
+                             <input type="text" class="width370 columnname" name="name">
+                             <!--判断样式-->
+                         <span class="hint">请输入流程名称</span>
+                         </li>
+                     </ul>
+                     <!-- <ul>
+                         <li>所属服务 :&nbsp;&nbsp;</li>
+                         <li>
+                             <select class="height40" name="ptaskId">
+                                 {volist name="re" id='vo'}
+                                  <option value="{$vo['id']}">{$vo['name']}</option>
+                                 {/volist}
+                             </select>
+                         </li>
+                     </ul> -->
+                     <ul  class="caption">
+                         <li>状态 :&nbsp;&nbsp;</li>
+                         <li>
+                             <input type="radio" name="isShow" value="1" id="yes" checked><label for="yes">启用</label>
+                             <input type="radio" name="isShow" value="0" id="no"><label for="no">禁用</label>
+                             <input type="radio" name="isShow" value="2" id="draft"><label for="draft">设为草稿</label>
+                         </li>
+                     </ul>
+                     <ul  class="caption">
+                         <li class="height246">备注 :&nbsp;&nbsp;</li>
+                         <li>
+                             <textarea name="description"></textarea>
+                         </li>
+                     </ul>
+
+                     <!-- <ul class="caption">
+                         <li  class="height230">
+                             <div>任务管理 :&nbsp;&nbsp;</div>
+                             <div class="newly">新增任务</div>
+                         </li>
+                         <li>
+                             任务列表
+                             <div class="mission-list">
+                                 任务1
+                                  
+                             </div>
+                         </li>
+                     </ul> -->
+             </div>
+         </div>
+     <!--提交框-->
+     <div class="commit">
+         <input type="submit" value="下一步">
+         <input type="reset" value="取消">
+     </div>
+         </form>
+ </div>
+
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/plusmission.js"></script>
+</body>
+</html>

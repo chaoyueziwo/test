@@ -1,0 +1,153 @@
+/*底部公共样式*/
+/*最底部footer*/
+.footer-box{
+    background:#353334;
+    height:510px;
+    width:100%;
+    color:#ffffff;
+    min-width: 1200px;
+}
+/*最底部搜索框*/
+.footer-box-search{
+    width:1200px;
+    margin: 0 auto;
+    font-size: 0;
+}
+.footer-box-search>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*底部a标签里的颜色字体为白色*/
+.footer-box-search a{
+    color:white;
+}
+/*友情链接*/
+.friend-box a{
+    color:white;
+}
+/*热门搜索左边部分上外边距50px*/
+.footer-box-search-left{
+    margin-top: 50px;
+    width:35%;
+    border-right:1px solid #4b4a4a;
+}
+.footer-box-search-left>span:first-child{
+    font-size: 16px;
+}
+/*热门搜索里的ul设为弹性布局 字体大小 为14px*/
+.footer-box-search-left>ul{
+    font-size: 14px;
+    margin-top: 20px;
+}
+/*热门搜索里的ul里的li*/
+.footer-box-search-left>ul>li{
+    margin:0 15px 0 0;
+    display: inline-block;
+    vertical-align: top;
+}
+/*热门搜索中间常见问题部分*/
+.footer-box-search-middle{
+    margin-top: 50px;
+    font-size: 16px;
+    width: 31%;
+    border-right:1px solid #4b4a4a;
+}
+.footer-box-search-middle>span{
+    margin-left: 12%;
+}
+/*热门搜索中间常见问题部分里的ul*/
+.footer-box-search-middle>ul{
+    margin-top:18px;
+}
+.footer-box-search-middle>ul>li{
+    display: inline-block;
+    vertical-align: top;
+    margin-left:12%;
+}
+/*微信扫码*/
+.footer-box-search-right{
+    margin-top: 50px;
+    font-size: 14px;
+    width: 33%;
+}
+.footer-box-search-right>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.footer-box-search-right>div:last-child{
+    margin-left:5%;
+}
+.footer-box-search-right>div:first-child{
+    margin-left:12%;
+}
+.footer-box-search-right>div:first-child>span:first-child{
+    font-size: 16px;
+}
+.footer-box-search-right>div:first-child>p{
+    margin-top: 16px;
+}
+/*电话号码*/
+.phonenum{
+    font-size: 24px;
+}
+/*qq在线咨询*/
+.qqconsult{
+    display: inline-block;
+    padding:10px 20px;
+    background:#1cbbb4;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+/*底部微信日期字体*/
+.date{
+    font-size: 14px;
+}
+/*微信上外边距*/
+.wechart{
+    margin-top: 18px;
+}
+/*友情链接*/
+.friend-box{
+    border-top:1px solid #4b4a4a;
+    margin-top: 50px;
+}
+.friend-box-list{
+    width:1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.friend-box-list>ul>li{
+    display: inline-block;
+    vertical-align: top;
+}
+/**/
+.friend-box-list>p:last-child{
+    text-align:center;
+    margin-top:20px;
+}
+/*底部效果*/
+/*最底部*/
+.footer-box-search a:hover{
+    text-decoration: underline;
+}
+/*友情链接*/
+.friend-box-list>ul li a:hover{
+    text-decoration: underline;
+}
+/*底部鼠标移入效果*/
+.pingguyemian>div:hover{
+    color:white;
+    background:#FF0000;
+    cursor: pointer;
+}
+/*QQ在线咨询*/
+.qqconsult:hover{
+    color:white;
+    background:#FF0000;
+    cursor: pointer;
+}
+/*底部上外边距60px*/
+.martop60px{
+    margin-top: 60px;
+}

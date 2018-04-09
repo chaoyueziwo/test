@@ -1,0 +1,269 @@
+/*创业资讯css*/
+/*所有服务分类线面的图片宽度设为100% 自适应宽度*/
+.tophoto>img{
+    width:100%;
+}
+/*中间内容*/
+.nav-box{
+    width:1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+/*导航栏第一个div*/
+.nav-box>div:first-child{
+    margin-left: 10px;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/images/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*导航栏*/
+.navbar{
+    margin-top: 20px;
+    height: 55px;
+}
+.navbar>ul{
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+}
+.navbar>ul>li{
+    padding:5px 0;
+    border-bottom: 3px solid transparent;
+}
+/*财税专题*/
+.subject{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+/*财税专题左边宽度280px*/
+.subjectleft{
+    width:280px;
+}
+
+/*公共样式*/
+.mar5px{
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-top: -4px;
+    width: 267px;
+}
+/*财税专题左边字级里的最后一个div*/
+.subjectleft>div:last-child{
+    margin-top: 15px;
+}
+/*财税专题中间部分*/
+.subjectmiddle{
+    border:1px solid #ddd;
+    width:550px;
+}
+.subjectmiddle>div:first-child>p{
+    text-align: center;
+    font-size: 18px;
+    margin:18px 0;
+}
+.subjectmiddle>div:first-child>span{
+    font-size: 13px;
+    display: inline-block;
+    width: 495px;
+    margin: 0 0 15px 25px;
+    line-height: 22px;
+}
+.subjectmiddle>div:last-child{
+    height: 290px;
+    border-top: 1px solid #ddd;
+}
+
+.subjectmiddle>div:last-child>ul{
+    display: flex;
+    margin:13px 20px;
+}
+.subjectmiddle>div:last-child>ul>li:first-child{
+    width:380px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.subjectmiddle>div:last-child>ul>li:last-child{
+    width: 110px;
+    text-align: right;
+}
+/*财税专题右边*/
+.subjectright{
+    width: 280px;
+    border: 1px solid #ddd;
+}
+.subjectright>p{
+    font-size: 18px;
+    margin: 18px 15px;
+}
+.subjectright>div:first-child{
+    display: flex;
+}
+/*创业优惠套餐*/
+.startfree{
+    display: flex;
+    margin: 0 0 20px 18px;
+}
+.startfree>div>p{
+    font-size: 13px;
+}
+.startfree>div>p:first-child{
+    margin-bottom: 5px;
+}
+/*查看详情*/
+.checkdetails{
+    padding:10px 7px;
+    color:white;
+    background: #1cbbb4;
+    margin-left: 20px;
+}
+/*注册公司指南*/
+.subjectright>div:last-child{
+    border-top:1px solid #ddd ;
+}
+/*注册公司指南列表 所有div设为行内快*/
+.subjectright>div:last-child>div{
+    width: 110px;
+    height:29px;
+    display: inline-block;
+    margin: 10px 0 0 18px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 29px;
+}
+.dailijizhang>img{
+    width:100%;
+    margin-top: 30px;
+}
+/*财税专题外面的盒子*/
+.finance-box{
+    margin-top: 30px;
+}
+/*财税专题外面的盒子里的div设为弹性布局*/
+.finance-box>div{
+    display:flex;
+    justify-content: space-between;
+}
+/*财税专题图标*/
+.subjectico{
+    display: inline-block;
+    vertical-align: bottom;
+    width:25px;
+    height:25px;
+    background: url("../img/images/cyzx-10.png")no-repeat 1px -21px;
+    margin-right: 7px;
+}
+/*财税专题头部 宽度100%*/
+.finance-box-list{
+    border:1px solid #ddd;
+    width:580px;
+}
+/*财税专题样式共用 ul设为弹性布局*/
+.finance-box-list>ul{
+    display: flex;
+    margin: 15px 0 10px 10px;
+}
+/*财税专题里的财税专题标题字体大小*/
+.font18px{
+    font-size: 18px;
+}
+.finance-box-list>ul li:first-child{
+    width:365px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/*右边日期 自动占满剩余空间 文本居右*/
+.finance-box-list>ul li:last-child{
+    flex-grow: 1;
+    text-align: right;
+    margin-right: 20px;
+}
+.finance-box-list>div{
+    border-top:1px solid #ddd;
+}
+.finance-box-list>div>div{
+    vertical-align: top;
+    width:260px;
+    height:30px;
+    display: inline-block;
+    border:1px solid #ddd;
+    margin-left: 17px;
+    line-height: 30px;
+}
+.finance-box-list>div>div>a>span{
+    display: inline-block;
+    margin-left: 7px;
+    width: 120px;
+    text-align: right;
+}
+/*上外边距20px*/
+.martop20px{
+    margin-top: 20px;
+}
+/*下外边距10px*/
+.marbottom20{
+    margin-bottom: 20px;
+}
+/*上外边距10px*/
+.martop15px{
+    margin-top: 15px;
+}
+
+/*中间内容部分里的a标签*/
+.nav-box a{
+    color:#000;
+}
+.nav-box a:hover{
+    color:#1cbbb4;
+}
+/*创业资讯效果 class为navbarli的鼠标移入 下边框颜色为1cbbb4*/
+.navbarli:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/*创业资讯效果 class为navbarli里的a标记鼠标移入字体颜色为1cbbb4*/
+.navbarli:hover>a{
+    color:#1cbbb4;
+}
+/*中间区域里第一个div里的span标签里的a标记鼠标移入*/
+.nav-box>div:first-child>span a:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/*财税专题里的下面部分里的a标签 鼠标移入专题颜色1cbbb4 加下划线*/
+.subjectmiddle>div:last-child>ul>li:first-child a:hover{
+    text-decoration:underline;
+}
+/*创业攻略指南下面指南 div鼠标移入*/
+.subjectright>div:last-child>div:hover{
+    background: #1cbbb4;
+}
+/*创业攻略指南下面指南 div鼠标移入 a标记字体为红色*/
+.subjectright>div:last-child>div:hover a{
+    color: #ffffff;
+}
+/*财税专题里的a标签加下划线*/
+.finance-box-list>ul>li a:hover{
+    text-decoration: underline;
+}
+/*财税专题里的首个ul里的li里的a标签 下划线去掉*/
+.finance-box-list>ul:first-child>li a:hover{
+    text-decoration: none;
+}
+/*财税底部div的鼠标移入效果， 边框1px 颜色1cbbb4*/
+.finance-box-list>div>div:hover{
+    border: 1px solid #1cbbb4;
+}
+/*服务小规模记账a标记移入时 最后一个span字体为红色*/
+.finance-box-list>div>div>a:hover span:last-child{
+    color: #FF0000;
+}

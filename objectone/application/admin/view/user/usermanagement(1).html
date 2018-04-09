@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../houtaicss/index.css">
+    <link rel="stylesheet" href="../houtaicss/usermanagement.css">
+    <title>用户管理</title>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks">
+    <!--弹窗新增组织-->
+    <form action="" onsubmit="return confirm();">
+        <div class="tissue-box">
+            <div>
+                <span>增加用户</span>
+                <span class="close">&times;</span>
+            </div>
+            <!--弹窗中间内容-->
+            <div class="tissue-box-middle">
+                <!--左-->
+                <div class="tissue-box-middle-left">
+                    <div>登录手机 :</div>
+                    <div>登录密码 :</div>
+                    <div>确认密码 :</div>
+                    <div>用户名称 :</div>
+                    <div>所属组织 :</div>
+                    <div>权限角色 :</div>
+                    <div>职位 :</div>
+                    <div>备注 :</div>
+                </div>
+                <!--右-->
+                <div class="tissue-box-middle-right">
+                    <div>
+                        <input type="tel" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  maxlength="13" id="phone">
+                        <span class="orange">请填写手机号码</span></div>
+                    <div><input type="password" maxlength="16" class="check1"><span class="orange">请填写登录密码</span></div>
+                    <div><input type="password" maxlength="16" class="check2"><span class="orange">请确认登录密码</span></div>
+                    <div><input type="text"></div>
+                    <div>
+                        <select>
+                            <option >企划部</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select>
+                            <option>前端工程师</option>
+                            <option>后台工程师</option>
+                            <option>UI设计师</option>
+                            <option>项目经理</option>
+                            <option>架构师</option>
+                        </select>
+                    </div>
+                    <div><input type="text"></div>
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--弹窗底部-->
+            <div class="tissue-box-bottom">
+                <div class="cancel">取消</div>
+                <input type="submit" value="保存">
+            </div>
+        </div>
+    </form>
+</div>
+<!--管理栏目片段-->
+<div class="container">
+    <!--增加-->
+    <div class="newplus">
+        <span>+</span>
+        <span>新增</span>
+    </div>
+</div>
+<!--底部-->
+<form action="">
+<div class="container-bottom">
+        <!--切换菜单-->
+        <div class="menu">
+            <div class="menubtn1">开启</div>
+            <span>|</span>
+            <div class="menubtn2">禁用</div>
+        </div>
+        <!--可拉伸表格-->
+        <table id="tb_1">
+            <tr>
+                <th class="width41"><input type="checkbox" class="all"><span>序号</span></th>
+                <th class="width38">用户名称</th>
+                <th class="width75">所属部门</th>
+                <th>权限角色</th>
+                <th>职位</th>
+                <th>手机</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>1</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>2</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>3</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>4</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>5</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>6</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>7</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>8</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>9</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"><span>10</span></td>
+                <td class="username">李小龙</td>
+                <td class="section">市场部 - 1组</td>
+                <td class="jurisdiction">管理员</td>
+                <td>经理</td>
+                <td>18537982679</td>
+                <td>/</td>
+            </tr>
+        </table>
+        <!--可拉伸表格-->
+        <table id="tb_2">
+        <tr>
+            <th class="width41"><input type="checkbox" class="all"><span>序号</span></th>
+            <th class="width38">用户名称</th>
+            <th class="width75">所属部门</th>
+            <th>权限角色</th>
+            <th>职位</th>
+            <th>手机</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>1</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>2</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>3</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>4</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>5</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>6</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>7</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>8</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>9</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"><span>10</span></td>
+            <td class="username">陈水扁</td>
+            <td class="section">市场部 - 1组</td>
+            <td class="jurisdiction">管理员</td>
+            <td>经理</td>
+            <td>18537982679</td>
+            <td>/</td>
+        </tr>
+    </table>
+</div>
+<div class="container-bottom-bottom">
+    <div>
+        <ul>
+            <li class="lineheight31"><input type="checkbox" id="all"><label for="all">全选</label></li>
+            <li class="lineheight31">|</li>
+            <li class="lineheight31">反选</li>
+            <li class="lineheight31">已选 <span class="cheng">0</span> 条</li>
+            <li class="update">更新顺序</li>
+            <!--页码-->
+            <li class="fg"></li>
+            <li class="page">
+                <span>
+                共<span>13</span>页<span class="juse"> 250 </span>条
+                </span>
+                <a class="marleft20"><span>上一页</span></a>
+                <a><span>1</span></a>
+                <a><span>2</span></a>
+                <a><span>3</span></a>
+                <a><span>4</span></a>
+                <a><span>5</span></a>
+                <a><span>下一页</span></a>
+                </span>
+                <span class="marleft20">
+                    <input type="text" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "  maxlength="3">
+                    <span>跳转</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+</form>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../houtaijs/usermanagement.js"></script>
+</body>
+</html>

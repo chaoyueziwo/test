@@ -1,0 +1,218 @@
+#container{
+    margin:70px 0 0 30px;
+    font-size: 14px;
+    width:95%;
+}
+.plus-box{
+    height:30px;
+    width: 105px;
+    background:#f6f6f6;
+    border-top:3px solid #0183be;
+    text-align: center;
+    line-height: 30px;
+    color:#0183be;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+#container>div:first-child{
+    position: absolute;
+    top:39px;
+}
+/* .plus2,.plus3,.plus4{
+    display: none;
+} */
+#container>div>a>div{
+    display: inline-block;
+    vertical-align: top;
+    height:30px;
+    width: 105px;
+    background:#f6f6f6;
+
+    border-top:1px solid #ddd;
+    text-align: center;
+    line-height: 30px;
+    color:#000;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+#container .plus1>div{
+    margin-top: -2px;
+    border-top: 3px solid #0183be;
+}
+.container-middle{
+    background: #f6f6f6;
+    min-width: 820px;
+    height:50%;
+    border: 1px solid #ddd;
+}
+.container-middle>div:first-child{
+    display: table;
+    content: "";
+}
+.container-middle-content{
+    margin:1%;
+    width: 98%;
+    background: #ffff;
+    border-bottom: 1px solid #ddd;
+}
+.container-middle-content>ul{
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-left: none;
+}
+/*首个ul里的最后一个li*/
+.container-middle-content>ul:first-child>li>span{
+    display:none;
+}
+.container-middle-content>ul>li{
+    height:50px;
+    line-height: 50px;
+    display: inline-block;
+}
+/*form表单里的ul里面的所有首个li占满整行*/
+.container-middle-content>ul li:first-child{
+    text-align: right;
+    width:14%;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top:none;
+    vertical-align: top;
+}
+/*form表单里的ul里面的所有最后一个li占满整行*/
+.container-middle-content>ul li:last-child{
+    margin-left: 1%;
+    width: 84%;
+}
+/*红色警告窗*/
+.redwarn{
+    display:none;
+}
+/*input表单字体12px*/
+input{
+ font-size: 12px;
+}
+/*提示颜色*/
+.container-middle-content>ul span{
+    color:#d6623d;
+}
+/*表单公共样式宽度*/
+.width370{
+    width: 370px;
+    height:25px;
+}
+.height25{
+    height:25px;
+    width:100px;
+}
+.width375{
+    width:370px;
+    height: 210px;
+}
+/*高度40 宽度375*/
+.height40{
+    height:35px;
+    width: 375px;
+}
+.textarea{
+    overflow-y:scroll;
+    margin-top: 7px;
+    resize: none;
+}
+/*高230px*/
+.height230{
+    height: 230px!important;
+}
+.commit{
+    margin:30px 0;
+    text-align: center;
+}
+.commit>input{
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.commit>input:hover{
+    cursor: pointer;
+}
+.commit>input:last-child{
+    background:#0183be;
+    border: none;
+    color: #ffffff;
+}
+.commit>input:first-child{
+    background: #ffffff;
+    border: 1px solid #ddd
+}
+/*表格数字框去掉上下箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+/*增加专题页样式*/
+.uploading{
+    vertical-align: middle;
+    background: #0183be;
+    padding: 6px 10px;
+    line-height: 30px;
+    color: #ffffff!important;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.uploading:hover{
+    cursor: pointer;
+}
+/*左外边距10px*/
+.marleft10{
+    margin-left: 10px;
+}
+#file1,#file2,#file3{
+    display:none;
+}
+.call{
+    display: none;
+}
+#hei160{
+    height: 160px;
+}
+/*底部温馨提示盒子*/
+.warm-box{
+    background: #fff;
+    margin: 1%;
+}
+.warm-box>ul>li{
+    display: inline-block;
+    width: 14%;
+    border-bottom: none;
+    border-top: none;
+    vertical-align: top;
+    height: 50px;
+    line-height: 50px;
+}
+.warm-box>ul{
+    border: 1px solid #ddd;
+}
+.warm-box>ul:first-child{
+    border-bottom: none;
+}
+.warm-box>ul>li:first-child{
+    text-align: right;
+    border-right: 1px solid #ddd;
+}
+.warm-box>ul:first-child>li:first-child{
+    border-bottom: none;
+}
+.warm-box>ul>li:last-child{
+    margin-left: 1%;
+    width: 84%;
+}
+.warm-box select{
+    width: 375px;
+    height: 30px;
+}
+.warm-box>ul:last-child{
+    border-top: none;
+}

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:19 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>新增栏目</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="__ROOT__/static/admin/favicon.ico"> <link href="__ROOT__/static/admin/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="__ROOT__/static/admin/css/plugins/markdown/bootstrap-markdown.min.css" />
+    <style>
+        .droppable-active{background-color:#ffe!important}.tools a{cursor:pointer;font-size:80%}.form-body .col-md-6,.form-body .col-md-12{min-height:400px}.draggable{cursor:move}
+        .pull-right {
+            float: right!important;
+            margin-right: 10px;
+        }
+        #btn-white{color: red;}
+        #btn-white:hover {
+            color: #fff;
+            background-color: red;
+            border-color: red;
+        }
+    </style>
+	<script type="text/javascript">
+		function check()
+      {
+          if(document.frm.name.value == "")
+          {
+              alert("栏目名称不能为空!");
+              document.frm.name.focus();
+              return false;
+          }
+          if(document.frm.title.value == "")
+          {
+              alert("标题不能为空!");
+              document.frm.name.focus();
+              return false;
+          }
+          if(document.frm.paixu.value == "")
+          {
+              alert("请为栏目排序!");
+              document.frm.paixu.focus();
+              return false;
+          }
+          if(document.frm.gjz.value == "")
+          {
+              alert("关键字不能为空!");
+              document.frm.gjz.focus();
+              return false;
+          }
+           if(document.frm.content.value == "")
+          {
+              alert("请填入简介!");
+              document.frm.content.focus();
+              return false;
+          }
+          
+        }
+	</script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+
+        <div class="row">
+            <div class="col-sm-5" style="width: 100%;">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>任务流程</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <!-- <li><a href="form_editors.html#">选项1</a>
+                                </li>
+                                <li><a href="form_editors.html#">选项2</a>
+                                </li> -->
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="alert alert-info">
+                            任务管理 > 新增任务
+                        </div>
+                         <form role="form" class="form-horizontal m-t" action="{:url('Addrenwu/save')}" method="post">
+                                            
+                                            <div class="form-group draggable">
+                                                <label class="col-sm-3 control-label">任务名称：</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" name="name" class="form-control" placeholder="请输入栏目名称" value="{$re.name}">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group draggable">
+                                                <label class="col-sm-3 control-label">任务状态：
+                                                </label>
+
+                                                <div class="col-sm-9">
+                                                    <label class="radio-inline">
+                                                        <input type="radio" checked="" value="1" id="optionsRadios1" name="isShow">启用</label>
+                                                    <label class="radio-inline">
+                                                        <input type="radio" value="0" id="optionsRadios2" name="isShow">禁用</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group draggable">
+                                                <label class="col-sm-3 control-label">任务类别：</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="typeId">
+                                                    {$res}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group draggable">
+                                                <label class="col-sm-3 control-label">所属部门：</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" name="rulerId">
+                                                       {$arr}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group draggable">
+                                                <label class="col-sm-3 control-label">任务备注：</label>
+                                                <div class="col-sm-9">
+                                                   <textarea name="content" data-provide="markdown" rows="5">{$re.content}</textarea>
+                                                </div>
+                                            </div>
+                                        <!-- <div class="form-group"><label>Email</label> <input type="email" placeholder="请输入您的Email" class="form-control"></div>
+                                        </div> -->
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group draggable">
+                                            <div class="col-sm-12 col-sm-offset-3">
+                                                <input type="hidden" name="id" value="{$id}">
+                                                <input type="hidden" name="keyId" value="{$pid}">
+                                                <button class="btn btn-primary" type="submit">保存内容</button>
+                                                <button class="btn btn-white" type="reset">取消</button>
+                                                <a href="__ROOT__/admin/Renwu/oper" class="btn btn-primary">查看流程</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                    <div class="ibox-content">
+                        <h3>任务列表</h3>
+                        <p class="small"><!-- <i class="fa fa-hand-o-up"></i> --> 在列表之间拖动任务面板</p>
+                          <div class="text-center">
+                           
+                          </div>
+                          
+                        <!-- <div class="input-group">
+                            <input type="text" placeholder="添加新任务" class="input input-sm form-control">
+                            <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-white"> <i class="fa fa-plus"></i> 添加</button>
+                                </span>
+                        </div> -->
+
+                        <ul class="sortable-list connectList agile-list">
+                          {volist name="res" id='vo' key="k" }
+                          {if condition="$k heq 0"}
+                            <li class="success-element">
+                            {elseif condition="$k heq 1"/}
+                            <li class="success-element">
+                            {elseif condition="$k heq 2"/}
+                            <li class="info-element">
+                            {elseif condition="$k heq 3"/}
+                            <li class="danger-element">
+                            {elseif condition="$k heq 4"/}
+                            <li class="success-element">
+                           {else /}
+                           <li class="info-element">
+                            {/if}
+                                {$vo.name}
+                              <div class="agile-detail">
+                                <a href="__URL__/update2/id/{$ov.id}/pid/{$id}" class="pull-right btn btn-xs btn-primary">修改</a><a href="__URL__/del2/id/{$vo.id}/pid/{$id}" class="pull-right btn btn-xs btn-white" id="btn-white">删除</a>
+                                    <i class="fa fa-clock-o"></i>{$vo['addtime']|date="Y-m-d H:i:s",###} 
+                              </div>
+                            </li>
+                            {/volist}
+                        </ul>
+                    </div>
+                            
+                     
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="__ROOT__/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__ROOT__/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ROOT__/static/admin/js/content.min.js?v=1.0.0"></script>
+    <script src="__ROOT__/static/admin/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="__ROOT__/static/admin/js/plugins/beautifyhtml/beautifyhtml.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/to-markdown.js"></script>
+   	<script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.zh.js"></script>
+    <script src="__ROOT__/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__ROOT__/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ROOT__/static/admin/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="__ROOT__/static/admin/js/content.min.js?v=1.0.0"></script>
+     <script>
+        $(document).ready(function(){$(".sortable-list").sortable({connectWith:".connectList"}).disableSelection()});
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:20 GMT -->
+</html>

@@ -1,0 +1,1231 @@
+/*产品管理*/
+.check{
+    color:#0183be;
+}
+.check:hover{
+    cursor: pointer;
+}
+.check>span{
+    color:#c74042;
+}
+/*菜单*/
+.menu{
+    background:#f6f6f6;
+    border: 1px solid #ddd;
+    margin: 15px 0;
+    font-size: 0;
+    width: 97.9%;
+    min-width: 620px;
+}
+/*菜单切换按钮*/
+.menu>div{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    padding: 5px 0;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+}
+/*待办任务页面展开时的样式*/
+.menu>.menubtn1{
+    border-bottom: 2px solid #0183be;
+    color:#0183be;
+}
+.menu>div:hover{
+    cursor: pointer;
+}
+/*菜单切换里的红色字体提示*/
+.menu>div>span{
+  font-size: 12px;
+  color:#ff0000;
+}
+/*竖杠*/
+.menu>span{
+    line-height: 30px;
+    color: #ddd;
+    font-size: 14px;
+}
+#tb_2,#tb_3,#tb_4{
+    display: none;
+}
+#tb_2>tbody>tr:first-child>th{
+    background: #f9f9f9;
+}
+#tb_3>tbody>tr:first-child>th{
+    background: #f9f9f9;
+}
+#tb_4>tbody>tr:first-child>th{
+    background: #f9f9f9;
+}
+/*遮罩层*/
+.maskbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background:rgba(0,0,0,.5);
+    display: none;
+}
+/*弹出菜单里的橙色字体，消息数量*/
+.newscount{
+    color:#d6623d;
+    font-size: 12px;
+}
+/*弹出菜单*/
+.checklist{
+    position: fixed;
+    top:0;
+    right: 0;
+    border: 1px solid #ddd;
+    display: none;
+    background: #fff;
+    z-index: 9999;
+    opacity: 1;
+    overflow-y: scroll;
+    width: 900px;
+}
+.bottombtn{
+    position: fixed;
+    bottom:50px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+}
+.bottombtn select{
+    vertical-align:-6px;
+    padding: 1px 0;
+}
+/*待办红色字体*/
+.colred{
+    color:#c74042;
+}
+.bottombtn>div{
+    display: inline-block;
+    vertical-align: top;
+    padding:5px 15px;
+    border: 1px solid #ddd;
+    color:#0183be;
+    background: #fff;
+    margin-right: 5px;
+}
+.bottombtn>div:hover{
+    cursor: pointer;
+}
+/*核款任务里的第一个div*/
+.check-box>div:first-child{
+    padding:0 20px;
+    height: 40px;
+    line-height: 40px;
+    background: #f6f6f6;
+    color: #818181;
+    border-bottom: 1px solid #ddd;
+}
+.close{
+    cursor: pointer;
+}
+/*核款任务关闭按钮*/
+.check-box>div:first-child>span:last-child{
+    float: right;
+     font-size: 20px;
+    line-height:40px;
+}
+/*核款任务下面部分*/
+.check-bottom{
+    margin:10px;
+    font-size: 14px;
+}
+.check-bottom>div{
+    display: inline-block;
+    vertical-align: top;
+}
+/*左边部分*/
+.check-bottom-left{
+    border-right: 1px solid #ddd;
+    width: 72%;
+}
+.check-bottom-left>div:first-child{
+    margin-top: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.check-bottom-left>div:first-child>div{
+    margin-bottom: 20px;
+}
+/*任务名称*/
+.check-bottom-left>div:first-child>div:first-child{
+    margin-left: 10px;
+}
+/*任务级别颜色*/
+.orange{
+    color:#d6623d;
+}
+.pointico{
+    display: inline-block;
+    vertical-align: middle;
+    height: 15px;
+    width: 15px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -88px;
+    margin-left: 5px;
+}
+/*订单号字体颜色*/
+.ordernumber{
+    color:#0183be;
+}
+.ordernumber:hover{
+    cursor: pointer;
+}
+/*右边距20px*/
+.marleft20{
+    margin-left: 20px;
+}
+.check-bottom-left>div:first-child>div:last-child{
+    font-size: 14px;
+    margin: 20px 0;
+    color:#000;
+}
+/*编辑资料*/
+.correlationbtn6>div{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    border: 1px solid #0183be;
+    color:#0183be;
+    padding: 0 10px;
+    line-height: 19px;
+}
+.correlationbtn6:hover{
+    background: #fff!important;
+}
+/*.check-bottom-left-top>div:first-child>div:last-child{*/
+    /*margin-top: 20px;*/
+    /*text-align: left;*/
+    /*margin-left: 28px;*/
+/*}*/
+/*客户资料弹窗左边头部订单下*/
+.check-bottom-left-top>div:first-child{
+    display: inline-block;
+    vertical-align: top;
+    width: 59%;
+    overflow: hidden;
+}
+.check-bottom-left-top>div:first-child>div{
+    margin-bottom: 15px;
+}
+/*右外边距78px，右外边距50px*/
+.marleft50{
+    margin-left: 50px;
+}
+.marleft78{
+    margin-left: 78px;
+}
+.check-bottom-left-top>div:last-child{
+    display: inline-block;
+    vertical-align: top;
+    width:40%;
+    text-align:left;
+}
+.check-bottom-left-top>div:last-child>div{
+    margin-bottom:15px;
+}
+/*取消上外边距*/
+.martop0{
+    margin-top: 0!important;
+}
+.marbottom0{
+    margin-bottom: 0!important;
+}
+/*任务名称图标*/
+.nameico{
+    display: inline-block;
+    vertical-align: bottom;
+    height: 20px;
+    width: 20px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 3px;
+}
+/*竖线*/
+.vertical{
+    display: inline-block;
+    vertical-align: bottom;
+    background: #000;
+    height: 18px;
+    width: 5px;
+}
+/*任务相关*/
+.correlation{
+    margin-top: 5px;
+    border-bottom: 1px solid #ddd;
+    margin-right: 10px;
+    font-size: 0;
+    position: relative;
+    padding:16px 0;
+}
+/*下拉箭头*/
+.downarrows{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    height: 10px;
+    width: 10px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -57px;
+}
+/*订单信息，会员信息，客户资料弹出菜单隐藏*/
+.correlationlist2,.correlationlist3,.correlationlist4{
+    display: none;
+}
+/*客户资料，联系人，订单，跟进记录里的最后一个.paymessage取消下边框*/
+.correlationlist>.paymessage:last-child{
+    border-bottom: none;
+}
+/*更多设置相对定位*/
+.correlationbtn5 {
+    position: relative;
+}
+/*更多弹出菜单*/
+.morelist{
+   width:98px;
+   position: absolute;
+    border: 1px solid #ddd;
+    border-top: none;
+    top:30px;
+    left:-1px;
+    display: none;
+}
+/*核款任务，更多菜单栏内容弹出，第一个div上外边框1px*/
+.morelist>div:first-child{
+    border-top: 1px solid #ddd;
+}
+/*更多弹出菜单里的内容鼠标移入*/
+.morelist>div:hover{
+    cursor: pointer;
+}
+/*任务相关里的div*/
+.correlation>div{
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    margin-bottom: -1px;
+    z-index: 2;
+}
+.correlation>div>div{
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    width: 98px;
+    border:1px solid transparent;
+    border-top: 2px solid transparent;
+    line-height: 22px;
+    border-bottom: 1px solid transparent;
+}
+.correlation>div>div:first-child{
+    border-bottom: 1px solid #fff;
+    border-top: 2px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+.correlation>div>div:hover{
+    cursor: pointer;
+}
+/*付款信息*/
+.paymessage{
+    margin: 20px 10px 0 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+.paymessageleft{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    width: 52%;
+}
+.paymessageright{
+    display: inline-block;
+    vertical-align: top;
+}
+.paymessage>p{
+    margin-left: 10px;
+}
+.paymessage>p>span:hover{
+    cursor: pointer;
+}
+.orderlist{
+    margin-top:20px;
+}
+/*订单号*/
+.orderlist>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.orderlist>div:first-child{
+    width: 100px;
+    text-align: right;
+}
+/*付款截图*/
+.payphoto{
+    vertical-align: top;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #ddd;
+}
+/*付款截图鼠标移入*/
+.payphoto:hover{
+    cursor: pointer;
+}
+/*付款截图里的设为固定定位，遮罩层*/
+.screenshot{
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    background:rgba(0,0,0,.5);
+    z-index:9999;
+    display: none;
+}
+/*付款截图大图片盒子*/
+.screenshot>div{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-right: 205px;
+    margin-top: 125px;
+    width: 500px;
+    display: none;
+}
+.font12{
+    font-size: 12px;
+}
+/*付款截图大图片*/
+.screenshot>div>img{
+    width: 100%;
+}
+/*付款截图里的图片*/
+.payphoto>img{
+    width: 100%;
+}
+/*截图里的关闭按钮*/
+.closed{
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    background: #ffffff;
+    color:#ddd;
+    border-radius:12px;
+    line-height:20px;
+    text-align: center;
+    height:20px;
+    width:20px;
+    padding:1px;
+    border:1px solid #ddd;
+    z-index: 99999;
+}
+/*关闭按钮鼠标移入*/
+.closed:hover{
+    background:#ddd;
+    color:#000000;
+    opacity: 0.5;
+    cursor: pointer;
+}
+/*关闭样式*/
+.closed::before {
+    content: "\2716";
+}
+.time{
+    margin-right: 30px;
+}
+.section{
+    margin-right: 10px;
+}
+/*订单负责人*/
+.principal{
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+}
+/*订单负责人里的p*/
+.principal>p{
+    margin: 30px 0 20px 10px;
+}
+/*订单负责人左边*/
+.principalleft{
+    display: inline-block;
+    vertical-align: top;
+    width: 43%;
+    text-align: center;
+}
+.principalright{
+    display: inline-block;
+    vertical-align: top;
+    width: 44%;
+    text-align: right;
+}
+/*核款任务右边*/
+.check-bottom-right{
+    width: 27%;
+}
+/*核款任务右边里的div*/
+.check-bottom-right>div{
+   margin: 0 10px;
+}
+/*截止日期天数*/
+.one{
+    display: inline-block;
+    color: #d6623d;
+    font-size: 36px;
+    font-family: 楷体;
+    font-weight: bold;
+    line-height: 37px;
+    vertical-align:sub;
+}
+/*截止日期*/
+.cut-off-top{
+    border-bottom: 1px solid #ddd;
+}
+.cut-off-top>div{
+  margin-bottom: 16px;
+}
+.cut-off-top>div:first-child{
+    margin-bottom: 5px;
+}
+/*跟进任务里的所有span*/
+.followtask>span{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    height: 22px;
+    width: 88px;
+    text-align: center;
+    line-height: 22px;
+}
+/*任务跟进弹窗*/
+.followtask-list{
+    font-size: 14px;
+    position: fixed;
+    top:24%;
+    right:9%;
+    height: 430px;
+    width: 585px;
+    z-index: 3;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 40px -2px #000;
+    display: none;
+}
+/*任务跟进标题*/
+.followtask-list>div>div:first-child{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #818181;
+    border-bottom: 1px solid #ddd;
+    background: #f6f6f6;
+}
+/*任务跟进*/
+.follow1,.follow2{
+    display: none;
+}
+/*跟进任务，分配任务鼠标移入*/
+.followtask>span:hover{
+    cursor: pointer;
+}
+
+/*跟进任务*/
+.followbtn{
+    background:#0183be;
+    border: 1px solid #0183be;
+    color: #fff;
+}
+.followbtn:hover{
+    background:#025e88;
+}
+/*分配任务*/
+.allotbtn{
+    margin-left: 5px;
+    border:1px solid #d6623d;
+    color: #d6623d;
+}
+/*分配任务鼠标移入*/
+.allotbtn:hover{
+    background:#d6623d;
+    border:1px solid transparent;
+    color:#fff;
+}
+/*跟进任务关闭按钮*/
+.followtask-list-close{
+    float: right;
+    font-size: 20px;
+    line-height:40px;
+}
+.followtask-list-close:hover{
+    cursor: pointer;
+}
+/*任务跟进弹窗框里的底部*/
+.followtask-list-bottom{
+    margin: 20px;
+}
+/*任务跟进里的订单号*/
+.tasknumber{
+    margin-left: 103px;
+}
+/*任务跟进弹窗框里的底部里的div里的div*/
+.followtask-list-bottom>div>div{
+    margin-bottom: 10px;
+}
+/*任务跟进里的取消，保存按钮*/
+.followtask-list-bottom>div>div:last-child{
+   margin-top: 30px;
+    text-align: center;
+}
+/*取消按钮*/
+.cancel{
+    display: inline-block;
+    vertical-align: top;
+    padding:10px 40px;
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-right: 20px;
+}
+.cancel,.save:hover{
+    cursor: pointer;
+}
+/*保存按钮*/
+.save{
+    padding:10px 40px;
+    border: 1px solid #0183be;
+    background:#0183be;
+    color:#fff;
+}
+/*款项审核设置相对定位*/
+.chose-box{
+    position: relative;
+    display: inline-block;
+    vertical-align:middle;
+    width: 190px;
+    height: 30px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+/*选择框，弹窗里的内容*/
+.chose-box{
+    cursor: pointer;
+}
+.chose-box>div>div:hover{
+    cursor: pointer;
+    background: #f6f6f6;
+}
+/*选择框里的div 弹窗*/
+.chose-box>div{
+    width: 190px;
+    border: 1px solid #ddd;
+    position: absolute;
+    margin-left: -1px;
+    display: none;
+}
+/*弹窗内容*/
+.chose-box>div>div{
+    padding: 5px 0 10px 10px;
+    background: #fff;
+}
+/*选择框里的字体*/
+.chose-box>span:first-child{
+    margin-left: 10px;
+    color:#b1b0b0;
+    line-height: 30px;
+}
+/*任务跟进里的款项提示文字*/
+.hint{
+    margin-left: 10px;
+    font-size: 12px;
+    color:#d6623d;
+    display:none;
+}
+/*选择框里的下拉箭头*/
+.floatright{
+    float: right;
+    margin: 10px 5px 10px 0;
+}
+/*任务跟进任务反馈文本框*/
+.feedback{
+    vertical-align: top;
+    border:1px solid #ddd;
+    height: 140px;
+    width: 375px!important;
+    resize: none;
+}
+/*分配任务里的启用任务加急选择框*/
+/*加急选择框*/
+#chose-box1{
+    width: 85px;
+    height: 25px;
+}
+/*任务分配启用任务加急里的菜单请选择*/
+#chose-box1>span:first-child{
+    line-height: 25px;
+}
+/*任务分配选择按钮公共样式*/
+.chosebtn{
+    display: inline-block;
+    vertical-align: middle;
+    width: 85px;
+    height: 25px;
+    border:1px solid #0183be;
+    color:#0183be;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 10px;
+}
+/*任务执行人选择框 启用截止时间选择框*/
+.chosebtn,.chosebtn1:hover{
+   cursor: pointer;
+}
+.chosebtn1{
+    display: inline-block;
+    vertical-align: middle;
+    width: 85px;
+    height: 25px;
+    border:1px solid #0183be;
+    color:#0183be;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 10px;
+}
+/*任务分配启用任务加急下拉菜单箭头*/
+#chose-box1>.downarrows{
+    height: 15px;
+    width: 15px;
+    background: url(../img/ht-yctc-20180131-1734.png)no-repeat 0 -59px;
+}
+/*任务加急弹窗内容*/
+#chose-box1>div{
+    width: 85px;
+}
+/*任务分配，设为相对定位*/
+.follow2{
+    position: relative;
+}
+/*分配任务里的文本框*/
+.follow2 .feedback{
+    height:105px;
+}
+/*取消按钮*/
+#taskcancel>input:first-child{
+    margin-left: 68px;
+}
+/*分配任务按钮*/
+.allot{
+    padding:10px 40px;
+    border: 1px solid #0183be;
+    background:#0183be;
+    color:#fff;
+}
+/*分配任务任务执行人，启用截止时间弹窗,设为绝对定位*/
+.choselist{
+    position: absolute;
+    top: 22px;
+    left: 18%;
+    width: 360px;
+    height: 390px;
+    background:#fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 40px -2px #000;
+    display: none;
+}
+/*跟进任务关闭按钮*/
+.executes-close{
+    float: right;
+    font-size: 20px;
+    line-height:40px;
+}
+/*选择执行人，启用截止时间标题*/
+.executes>div:first-child{
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #818181;
+    border-bottom: 1px solid #ddd;
+    background: #f6f6f6;
+}
+/*选择执行人关闭按钮*/
+.executes-close:hover{
+    cursor: pointer;
+}
+/*选择执行人底部*/
+.executes>div:last-child{
+    margin-left:35px;
+}
+/*所有部门选择框 设为相对定位*/
+.allsection{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 25px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    line-height: 25px;
+    padding-left: 10px;
+    margin-left: 15px;
+}
+.allsection:hover{
+    cursor: pointer;
+}
+/*所有部门弹窗 设为绝对定位*/
+.department{
+    position: absolute;
+    left: -1px;
+    width: 110px;
+    border: 1px solid #ddd;
+    background: #fff;
+    display: none;
+}
+/*所有部门弹窗内容*/
+.department>div{
+   padding-left: 10px;
+}
+/*所有部门弹窗内容鼠标移入*/
+.department>div:hover{
+    cursor: pointer;
+    background: #f6f6f6;
+}
+/*所有部门选择框里的箭头右浮动*/
+.arrowsfloat{
+    float: right;
+    margin: 7px 15px 0 0;
+}
+/*选择执行人底部里的div里的div*/
+.executes>div:last-child>div{
+    margin-top: 15px;
+}
+/*选择执行人里的成员选择框*/
+.member{
+    margin-left: 11px;
+    height: 220px;
+    width: 210px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    overflow-y: scroll;
+}
+/*选择执行人里的成员列表第一个搜索框*/
+.member>p{
+    height: 30px;
+    width: 170px;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 5px 0 5px;
+}
+.member>p>input{
+   width:80%;
+    border: none;
+}
+/*选择执行人里的成员列表*/
+.member>div{
+    height: 30px;
+    width: 170px;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 5px 0 5px;
+}
+/*选择执行人成员选择鼠标移入效果*/
+.member>div:hover{
+    cursor: pointer;
+    background:#f6f6f6;
+}
+/*选择执行人成员选中样式*/
+.chosed{
+    border: 1px solid #0183be!important;
+    color:#0183be;
+}
+/*选择执行人里的成员搜索框*/
+.searchico{
+   display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    background: url(../img/ht-yctc-20180131-1734.png)no-repeat 0 -123px;
+}
+/*成员部门颜色*/
+.member>div>span:first-child{
+    color:#d6623d;
+}
+.followtask-list-close:hover{
+    cursor: pointer;
+}
+/*任务分配里的分配按钮*/
+.allot:hover{
+    cursor: pointer;
+}
+/*选中执行人取消按钮*/
+.executorcancel{
+    display: inline-block;
+    vertical-align:top;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+    margin-left: 30px;
+}
+.executorcancel,.executoraffirm:hover{
+    cursor: pointer;
+}
+/*任务分配选择执行人，设置截止时间窗口*/
+.executes1,.executes2{
+    display: none;
+}
+/*选中执行人确认按钮*/
+.executoraffirm{
+    display: inline-block;
+    vertical-align:top;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    background: #0183be;
+    border: 1px solid #0183be;
+    color:#fff;
+}
+/*设置截止时间*/
+/*.layui-laydate-footer{*/
+    /*display: none;*/
+/*}*/
+/*时间插件*/
+#test5{
+    width: 180px;
+}
+.layui-input-inline{
+    display: inline-block;
+}
+.check-bottom-left>div.paymessage:last-child{
+    border-bottom: none;
+}
+/*订单，公司字体颜色*/
+.blue{
+    color:#0183be;
+}
+.blue:hover{
+    cursor: pointer;
+}
+/*订单进度*/
+.cut-off-bottom{
+    font-size: 12px;
+    margin-top:20px!important;
+}
+/*订单进度*/
+.cut-off-bottom>div:first-child>span:first-child{
+    font-size: 14px;
+}
+/*订单进度点击*/
+.cut-off-bottom>div:first-child>span:first-child:hover{
+    cursor: pointer;
+}
+/*发布子任务*/
+.cut-off-bottom>div:first-child>span:last-child{
+    padding: 2px 5px;
+    border:1px solid #d6623d;
+    color: #d6623d;
+}
+/*下拉三角按钮*/
+.down{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left:5px;
+    height: 10px;
+    width: 15px;
+    background:url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -40px;
+}
+/*进度条,设置高度400，左边框1px 上外边距20，设置相对定位*/
+.progressbar{
+    position: relative;
+    height:330px;
+    border-left: 1px solid #b7b7b7;
+    margin-top: 20px;
+}
+/*订单进度里的内容*/
+.progressbar-list{
+    position: absolute;
+    margin-left: -4px;
+    top:-10px;
+}
+/*订单进度未完成颜色*/
+.unfinished{
+    color: #b7b7b7;
+}
+/*圆点右边准备资料信息确认*/
+.progressbar-list>div>div{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+}
+.dian{
+    position: absolute;
+    height: 6px;
+    width:6px;
+    background:#b7b7b7;
+    border-radius: 50%;
+    top:7px;
+    left: -20px;
+}
+/*进行中的任务*/
+.underway{
+    padding:10px 0 0 0;
+    border: 1px solid #ddd;
+    color:#000;
+}
+.underway>div{
+    margin-top: 10px;
+    margin-left: 25px;
+}
+/*进行中的订单里的span标题颜色*/
+.underway>span{
+    margin:0 2px;
+    color:#0183be;
+}
+/*进行中的订单里的当前进行中橙色颜色*/
+.going{
+    color:#d6623d;
+}
+/*进行中的订单里的当前进行中dian背景*/
+.finishdianed{
+    background: #d6623d!important;
+}
+.underway>span>.dian{
+    left: -22px;
+}
+.mission{
+    margin-bottom: 10px;
+}
+/*任务1.2.3类推*/
+.missionlist{
+    position: relative;
+    margin-bottom: 10px;
+}
+/*已完成任务里的点*/
+.finishdian{
+    display: inline-block;
+    vertical-align: middle;
+    height: 6px;
+    width:6px;
+    background:#b7b7b7;
+    border-radius: 50%;
+}
+/*负责人样式*/
+.taskprincipal{
+    margin:10px!important;
+}
+.taskprincipal>div{
+    margin-top:8px;
+}
+/*订单进度里的点变箭头提示图标*/
+.hintico{
+    position: absolute;
+    top:0;
+    left: -26px;
+    height: 20px;
+    width: 20px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -104px;
+}
+/*客户主要对接人下拉菜单*/
+.cut-off-bottom-list{
+    margin-top: 20px;
+    font-size: 12px;
+}
+/*客户主要对接人下拉菜单内容*/
+.cut-off-bottom-list>div{
+   margin-bottom: 10px;
+}
+/*客户主要对接人下拉菜单内容地址，标签*/
+.site>div{
+   display: inline-block;
+   vertical-align: top;
+}
+.site>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.site>div>div:last-child{
+    width: 120px;
+}
+/*客户主要对接人下拉菜单，标签*/
+.label>span{
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 10px;
+    border: 1px solid #ddd;
+    border-radius:20px;
+    margin-bottom: 5px;
+}
+/*客户主要对接人备注*/
+.remarks>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.remarks>div:last-child{
+    width: 170px;
+}
+/*宽度140px*/
+.width140{
+    width: 141px;
+}
+.paymessage-list{
+    border:1px solid #ddd;
+    width: 93%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+/*联系人弹窗里的内容联系人*/
+.paymessage-list>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+}
+.paymessage-list>div:first-child>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+.paymessage-list>div:first-child>div:last-child{
+    text-align: right;
+    color:#0183be;
+}
+/*客户方主要对接人下面联系人*/
+.paymessage-list-nav{
+    margin: 20px 20px 0 20px;
+}
+.paymessage-list-nav>div{
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+.paymessage-list-nav>div>div>span{
+    vertical-align: top;
+    display: inline-block;
+}
+/*宽度165*/
+.width165{
+    width: 165px;
+}
+.paymessage-list-nav>.nav-list:first-child>div{
+    margin-bottom: 18px;
+}
+.nav-list>div{
+    margin-bottom: 15px;
+}
+.nav-list>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.nav-list>div>div:first-child{
+    width: 78px;
+    text-align: right;
+}
+/*客户联系人标签，备注样式*/
+.nav-list-bottom>div>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.nav-list-bottom>div>div:first-child{
+    width: 78px;
+    text-align: right;
+}
+/*宽度440*/
+.width440{
+    width: 440px;
+}
+/*更多相关服务，相关跟进记录,取消下边框，下内边距*/
+.morepop-up>.paymessage{
+    border-bottom:none;
+    padding-bottom:0;
+    margin:20px;
+}
+.morepop-up>.paymessage>p{
+    margin-left: 0;
+}
+/*客户资料下拉菜单里的下拉菜单里的箭头公共样式*/
+.morepop-up>.paymessage .down{
+    margin-left: 0;
+}
+/*客户资料下拉菜单里的下拉菜单里有边框盒子的公共样式*/
+.record{
+    border: 1px solid #ddd;
+    overflow-y: scroll;
+    height: 540px;
+    margin: 10px 0;
+}
+/*客户资料下拉菜单里的下拉菜单里有边框盒子里的div*/
+.record>div{
+    margin:0 10px 20px 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+.record>div>p{
+    font-size: 12px;
+    opacity:0.7;
+}
+.record>div>p>span:first-child{
+    margin-right: 20px;
+}
+/*客户资料下拉菜单里的下拉菜单里有边框盒子里的首个div*/
+.record>div:first-child{
+    margin-top: 10px;
+}
+.record>div>div{
+    margin-top: 10px;
+}
+/*客户资料下拉菜单里的下拉菜单里有边框盒子里的div里的div行高25px*/
+.lineheight25{
+    line-height: 25px;
+}
+/*三张付款截图里的div*/
+.threephoto>div{
+    display:inline-block;
+    vertical-align:top;
+    margin-right: 10px;
+}
+.threephoto .screenshot{
+    width: 892px!important;
+}
+/*下载文件的图标*/
+.fileico{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -323px;
+}
+/*下载文件图标旁边的文字*/
+.filename{
+    font-size: 12px;
+    line-height: 15px;
+}
+/*下载按钮*/
+.download{
+    margin-left: 30px;
+}
+/*所联系人盒子字体大小为0，取消外边距*/
+.contacts{
+    font-size: 0;
+}
+.contacts>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    width: 33.33%;
+}
+.marleft12{
+    margin-left: 12px;
+}
+.contacts>div>div:first-child{
+    margin-bottom: 10px;
+}
+/*产品管理表格里的置顶，推荐，头条颜色*/
+.recommendcolor,.topcolor,.topnewscolor{
+    color:#ff0000;
+}
+#page2,#page3,#page4{
+    display: none;
+}

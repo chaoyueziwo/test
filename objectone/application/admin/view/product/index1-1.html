@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:19 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>新增产品</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="__ROOT__/static/admin/favicon.ico"> <link href="__ROOT__/static/admin/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="__ROOT__/static/admin/css/plugins/markdown/bootstrap-markdown.min.css" />
+       <!--  <link rel="stylesheet" type="text/css" href="__ROOT__/static/admin/css/plugins/webuploader/webuploader.css">
+        <link rel="stylesheet" type="text/css" href="__ROOT__/static/admin/css/demo/webuploader-demo.min.css"> -->
+    <style>
+        .droppable-active{background-color:#ffe!important}.tools a{cursor:pointer;font-size:80%}.form-body .col-md-6,.form-body .col-md-12{min-height:400px}.draggable{cursor:move}
+        .pull-right {
+            float: right!important;
+            margin-right: 10px;
+        }
+        #btn-white{color: red;}
+        #btn-white:hover {
+            color: #fff;
+            background-color: red;
+            border-color: red;
+        }
+    </style>
+	<script type="text/javascript">
+		function check()
+      {
+          if(document.frm.name.value == "")
+          {
+              alert("栏目名称不能为空!");
+              document.frm.name.focus();
+              return false;
+          }
+          if(document.frm.title.value == "")
+          {
+              alert("标题不能为空!");
+              document.frm.name.focus();
+              return false;
+          }
+          if(document.frm.paixu.value == "")
+          {
+              alert("请为栏目排序!");
+              document.frm.paixu.focus();
+              return false;
+          }
+          if(document.frm.gjz.value == "")
+          {
+              alert("关键字不能为空!");
+              document.frm.gjz.focus();
+              return false;
+          }
+           if(document.frm.content.value == "")
+          {
+              alert("请填入简介!");
+              document.frm.content.focus();
+              return false;
+          }
+          
+        }
+	</script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+
+        <div class="row">
+            <div class="col-sm-5" style="width: 100%;">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>增加产品</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <!-- <li><a href="form_editors.html#">选项1</a>
+                                </li>
+                                <li><a href="form_editors.html#">选项2</a>
+                                </li> -->
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="alert alert-info">
+                            产品中心 > 新增产品
+                        </div>
+                        <form role="form" class="form-horizontal m-t" action="{:url('Product/add')}" method="post" onsubmit="return check()" name="frm" enctype="multipart/form-data">
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">产品名称：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="name" class="form-control" placeholder="请输入产品名称"> 
+                                    <input type="hidden" name="id" value="{$id}"/> 
+                                </div>
+                            </div>
+                             <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">产品描述：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="miaoshu" class="form-control" placeholder="请输入产品描述">  
+                                </div>
+                            </div>
+                             <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">产品标签：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="biaoqian" class="form-control" placeholder="请输入产品标签">  
+                                </div>
+                            </div>
+                             <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">SEO标题：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="seotitle" class="form-control" placeholder="请输入SEO标题">  
+                                </div>
+                            </div>
+                             <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">SEO关键词：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="seogjc" class="form-control" placeholder="请输入SEO关键词">  
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">SEO描述：</label>
+                                <div class="col-sm-9">
+                                    <textarea name="seoms" data-provide="markdown" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">价格：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="price" class="form-control" placeholder="请输入价格">  
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">产品图片：</label>
+                                <div class="col-sm-9">
+                                    <input type="file" name="image">
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">地区：
+                                </label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline">
+                                        <input type="radio" checked="" value="1" id="optionsRadios1" name="isshow">是</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" id="optionsRadios2" name="isshow">否</label>
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">审核：
+                                </label>
+                                <div class="col-sm-9">
+                                    <label class="radio-inline">
+                                        <input type="radio" checked="" value="1" id="optionsRadios1" name="audit">已审核</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" id="optionsRadios2" name="audit">待审核</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="2" id="optionsRadios2" name="audit">草稿</label>
+                                </div>
+                            </div>
+                            <!-- <div id="uploader" class="wu-example">
+                                <div class="queueList">
+                                    <div id="dndArea" class="placeholder">
+                                        <div id="filePicker"></div>
+                                        <p>或将照片拖到这里，单次最多可选300张</p>
+                                    </div>
+                                </div>
+                                <div class="statusBar" style="display:none;">
+                                    <div class="progress">
+                                        <span class="text">0%</span>
+                                        <span class="percentage"></span>
+                                    </div>
+                                    <div class="info"></div>
+                                    <div class="btns">
+                                        <div id="filePicker2"></div>
+                                        <div class="uploadBtn">开始上传</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">选择任务流程：</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="taskId">
+                                       {volist name="arr" id='vo'}
+                                      <option value="{$vo['id']}">{$vo['name']}</option>
+                                                                               {/volist}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">温馨提示：</label>
+                                <div class="col-sm-9">
+                                    <textarea name="tishi" data-provide="markdown" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group draggable">
+                                <label class="col-sm-3 control-label">备注：</label>
+                                <div class="col-sm-9">
+                                    <textarea name="content" data-provide="markdown" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group draggable">
+                                <div class="col-sm-12 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="submit">下一步</button>
+                                    <button class="btn btn-white" type="reset">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                       
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="__ROOT__/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__ROOT__/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ROOT__/static/admin/js/content.min.js?v=1.0.0"></script>
+    <script src="__ROOT__/static/admin/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="__ROOT__/static/admin/js/plugins/beautifyhtml/beautifyhtml.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/to-markdown.js"></script>
+   	<script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.zh.js"></script>
+    <script src="__ROOT__/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__ROOT__/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ROOT__/static/admin/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="__ROOT__/static/admin/js/content.min.js?v=1.0.0"></script>
+    <!--  <script type="text/javascript">
+       var BASE_URL = '__ROOT__/static/admin/js/plugins/webuploader/index.html';
+        </script>
+        <script src="__ROOT__/static/admin/js/plugins/webuploader/webuploader.min.js"></script>
+        <script src="__ROOT__/static/admin/js/demo/webuploader-demo.min.js"></script> -->
+     <script>
+        $(document).ready(function(){$(".sortable-list").sortable({connectWith:".connectList"}).disableSelection()});
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:20 GMT -->
+</html>

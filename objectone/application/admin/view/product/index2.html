@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusproduct2.css">
+    <title>增加产品第二步</title>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks">
+    <!--新增任务弹窗-->
+    <form action="" onSubmit="return missionsubmit();">
+        <div class="newly-box">
+            <div>
+                <span>编辑选项类型</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    <span>类型名称 :</span>
+                    <span class="width200 typename typenamee">某某某类型一</span>
+                    <span>
+                        <input type="text" placeholder="请填写类型名称" id="inputname">
+                    </span>
+                    <span class="amend">修改</span>
+                    <span class="plustype"><span>+</span>增加选项</span>
+                </div>
+            </div>
+            <div class="newly-box-middle">
+                    <div id="datas">
+                    
+                    </div>
+            </div>
+            <div class="newly-box-bottomm">
+                    <span class="cancel">取消</span>
+                    <input type="submit" value="确认">
+            </div>
+            <!--增加选项名称弹窗-->
+            <div class="plusoption">
+                <div>
+                    <span>增加选项名称</span>
+                    <span class="closed">&times;</span>
+                </div>
+                <div class="plusoption-middle">
+                    <div>
+                        类型名称 :
+                        <input type="text" class="typenamed">
+                        <input type="hidden" id="hidd">
+                    </div>
+                    <div>
+                        <span class="canceled">取消</span>
+                        <span class="nexted" onclick="addVs(this)">下一步</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newly-boxx">
+            <div>
+                <span>编辑类型名称</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    类型名称 :
+                    <input type="text" class="typename typenamme">
+                </div>
+                <div class="cancelbtn">
+                    <span class="cancel">取消</span>
+                    <span class="next" onclick="add(this)">下一步</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+  <!--增加栏目-->
+ <div id="container">
+    {if condition="empty($upd) neq true"}
+      <div>
+       <a href="__WEB__/admin/Product/update/id/{$id}/pid/{$pid}" class="plus1"><div>编辑产品</div></a>
+       <a href="__WEB__/admin/Product/index2/pid/{$pid}/id/{$id}" class="plus2"><div>管理选项</div></a>
+       <a href="__WEB__/admin/Product/index3/pid/{$id}/id/{$pid}" class="plus3"><div>选择选项</div></a>
+       <a href="__WEB__/admin/Product/index4/pid/{$id}/id/{$pid}" class="plus4"><div>办理流程</div></a>
+       </div>
+       {else/}
+       <div class="plus-box">增加产品</div>
+    {/if}
+         <form action="" onSubmit="return submitting();">
+         <div class="container-middle">
+             <div></div>
+             <div class="container-middle-content">
+                     <ul class="caption">
+                         <li  class="height230">
+                             <div class="chosetype">
+                                 <div>管理选项类型 :&nbsp;&nbsp;</div>
+                                 <div class="newly">新增类型</div>
+                             </div>
+                         </li>
+                         <li>
+                             <!--任务列表-->
+                             <div class="mission-list">
+                                 <!--任务1-->
+                                 {volist name="res" id='vo' key="k" }
+                                  <div class="mission-list-list">
+                                      {if condition="$vo['isShow'] heq 0"}
+                                      
+                                      <div style="color: #ddd;">{$vo.name}</div>
+                                     {else /}
+                                      <div style="color: #000;">{$vo.name}</div>
+                                   {/if}
+                                      <div>
+                                          
+                                          {if condition="$vo['isShow'] heq 0"}
+                                            <span onclick="state({$vo['id']})"  class="state">启用</span>
+                                            {else /}
+                                            <span onclick="state({$vo['id']})"  class="state">禁用</span>
+                                            {/if}
+                                          <span onclick="amends(this)" value="{$vo.id}">修改</span>
+                                          <span class="delebtn" onclick="dels(this)" value="{$vo.id}">删除</span>
+                                          <span class="sort-asc" onclick="up(this)" value="{$vo.id}">上移</span>
+                                          <span class="sort-down" onclick="next(this)" value="{$vo.id}">下移</span>
+                                      </div>
+                                  </div>
+                                  {/volist}
+                                
+                             </div>
+                         </li>
+                     </ul>
+             </div>
+         </div>
+     <!--提交框-->
+     <div class="commit">
+         <input type="reset" value="重置">
+         <a href="__URL__/index3/pid/{$id}/id/{$pid}">下一步</a>
+     </div>
+         </form>
+ </div>
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/plusproduct2.js"></script>
+<script>
+ function state(id){
+         var url = '{:url("Addproduct/state")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               location=location ;
+                 
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+    }
+function add(obj){
+       var tname = $(".typenamme").val();
+       if(tname==''){
+           return false;
+       }else{
+        var url = '{:url("Addproduct/add")}';
+        var id = "{$pid}";
+        var pid = "{$id}";
+
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id+"&pid="+pid+"&name="+tname),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(obj).parents(".newly-boxx").hide();
+               $(".newly-box").show();
+               $(".typenamee").text(tname);
+               $("#hidd").val(t);
+               $("#inputname").val(tname);
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+           
+    }
+}
+//   编辑选项类型修改按钮
+    $(".amend").click(function(){
+        t_name =$(".typenamee").text();
+       if($(this).text()=='修改'){
+           $("#inputname").show();
+           $(".typenamee").hide();
+           $(this).text("确认");
+       /*}else if($("#inputname").val()==''){
+           $(".typenamee").text(t_name).show();
+           $("#inputname").hide();
+           $(this).text("修改");*/
+       }else{
+            var tname = $("#inputname").val();
+            if(tname==''){
+           return false;
+       }else{
+        var url = '{:url("Addproduct/upd")}';
+        var id = "{$pid}";
+        var pid = "{$id}";
+        var keyId = $("#hidd").val();
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id+"&pid="+pid+"&name="+tname+"&keyId="+keyId),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(".typenamee").text(tname).show();
+               $("#inputname").hide();
+               $(this).text("修改");
+               $(".typenamee").text(tname);
+               
+               $("#inputname").val(tname);
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+           
+    }
+          
+       }
+    });
+function addVs(obj){
+       var ttname =$(".typenamed").val();
+       var sid = $("#hidd").val();
+       if(ttname==''){
+           return false;
+       }else{
+        var url = '{:url("Property/add")}';
+        
+
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("name="+ttname+"&sid="+sid),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(obj).parents(".plusoption").hide();
+
+               var html = "";
+                    for(var i=0;i<t.length;i++){
+                    html += '<div class="newly-box-middle-list">';
+                    html += '<div>';
+                    html += '<span class="typetype">'+t[i].name+'</span>';
+                    html += '<input type="text" placeholder="请填写编辑类型" class="type">';
+                    html += '<input type="hidden" class="keyId">';
+                    html +='</div>';
+                    html +='<div>';
+                    html +='<span class="penico" onclick="edit(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="deleico" onclick="del(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-asc" onclick="plus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-down" onclick="minus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="eyeico" onclick="isShow(this)" value="'+t[i].id+'"></span>';
+                    html +='<div class="enter" onclick="enter(this)">确认</div>';
+                    html +='</div>';
+                    html +='</div>';
+                   
+                    //html +='<td><a href="__URL__/del/id/'+msg[i].id+'">删除</a></td>';
+                   
+                    }
+                   
+                    $('#datas').html(html);
+           
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+           
+       }
+}
+function edit(obj){
+  var id = $(obj).attr('value');
+  var name = $(obj).parent().siblings("div").children(".typetype").text();
+ $(obj).parent().siblings("div").children(".keyId").val(id);
+  //    编辑选项类型中间列表修改图标点击
+        $(obj).parent().siblings("div").children(".typetype").hide().siblings(".type").val(name).show();
+       $(obj).hide().siblings("span").hide().siblings(".enter").css("display","inline-block");
+}
+function enter(obj){
+    var keyId = $(obj).parent().siblings("div").children(".keyId").val();
+    var tname = $(obj).parent().siblings("div").children(".type").val();
+    var sid = $("#hidd").val();
+
+    if(tname==''){
+           return false;
+       }else{
+        var url = '{:url("Property/upd")}';
+       
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("name="+tname+"&keyId="+keyId+"&sid="+sid),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               var html = "";
+                    for(var i=0;i<t.length;i++){
+                    html += '<div class="newly-box-middle-list">';
+                    html += '<div>';
+                    html += '<span class="typetype">'+t[i].name+'</span>';
+                    html += '<input type="text" placeholder="请填写编辑类型" class="type">';
+                    html += '<input type="hidden" class="keyId">';
+                    html +='</div>';
+                    html +='<div>';
+                    html +='<span class="penico" onclick="edit(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="deleico" onclick="del(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-asc" onclick="plus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-down" onclick="minus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="eyeico" onclick="isShow(this)" value="'+t[i].id+'"></span>';
+                    html +='<div class="enter" onclick="enter(this)">确认</div>';
+                    html +='</div>';
+                    html +='</div>';
+                   
+                    //html +='<td><a href="__URL__/del/id/'+msg[i].id+'">删除</a></td>';
+                   
+                    }
+                   
+                    $('#datas').html(html);
+                    $(obj).css("display","none").siblings("span").show().parent().siblings("div").children(".typetype").show().siblings(".type").hide();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+           
+    }
+};
+function del(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Property/del")}';
+ if(confirm("确认删除吗")){
+
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(obj).parents(".newly-box-middle-list").hide();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+    }else{
+   return;
+  }
+}
+function dels(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Addproduct/del")}';
+ if(confirm("确认删除吗")){
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(obj).parents(".mission-list-list").hide();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+    }else{
+   return;
+  }
+}
+function isShow(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Property/isShow")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t == 1){
+               $(obj).css("background","url(__ROOT__/static/admin/img/ht-yctc-20180131-1734.png)no-repeat 1px -476px").parents(".newly-box-middle-list").css("opacity","0.5");
+                }else{  
+      
+               $(obj).css("background","url(__ROOT__/static/admin/img/ht-yctc-20180131-1734.png)no-repeat 1px -460px").parents(".newly-box-middle-list").css("opacity","1");
+                }  
+            }     
+        });
+}
+function plus(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Property/plus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //上移
+               if($(obj).parents('.newly-box-middle-list').prevAll().length > 0){
+                    $(obj).parents('.newly-box-middle-list').prev().before($(obj).parents('.newly-box-middle-list').prop('outerHTML'));
+                    $(obj).parents('.newly-box-middle-list').remove();
+                }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function minus(obj){
+    var id = $(obj).attr('value');
+ var url = '{:url("Property/minus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //上移
+               //判断是否有下一个节点
+                    if($(obj).parents('.newly-box-middle-list').nextAll().length > 0){
+                        $(obj).parents('.newly-box-middle-list').next().after($(obj).parents('.newly-box-middle-list').prop('outerHTML'));
+                        $(obj).parents('.newly-box-middle-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function up(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Addproduct/plus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //上移
+                if($(obj).parents('.mission-list-list').prevAll().length > 0){
+                        $(obj).parents('.mission-list-list').prev().before($(obj).parents('.mission-list-list').prop('outerHTML'));
+                        $(obj).parents('.mission-list-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function next(obj){
+    var id = $(obj).attr('value');
+ var url = '{:url("Addproduct/minus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //上移
+               //判断是否有下一个节点
+                    if($(obj).parents('.mission-list-list').nextAll().length > 0){
+                            $(obj).parents('.mission-list-list').next().after($(obj).parents('.mission-list-list').prop('outerHTML'));
+                            $(obj).parents('.mission-list-list').remove();
+                        }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+//修改
+function amends(obj){
+    var tname = $(obj).parent().siblings("div").text();
+   
+    var sid = $(obj).attr('value');
+    var url = '{:url("Property/amend")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("sid="+sid),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               var html = "";
+                    for(var i=0;i<t.length;i++){
+                    html += '<div class="newly-box-middle-list">';
+                    html += '<div>';
+                    html += '<span class="typetype">'+t[i].name+'</span>';
+                    html += '<input type="text" placeholder="请填写编辑类型" class="type">';
+                    html += '<input type="hidden" class="keyId">';
+                    html +='</div>';
+                    html +='<div>';
+                    html +='<span class="penico" onclick="edit(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="deleico" onclick="del(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-asc" onclick="plus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="sort-down" onclick="minus(this)" value="'+t[i].id+'"></span>';
+                    html +='<span class="eyeico" onclick="isShow(this)" value="'+t[i].id+'"></span>';
+                    html +='<div class="enter" onclick="enter(this)">确认</div>';
+                    html +='</div>';
+                    html +='</div>';
+                   
+                    //html +='<td><a href="__URL__/del/id/'+msg[i].id+'">删除</a></td>';
+                   
+                    }
+                   
+                    $('#datas').html(html);
+                    $(".masks").show();
+                    $(".newly-box").show();
+                    $(".typenamee").text(tname);
+                    $("#hidd").val(sid);
+                    $("#inputname").val(tname);
+           
+                }else{  
+      
+                console.log(tname);
+                }  
+            }     
+        });
+    
+}
+</script>
+</body>
+</html>

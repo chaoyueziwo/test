@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:19 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>新增栏目</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__ROOT__/static/admin/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/animate.min.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="__ROOT__/static/admin/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="__ROOT__/static/admin/css/plugins/markdown/bootstrap-markdown.min.css" />
+    <style>
+        .droppable-active{background-color:#ffe!important}.tools a{cursor:pointer;font-size:80%}.form-body .col-md-6,.form-body .col-md-12{min-height:400px}.draggable{cursor:move}
+        
+ 
+   .tr{
+      display:none;
+      
+   }
+    </style>
+	<script type="text/javascript">
+		var chk = document.getElementsByName('chk');
+		function aa(){
+		    for(var i=0; i<chk.length; i++){
+		        chk[i].checked=true;
+		    }
+		}
+		function bb(){
+		    for(var i=0; i<chk.length; i++){
+		        if(chk[i].checked){
+		            chk[i].checked=false;
+		        }else{
+		            chk[i].checked=true;
+		        }
+		    }
+		}
+		function dels(){
+		    var str='';
+		    var box=document.getElementsByName('chk');
+		    var aa=document.getElementById('aa');
+		    for(var i=0;i<chk.length;i++){
+		        if(chk[i].checked){
+		            str=str+chk[i].title+',';
+		        }
+		    }
+		    str=str.substring(str.length-1,',');
+		    //alert(str);die;
+		    var ajax=new XMLHttpRequest();
+		    ajax.onreadystatechange=function(){
+		        if(ajax.readyState==4){
+		            document.getElementById('rep').innerHTML=ajax.responseText;
+		        }
+		    }
+		    ajax.open('get','dels?id='+str);
+		    ajax.send(null);
+		}
+
+    
+	</script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+
+        <div class="row">
+            <div class="col-sm-5" style="width: 80%;">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <a href="__URL__/index"><h5>增加角色</h5></a>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <!-- <li><a href="form_editors.html#">选项1</a>
+                                </li>
+                                <li><a href="form_editors.html#">选项2</a>
+                                </li> -->
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="alert alert-info">
+                             用户管理 > 角色管理
+                        </div>
+                       		<div class="col-sm-6" style="width: 100%;">
+                <div class="ibox float-e-margins" style="width: 100%;" id="rep">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="width41"><input type="checkbox" name="kkk" id="k" onclick="aa()"></th>
+                                    <th>ID</th>
+				                    <th>角色父ID</th>
+				                    <th>栏目名称</th>
+				                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {volist name="re" id='vo' key="k"}
+                                {if condition="$vo['pid'] heq 0"}
+                                <tr> 
+                                    <td><input type="checkbox" name="chk" id="con" title="{$vo.id}"></td>
+							    	<td>{$vo.id}</td>
+							    	<td>{$vo.pid}</td>
+						            <td value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}{$vo['name']}</td>
+							    	<td><a href="__URL__/del/id/{$vo.id}">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}">修改</a>
+							    	</td>
+						        </tr>
+								{else/}
+                                <tr> 
+                                    <td><input type="checkbox" name="chk" id="con" title="{$vo.id}"></td>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.pid}</td>
+                                     <td value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}|--{$vo['name']}</td>
+                                    <td><a href="__URL__/del/id/{$vo.id}">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="__URL__/update/id/{$vo.id}">修改</a>
+                                    </td>
+                                </tr>
+                                {/if}
+						        {/volist}
+                            </tbody>
+                            <tbody>
+                            	<tr>
+							        <td colspan="6">
+							        全选<input type="checkbox" name="kkk" id="k" onclick="aa()">&nbsp;&nbsp;&nbsp;
+							        反选<input type="checkbox" name="ddd" id="" onclick="bb()">&nbsp;&nbsp;&nbsp;
+							      <!--   全不选<input type="checkbox" name="bbb" id="" onclick="cc()"> -->
+							        <input type="button" value="删除" style="margin-left:85px;" onclick="dels()">
+							        </td>
+							    </tr>
+							<tbody>
+                        </table>
+
+                    
+                </div>
+            </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="__ROOT__/static/admin/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__ROOT__/static/admin/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ROOT__/static/admin/js/content.min.js?v=1.0.0"></script>
+    <script src="__ROOT__/static/admin/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="__ROOT__/static/admin/js/plugins/beautifyhtml/beautifyhtml.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/to-markdown.js"></script>
+   	<script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/admin/js/plugins/markdown/bootstrap-markdown.zh.js"></script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_builder.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:20:20 GMT -->
+</html>

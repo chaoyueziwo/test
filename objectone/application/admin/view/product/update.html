@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加专题页</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusproduct.css">
+    <title>增加产品</title>
+</head>
+<body>
+<!--增加栏目-->
+<div id="container">
+    
+     <div>
+       <a href="__WEB__/admin/Product/update/pid/{$id}/id/{$re.id}" class="plus1"><div>编辑产品</div></a>
+       <a href="__WEB__/admin/Product/index2/pid/{$id}/id/{$re.id}" class="plus2"><div>管理选项</div></a>
+       <a href="__WEB__/admin/Product/index3/pid/{$re.id}/id/{$id}" class="plus3"><div>选择选项</div></a>
+       <a href="__WEB__/admin/Product/index4/pid/{$re.id}/id/{$id}" class="plus4"><div>办理流程</div></a>
+    </div>
+    <form action="{:url('Product/save')}" method="post" onSubmit="return submitting();" enctype="multipart/form-data">
+    <div class="container-middle">
+        <div></div>
+            <div class="container-middle-content">
+                <ul>
+                    <li>产品名称 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text" class="width370 columnname" name="name" value="{$re.name}">
+                        <input type="hidden" name="id" value="{$id}"/>
+                        <input type="hidden" name="uid" value="{$re.id}"/>
+                        <!--判断样式-->
+                    <span>请输入产品名称</span>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>产品描述 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="description" value="{$re.description}">
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>产品标签 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="lable" value="{$re.lable}">
+                        <span>(请填写1-3个标签，请用逗号或空格分开)</span>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>SEO标题 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="seoTitle" value="{$re.seoTitle}">
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>SEO关键词 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="seoKey" value="{$re.seoKey}">
+                        <span>(请填写1-3个标签，请用逗号或空格分开)</span>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">SEO描述 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="seoDesc" cols="30" rows="10" class="width375 textarea">{$re.seoDesc}</textarea>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>属性 :&nbsp;&nbsp;</li>
+                    <li>
+                        推荐 : <select name="recommend" id="jumpMenu">
+                        <option value="0">不推荐</option>
+                        <option value="1">1级推荐</option>
+                        <option value="2">2级推荐</option>
+                        <option value="3">3级推荐</option>
+                        <option value="4">4级推荐</option>
+                        <option value="5">5级推荐</option>
+                        <option value="6">6级推荐</option>
+                        <option value="7">7级推荐</option>
+                        <option value="8">8级推荐</option>
+                        <option value="9">9级推荐</option>
+                    </select>
+                        头条 : <select name="top" id="topJumpMenu">
+                        <option value="0">非头条</option>
+                        <option value="1">1级头条</option>
+                        <option value="2">2级头条</option>
+                        <option value="3">3级头条</option>
+                        <option value="4">4级头条</option>
+                        <option value="5">5级头条</option>
+                        <option value="6">6级头条</option>
+                        <option value="7">7级头条</option>
+                        <option value="8">8级头条</option>
+                        <option value="9">9级头条</option>
+                    </select>
+                        置顶 : <select name="overhead" id="headJumpMenu">
+                        <option value="0">不置顶</option>
+                        <option value="1">1级置顶</option>
+                        <option value="2">2级置顶</option>
+                        <option value="3">3级置顶</option>
+                        <option value="4">4级置顶</option>
+                        <option value="5">5级置顶</option>
+                        <option value="6">6级置顶</option>
+                        <option value="7">7级置顶</option>
+                        <option value="8">8级置顶</option>
+                        <option value="9">9级置顶</option>
+                    </select>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>状态 :&nbsp;&nbsp;</li>
+                    {if condition="$re['state'] heq 0"}
+                    <li>
+                        <input type="radio" id="use" value="1" name="state"><label for="use">启用</label>
+                        <input type="radio" id="useno" value="0" name="state" checked="checked"><label for="useno">不启用</label>
+                    </li>
+                    {else/}
+                    <li>
+                        <input type="radio" id="use" value="1" name="state"  checked="checked"><label for="use">启用</label>
+                        <input type="radio" id="useno" value="0" name="state"><label for="useno">不启用</label>
+                    </li>
+                    {/if}
+                </ul>
+                <ul  class="caption">
+                    <li>待审核 :&nbsp;&nbsp;</li>
+                    {if condition="$re['audit'] heq 0"}
+                    <li>
+                        <input type="radio" id="audit" value="0" name="audit" checked="checked"><label for="audit">待审核</label>
+                        <input type="radio" id="audit2" value="1" name="audit"><label for="audit2">已审核</label>
+                        <input type="radio" id="audit3" value="2" name="audit"><label for="audit3">设为草稿</label>
+                    </li>
+                    {elseif condition="$re['state'] heq 1"}
+                    <li>
+                        <input type="radio" id="audit" value="0" name="audit"><label for="audit">待审核</label>
+                        <input type="radio" id="audit2" value="1" name="audit" checked="checked"><label for="audit2">已审核</label>
+                        <input type="radio" id="audit3" value="2" name="audit"><label for="audit3">设为草稿</label>
+                    </li>
+                    {else/}
+                    <li>
+                        <input type="radio" id="audit" value="0" name="audit"><label for="audit">待审核</label>
+                        <input type="radio" id="audit2" value="1" name="audit" checked="checked"><label for="audit2">已审核</label>
+                        <input type="radio" id="audit3" value="2" name="audit" checked="checked"><label for="audit3">设为草稿</label>
+                    </li>
+                    {/if}
+                </ul>
+                <ul  class="caption">
+                    <li>默认服务价格 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="price" value="{$re.price}">
+                    </li>
+                </ul>
+                <ul>
+                    <li id="hei160">缩略图 :&nbsp;&nbsp;</li>
+                    <li>
+                        <div>
+                            <input type="text"  value="{$re.bigPic}" id="text" class="width370">
+                            <input type="file" id="file1" name="bigPic">
+                            <a onclick="$('#file1').click()" class="uploading">上传大图片</a>
+                        </div>
+                        <div><img src="__ROOT__/{$re.bigPic}" alt=""></div>
+                        <div>
+                            <input type="text"  value="{$re.middlePic}" id="text2" class="width370">
+                            <input type="file" id="file2" name="middlePic">
+                            <a onclick="$('#file2').click()" class="uploading">上传中图片</a>
+                        </div>
+                        <div><img src="__ROOT__/{$re.middlePic}" alt=""></div>
+                        <div>
+                            <input type="text" value="{$re.smallPic}" id="text3" class="width370" >
+                            <input type="file" id="file3" name="smallPic" >
+                            <a onclick="$('#file3').click()" class="uploading">上传小图片</a>
+                        </div>
+                        <div><img src="__ROOT__/{$re.smallPic}" alt=""></div>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>地区 :&nbsp;&nbsp;</li>
+                   {if condition="$re['isShow'] heq 0"}
+                    <li>
+                        <input type="radio" id="nostart" value="0" name="isShow" checked="checked"><label for="nostart">不启用</label>
+                        <input type="radio" id="start" value="1" name="isShow"><label for="start">启用</label>
+                    </li>
+                    {else/}
+                     <li>
+                        <input type="radio" id="nostart" value="0" name="isShow"><label for="nostart">不启用</label>
+                        <input type="radio" id="start" value="1" name="isShow" checked="checked"><label for="start">启用</label>
+                    </li>
+                    {/if}
+                </ul>
+            </div>
+        <!--底部温馨提示-->
+            <div class="warm-box">
+                <ul  class="caption">
+                    <li>选择任务流程 :&nbsp;&nbsp;</li>
+                    <li>
+                        <select name="taskId">
+                           {$arr}
+                        </select>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">温馨提示 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="tip" cols="30" rows="10" class="width375 textarea">{$re.tip}</textarea>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">备注 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="content" cols="30" rows="10" class="width375 textarea">{$re.content}</textarea>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <!--提交框-->
+    <div class="commit">
+        <input type="reset" value="重置">
+        <input type="submit" value="下一步">
+    </div>
+    </form>
+</div>
+
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/plusproduct.js"></script>
+<script type="text/javascript">
+    var recommend = "<{$re.recommend}>";
+    var top = "<{$re.top}>";
+    var overhead = "<{$re.overhead}>";
+    $(function(){
+         $("#jumpMenu").val(recommend);
+         $("#topJumpMenu").val(top);
+         $("#headJumpMenu").val(overhead);
+    });
+    
+
+</script>
+</body>
+</html>
+</body>
+</html>

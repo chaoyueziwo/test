@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusproduct4.css">
+    <title>增加产品第四步</title>
+    <style>
+    .maskss{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+/*新增任务弹窗*/
+.newly-boxx{
+    position:absolute;
+    width:850px;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: #fff;
+    display: none;
+}
+/*新增任务弹窗里的文本编辑框*/
+.newly-boxx>.newly-box-bottom .note-editable{
+    height: 300px;
+}
+.newly-boxx>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+}
+#finish{
+     display: inline-block;
+     vertical-align: top;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    margin-left: 30px;
+    font-size: 14px;
+    background: #0183be;
+    color:#fff;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+<!--遮罩层-->
+<div class="masks">
+    <!--新增任务弹窗-->
+    <form action=""  name="frm">
+        <div class="newly-box">
+            <div>
+                <span>编辑流程</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    <span>流程标题 :</span>
+                    <input type="text" name="title" style="border: 1px solid #ddd;padding: 5px 5px 5px 5px;" placeholder="请填写标题" class="title">
+                </div>
+                <div>
+                    <span>服务介绍 :</span>
+                    <div class="summernote"><textarea name="content1"></textarea></div>
+                </div>
+                <div>
+                    <span>取消</span>
+                   <!--  <input type="hidden" name="id" value="{$id}">
+                   <input type="hidden" name="pid" value="{$pid}"> -->
+                    <span onclick="addFlow()" id="finish">保存</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="maskss" style="display: none;">
+    新增任务弹窗
+    <form action=""  name="frms">
+        <div class="newly-boxx">
+            <div>
+                <span>编辑流程</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="newly-box-bottom">
+                <div>
+                    <span>流程标题 :</span>
+                    <input type="text" name="titles" style="border: 1px solid #ddd;padding: 5px 5px 5px 5px;" placeholder="请填写标题" class="titles">
+                </div>
+                <div>
+                    <span>服务介绍 :</span>
+                    <div class="summernote"><textarea name="contents"></textarea></div>
+                </div>
+                <div>
+                    <span>取消</span>
+                    <input type="hidden" name="id" class="hidd">
+                    <span onclick="save()" id="finish">保存</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+  <!--增加栏目-->
+ <div id="container">
+    {if condition="empty($res) neq true"}
+      <div>
+       <a href="__WEB__/admin/Product/update/id/{$pid}/pid/{$id}" class="plus1"><div>编辑产品</div></a>
+       <a href="__WEB__/admin/Product/index2/pid/{$id}/id/{$pid}" class="plus2"><div>管理选项</div></a>
+       <a href="__WEB__/admin/Product/index3/pid/{$pid}/id/{$id}" class="plus3"><div>选择选项</div></a>
+       <a href="__WEB__/admin/Product/index4/pid/{$pid}/id/{$id}" class="plus4"><div>办理流程</div></a>
+       </div>
+       {else /}
+       <div class="plus-box">增加产品</div>
+    {/if}
+         <form >
+         <div class="container-middle">
+             <div></div>
+             <div class="container-middle-content">
+                 <ul class="caption">
+                     <li>
+                         <div class="chosetype">
+                             <div>服务介绍 :&nbsp;&nbsp;</div>
+                         </div>
+                     </li>
+                     <li>
+                         <!--服务介绍-->
+                        <div class="summernote"><textarea name="content2">{$res.content}</textarea></div>
+                     </li>
+                 </ul>
+             </div>
+             <div class="container-middle-content">
+                     <ul class="caption">
+                         <li>
+                             <div class="chosetype">
+                                 <div>办理流程 :&nbsp;&nbsp;</div>
+                                 <div class="newly">增加流程</div>
+                             </div>
+                         </li>
+                         <li>
+                             <!--任务列表-->
+                             <div class="mission-list">
+                                 <!--任务1-->
+                                {volist name="re" id='vo' key="k" }
+                                <div class="mission-list-list">
+                                    <div class="typetype">{$vo.title}</div>
+                                    <div>
+                                    <span onclick="amend(this)" value="{$vo.id}">修改</span>
+                                    <span class="delebtn" value="{$vo.id}">删除</span>
+                                    <span class="sort-asc" onclick="good(this)" value="{$vo.id}">上移</span>
+                                    <span class="sort-down" onclick="next(this)" value="{$vo.id}">下移</span>
+                                    </div>
+                                </div>
+                                {/volist}
+                             </div>
+                         </li>
+                     </ul>
+             </div>
+             <div class="container-middle-content">
+                 <ul class="caption">
+                     <li>
+                         <div class="chosetype">
+                             <div>注意事项 :&nbsp;&nbsp;</div>
+                         </div>
+                     </li>
+                     <li>
+                         <!--注意事项文本框-->
+                             <textarea name="content3">{$res.attention}</textarea>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+     <!--提交框-->
+     <div class="commit">
+         <input type="reset" value="重置">
+         <span onclick="addSreve()" id="finish">完成</span>
+     </div>
+         </form>
+ </div>
+
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>   <!-- 中文-->
+<script src="__ROOT__/static/admin/houtaijs/plusproduct4.js"></script>
+<script type="text/javascript" src="__ROOT__/static/kindeditor/kindeditor.js"></script>
+<script>
+ var editor1;//编辑器对象
+ var editor2;//编辑器对象
+ var editor3;//编辑器对象
+ var editors;//编辑器对象
+ var pid = "{$pid}";//产品ID
+    //加载编辑器
+    KindEditor.ready(function(e){
+        //创建编辑器
+        editor1 = e.create("[name=content1]",{
+            width:"650px",
+            height:"250px"
+            //items:["undo","redo","|","bold","italic","underline"]
+        });
+         editors = e.create("[name=contents]",{
+            width:"650px",
+            height:"250px"
+            //items:["undo","redo","|","bold","italic","underline"]
+        });
+        editor2 = e.create("[name=content2]",{
+            width:"650px",
+            height:"250px"
+            //items:["undo","redo","|","bold","italic","underline"]
+        });
+        editor3 = e.create("[name=content3]",{
+            width:"650px",
+            height:"250px"
+            //items:["undo","redo","|","bold","italic","underline"]
+        });
+        //设置编辑器中的内容
+        //editor.html("在这里编写你的内容...");
+       
+    });
+    function addFlow(){
+
+     if(document.frm.title.value == "")
+          {
+              alert("请输入标题！");
+              document.frm.title.focus();
+              return false;
+          }
+          else if(editor1.html() == "")
+          {
+              alert("请输入文章内容！");
+              editor1.focus();
+              return false;
+          }
+          else
+          {
+   var title = $(".title").val();
+   var url = '{:url("Product/addFlow")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("title="+title+"&pid="+pid+"&content="+editor1.html()),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               $(".masks").hide();
+               var html = "";
+                    for(var i=0;i<t.length;i++){
+                    html += '<div class="mission-list-list">';
+                    html += '<div class="typetype">'+t[i].title+'</div>';
+                    html +='<div>';
+                    html +='<span onclick="amends(this)" value="'+t[i].id+'">修改</span>';
+                    html +='<span class="delebtns" value="'+t[i].id+'">删除</span>';
+                    html +='<span class="sort-asc" onclick="goods(this)" value="'+t[i].id+'">上移</span>';
+                    html +='<span class="sort-down" onclick="nexts(this)" value="'+t[i].id+'">下移</span>';
+                    html +='</div>';
+                    html +='</div>';
+                   
+                    //html +='<td><a href="__URL__/del/id/'+msg[i].id+'">删除</a></td>';
+                   
+                    }
+                   
+                    $('.mission-list').html(html);
+                
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+          }
+    }
+    function save(){
+      if(document.frms.titles.value == "")
+          {
+              alert("请输入标题！");
+              document.frms.titles.focus();
+              return false;
+          }
+          else if(editors.html() == "")
+          {
+              alert("请输入文章内容！");
+              editors.focus();
+              return false;
+          }
+          else
+          {
+   var title = $(".titles").val();
+   var lid = $(".hidd").val();
+   var url = '{:url("Product/saveFlow")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("title="+title+"&id="+lid+"&pid="+pid+"&content="+editors.html()),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+             
+          location=location ;
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+          }  
+    }
+    function amend(obj){
+        var lid = $(obj).attr('value');
+        var url = '{:url("Product/selFlow")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+lid),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t.content);
+              if(t != null){
+             $(".titles").val(t.title);
+             editors.html(t.content);
+             $(".hidd").val(lid);
+              $(".maskss").show();
+             $(".newly-boxx").show();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+       
+    }
+     function amends(obj){
+        var lid = $(obj).attr('value');
+        var url = '{:url("Product/selFlow")}';
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+lid),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t.content);
+              if(t != null){
+             $(".titles").val(t.title);
+             editors.html(t.content);
+             $(".hidd").val(lid);
+              $(".maskss").show();
+             $(".newly-boxx").show();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+       
+    }
+    //    任务管理删除按钮
+    $(".delebtn").click(function(){
+      if(confirm("确认删除吗")){
+      var id = $(this).attr('value');
+      var url = '{:url("Product/delFlow")}';
+      var mythis = $(this);
+      $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){ 
+                console.log(t);
+             if(t != null){ 
+                $(mythis).parents(".mission-list-list").remove();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+        }else{
+            return;
+        }
+    });
+    //    任务管理删除按钮
+    $(".delebtns").click(function(){
+      if(confirm("确认删除吗")){
+      var id = $(this).attr('value');
+      var url = '{:url("Product/delFlow")}';
+      var mythis = $(this);
+      $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){ 
+                console.log(t);
+             if(t != null){ 
+                $(mythis).parents(".mission-list-list").remove();
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        });
+        }else{
+            return;
+        }
+    });
+    function good(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Product/plus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //判断是否有上一个节点
+                    if($(obj).parents('.mission-list-list').prevAll().length > 0){
+                        $(obj).parents('.mission-list-list').prev().before($(obj).parents('.mission-list-list').prop('outerHTML'));
+                        $(obj).parents('.mission-list-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+ function goods(obj){
+ var id = $(obj).attr('value');
+ var url = '{:url("Product/plus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+                //判断是否有上一个节点
+                    if($(obj).parents('.mission-list-list').prevAll().length > 0){
+                        $(obj).parents('.mission-list-list').prev().before($(obj).parents('.mission-list-list').prop('outerHTML'));
+                        $(obj).parents('.mission-list-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function next(obj){
+    var id = $(obj).attr('value');
+ var url = '{:url("Product/minus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               //判断是否有下一个节点
+                    if($(obj).parents('.mission-list-list').nextAll().length > 0){
+                        $(obj).parents('.mission-list-list').next().after($(obj).parents('.mission-list-list').prop('outerHTML'));
+                        $(obj).parents('.mission-list-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function nexts(obj){
+    var id = $(obj).attr('value');
+ var url = '{:url("Product/minus")}';
+   $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+               //判断是否有下一个节点
+                    if($(obj).parents('.mission-list-list').nextAll().length > 0){
+                        $(obj).parents('.mission-list-list').next().after($(obj).parents('.mission-list-list').prop('outerHTML'));
+                        $(obj).parents('.mission-list-list').remove();
+                    }
+                }else{  
+      
+               return;
+                }  
+            }     
+        });
+}
+function addSreve(){
+    if(editor2.html() == "")
+          {
+              alert("请输入文章内容！");
+              editor2.focus();
+              return false;
+          }else if(editor3.html() == ""){
+            alert("请输入文章内容！");
+              editor3.focus();
+              return false;
+          }else{
+           var url = '{:url("Product/addSreve")}';
+           var id = "{$id}";
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("attention="+editor3.html()+"&pid="+pid+"&content="+editor2.html()),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                console.log(t);
+              if(t != null){
+             
+        location.href="__WEB__/admin/Product/oper/id/{$id}";  
+                }else{  
+      
+               alert("操作失败");
+                }  
+            }     
+        }); 
+          }
+}
+
+</script>
+</body>
+</html>

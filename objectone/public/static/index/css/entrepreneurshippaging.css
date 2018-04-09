@@ -1,0 +1,406 @@
+/*创业资讯分页css*/
+body{
+    font-size: 16px;
+}
+.tophoto>img{
+    width: 100%;
+}
+/*中间盒子*/
+.nav-box{
+    width:1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*中间内容里的a标签 鼠标移入字体颜色为1cbbb4*/
+.nav-box a:hover{
+    color:#1cbbb4;
+}
+/*导航栏第一个div*/
+.nav-box>div:first-child{
+    margin-left: 10px;
+}
+.nav-box>div:first-child>span>a{
+    font-size: 14px;
+}
+/*位置的图标*/
+.locationico{
+    display: inline-block;
+    height:20px;
+    width:20px;
+    background: url("../img/images/cyzx-10.png")no-repeat 5px 3px;
+    vertical-align: text-bottom;
+}
+/*导航栏*/
+.navbar{
+    margin-top: 20px;
+    height: 55px;
+}
+/*navbarli鼠标移入加下划线*/
+.navbarli:hover{
+    border-bottom: 3px solid #1cbbb4;
+}
+/*定位样式。下边框3px 颜色为透明*/
+.borderbot3px{
+    border-bottom: 2px solid transparent;
+}
+/*定位鼠标移入*/
+.borderbot3px:hover{
+    border-bottom: 2px solid #1cbbb4;
+}
+.navbar>ul{
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+}
+.navbar>ul>li{
+    padding:5px 0;
+    border-bottom: 3px solid transparent;
+}
+/*全部资讯盒子*/
+.nav-box-allmessage{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+/*全部资讯盒子里的左边div*/
+.nav-box-allmessage-left{
+    width: 870px;
+    border: 1px solid #ddd;
+}
+/*全部 资讯盒子 里的所有a标签 鼠标移入加下划线*/
+.nav-box-allmessage-left a:hover{
+    text-decoration: underline;
+}
+/*竖杠绿色图标*/
+.activity{
+    display: inline-block;
+    vertical-align: bottom;
+    height:20px;
+    width:15px;
+    background: url("../img/image/sy-2.png")no-repeat -47px 0;
+}
+.nav-box-allmessage-left>p>span:last-child{
+    font-size: 18px;
+}
+/*全部资讯里的p标签 上下左右外边距20px*/
+.nav-box-allmessage-left>p{
+    margin: 20px 20px;
+}
+/*全部资讯搜索框*/
+.nav-box-allmessage-left-search{
+    width:670px;
+    border: 1px solid #1cbbb4;
+    display: inline-block;
+    margin: 0 10px 0 30px;
+}
+/*全部资讯搜索框里的input*/
+.nav-box-allmessage-left-search>input{
+    border: none;
+    padding:10px;
+    font-weight:bold;
+}
+.nav-box-allmessage-left-search>span{
+    float: right;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    height: 37px;
+    width: 120px;
+    background: #1cbbb4;
+    font-size: 16px;
+}
+
+/*搜索按钮图片*/
+.nav-box-allmessage-left-search>span>img{
+    vertical-align: middle;
+}
+/**/
+.nav-box-allmessage-left-search>span>span{
+    line-height: 35px;
+}
+/*在线提问*/
+.nav-box-allmessage-left-ask{
+    display: inline-block;
+    vertical-align: top;
+    width:120px;
+    height: 37px;
+    border: 1px solid #1cbbb4;
+    color: #1cbbb4;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+}
+/*全部资讯下面的列表答案*/
+.nav-box-allmessage-left-search-list{
+    margin-top: 20px;
+    border-top:1px solid #ddd;
+}
+.nav-box-allmessage-left-search-list>ul{
+    display: flex;
+    margin:10px 20px;
+}
+/*ul上外边距30px*/
+.nav-box-allmessage-left-search-list .martop30px{
+    margin-top: 30px;
+}
+/*ul下外边距30px*/
+.nav-box-allmessage-left-search-list .marbottom30{
+    margin-bottom: 30px;
+}
+/*搜索框里的列表答案里的ul里的所有首个的li*/
+.nav-box-allmessage-left-search-list>ul>li:first-child{
+   width:450px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/*搜索框里的列表答案里的ul里的所有最后的li*/
+.nav-box-allmessage-left-search-list>ul>li:last-child{
+    flex-grow: 1;
+    text-align: right;
+}
+/*搜索框里立刻咨询图片*/
+.nav-box-allmessage-left-search-list-photo{
+    width:825px;
+    height: 65px;
+    margin:0 20px;
+    background: #1cbbb4;
+}
+/*搜索框里立刻咨询图片*/
+.nav-box-allmessage-left-search-list-photo>span{
+    color:#ffffff;
+    display: inline-block;
+    margin: 10px 20px;
+}
+/*搜索框里立刻咨询图片里的公司注册、商标申请、记账报税*/
+.nav-box-allmessage-left-search-list-photo>span:first-child{
+    font-size: 24px;
+}
+/*聚惠企业帮您一站解决字体*/
+.font20px{
+    font-size: 20px;
+}
+/*搜索框立刻咨询样式*/
+.nav-box-allmessage-left-search-list-photo>span:last-child{
+   background:#d6623d;
+    border-radius: 40px;
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    box-shadow:1px 1px 1px #000000 ;
+}
+.nav-box-allmessage-left-search-list-photo>span:last-child:hover{
+    background:#bb4b27;
+    cursor: pointer;
+}
+.nav-box-allmessage-left-search-list-photo>span:last-child>a{
+    color: #ffffff;
+}
+.nav-box-allmessage-left-search-list-photo>span:last-child>a:hover{
+    text-decoration: none;
+}
+.bordernone{
+    border:none;
+}
+/*点线分割线*/
+.dot{
+    margin: 10px 20px;
+    opacity: 0.2;
+}
+/*页码*/
+.pagenum{
+    margin:20px 40px;
+}
+.pagenum a{
+    text-decoration: none!important;
+}
+.pagenum>ul{
+    display: flex;
+    font-size: 14px;
+    width: 500px;
+    margin: 0 auto;
+}
+.pagenum>ul>li{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 30px;
+}
+#pageup{
+    width:75px;
+    height:30px;
+}
+#pagedown{
+    width:75px;
+    height:30px;
+}
+/*三幅图片盒子*/
+.photolink{
+    margin: 20px 25px 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.photolink>a>div{
+    width:260px;
+    position:relative;
+}
+.photolink>a>div img{
+    width: 100%;
+}
+/*三幅图片里的下面的文字 定位*/
+.photolink>a>div span{
+    opacity: 0.8;
+    width: 100%;
+    background: #000000;
+    height:30px;
+    font-size: 13px;
+    position: absolute;
+    top:130px;
+    left: 0;
+    color:#ffffff;
+    text-align: center;
+    line-height: 30px;
+}
+/*创业攻略指南盒子*/
+.subjectright{
+    width: 280px;
+    border: 1px solid #ddd;
+}
+.subjectright>p{
+    font-size: 18px;
+    margin: 18px 15px;
+}
+.subjectright>div:first-child{
+    display: flex;
+}
+/*创业优惠套餐*/
+.startfree{
+    display: flex;
+    margin: 0 0 20px 18px;
+}
+.startfree>div>p{
+    font-size: 13px;
+}
+.startfree>div>p:first-child{
+    margin-bottom: 5px;
+}
+/*查看详情*/
+.checkdetails{
+    padding:10px 7px;
+    color:white;
+    background: #1cbbb4;
+    margin-left: 20px;
+}
+/*注册公司指南*/
+.subjectright>div:last-child{
+    border-top:1px solid #ddd ;
+}
+/*注册公司指南列表 所有div设为行内快*/
+.subjectright>div:last-child>div{
+    width: 110px;
+    height:29px;
+    display: inline-block;
+    margin: 10px 0 0 18px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 29px;
+}
+/*财税专题里的下面部分里的a标签 鼠标移入专题颜色1cbbb4 加下划线*/
+.subjectmiddle>div:last-child>ul>li:first-child a:hover{
+    text-decoration:underline;
+}
+/*创业攻略指南下面指南 div鼠标移入*/
+.subjectright>div:last-child>div:hover{
+    background: #1cbbb4;
+}
+/*创业攻略指南下面指南 div鼠标移入 a标记字体为红色*/
+.subjectright>div:last-child>div:hover a{
+    color: #ffffff;
+}
+.subjectright>div:last-child>div a{
+    font-size: 14px;
+}
+/*下外边距10px*/
+#marbottom10{
+    margin-bottom: 10px;
+}
+/*右边中间部分最新资讯、热门资讯*/
+.nav-box-allmessage-right-middle{
+    margin-top:30px;
+    border: 1px solid #ddd;
+}
+.nav-box-allmessage-right-middle>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+/*最新资讯*/
+.newmessage{
+    width:50%;
+    font-size:18px;
+    height: 50px;
+    position: relative;
+    border-right: 1px solid #ddd;
+}
+/*热门资讯*/
+.hotmessage{
+    width: 50%;
+    font-size:18px;
+    height: 50px;
+    position: relative;
+}
+/*最新资讯里的span*/
+.newmessage>span{
+    margin-top:15px;
+}
+/*最新资讯里的第一个span*/
+.newmessage>span:first-child{
+     margin-left:10px;
+ }
+.hotmessage>span{
+    margin-top:15px;
+}
+.hotmessage>span:first-child{
+    margin-left:10px;
+}
+/*点线分割线*/
+.marleft13px{
+    margin-left: 13px;
+    opacity: 0.2;
+}
+/*公共样式字体大小为13px*/
+.font13px{
+    font-size: 13px;
+}
+/*上外边距15px*/
+.nav-box-allmessage-right-middle .martop15px{
+    margin-top: 15px;
+}
+/*上下外边距7px*/
+.mar7px{
+    margin:7px 0;
+}
+/*下外边距20px*/
+.marbottom20{
+    margin-bottom: 20px;
+}
+/*最新提问、热门提问背景颜色*/
+.newmessage{
+    background: #f6f6f6;
+    cursor: pointer;
+}
+.hotmessage{
+    background: #f6f6f6;
+    cursor: pointer;
+}
+.hotmessage1{
+    display: none;
+}
+.hotmessage4{
+    display: none;
+}

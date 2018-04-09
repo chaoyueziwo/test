@@ -1,0 +1,601 @@
+/*增加栏目*/
+#container{
+    margin:70px 0 0 30px;
+    font-size: 14px;
+    width:95%;
+}
+#container>div:first-child{
+    position: absolute;
+    top:39px;
+}
+.plus-box{
+    height:30px;
+    width: 105px;
+    background:#f6f6f6;
+    border-top:3px solid #0183be;
+    text-align: center;
+    line-height: 30px;
+    color:#0183be;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+#container>div>a>div{
+    display: inline-block;
+    vertical-align: top;
+    height:30px;
+    width: 105px;
+    background:#f6f6f6;
+    border-top:1px solid #ddd;
+    text-align: center;
+    line-height: 30px;
+    color:#000;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+#container .plus2>div{
+    margin-top: -2px;
+    border-top: 3px solid #0183be;
+}
+.container-middle{
+    background: #f6f6f6;
+    min-width: 820px;
+    height:50%;
+    border: 1px solid #ddd;
+}
+.container-middle>div:first-child{
+    display: table;
+    content: "";
+}
+.container-middle-content{
+    margin: 10px;
+    height: 97%;
+    width: 98.5%;
+    background: #ffff;
+    border-bottom: 1px solid #ddd;
+}
+.container-middle-content>ul{
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-left: none;
+}
+.container-middle-content>ul>li{
+    display: inline-block;
+}
+/*form表单里的ul里面的所有首个li占满整行*/
+.container-middle-content>ul li:first-child{
+    text-align: right;
+    width: 14%;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top:none;
+    vertical-align: top;
+}
+/*form表单里的ul里面的所有最后一个li占满整行*/
+.container-middle-content>ul li:last-child{
+    margin-left: 10px;
+    width: 84%;
+}
+/*红色警告窗*/
+.redwarn{
+    display:none;
+}
+/*input表单字体12px*/
+input{
+ font-size: 12px;
+}
+/*提示颜色*/
+.container-middle-content>ul span{
+    color:#d6623d;
+}
+/*表单公共样式宽度*/
+.width370{
+    width: 370px;
+    height:25px;
+}
+.height25{
+    height:25px;
+    width:100px;
+}
+.height230{
+    height:416px;
+}
+.height100{
+    height: 136px;
+}
+.width375{
+    width:370px;
+    height: 210px;
+}
+.width200{
+    width:170px;
+}
+/*高度40 宽度375*/
+.height40{
+    height:35px;
+    width: 375px;
+}
+.textarea{
+    overflow-y:scroll;
+    margin-top: 7px;
+}
+.commit{
+    margin: 30px 0;
+    text-align: center;
+}
+.commit>input{
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.commit>input[type="submit"]{
+    background:#0183be;
+    border: none;
+    color: #ffffff;
+}
+.commit>input[type="reset"]{
+    background: #ffffff;
+    border: 1px solid #ddd
+}
+.commit>a{
+    background:#0183be;
+    color: #ffffff;
+    padding:6px 29px;
+    line-height: 30px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.commit>input:hover{
+    cursor: pointer;
+}
+/*表格数字框去掉上下箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+/*增加专题页样式*/
+.uploading{
+    vertical-align: middle;
+    background: #0183be;
+    padding: 6px 10px;
+    line-height: 30px;
+    color: #ffffff!important;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.uploading:hover{
+    cursor: pointer;
+}
+/*左外边距10px*/
+.marleft10{
+    margin-left: 10px;
+}
+#file1{
+    display:none;
+}
+/*增加流程里的新增任务*/
+.newly{
+    display: inline-block;
+    border: 1px solid #0183be;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    color: #0183be;
+}
+.newly:hover{
+    cursor: pointer;
+}
+/*遮罩层*/
+.masks{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+/*新增任务弹窗*/
+.newly-box{
+    position:fixed;
+    width:550px;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: #fff;
+    display: none;
+}
+.newly-box .newly-box-bottom>div span{
+    vertical-align: middle;
+    display: inline-block;
+}
+.newly-boxx{
+    position:fixed;
+    height: 180px;
+    width:430px;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: #fff;
+    display: none;
+}
+/*新增任务弹窗，编辑任务*/
+.newly-box>div:first-child,.newly-boxx>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+/*新增类型*/
+.next{
+    background:#0183be;
+    color:#fff;
+}
+/*关闭按钮*/
+.close{
+    font-size: 20px;
+    float: right;
+    line-height: 20px;
+}
+.newly-box-bottomm>span,.newly-box-bottomm>input,.close:hover{
+    cursor: pointer;
+}
+/*启用，禁用，设为草稿*/
+label{
+    margin-right: 20px;
+}
+/*启用，禁用，设为草稿单选框*/
+input[type="radio"]{
+    vertical-align: text-top;
+}
+/*任务管理里的任务*/
+.mission-list{
+    border: 1px solid #ddd;
+    margin:15px 0 15px 0;
+    overflow-y: scroll;
+    width: 650px;
+    height: 380px;
+}
+.mission-list-list{
+    margin:7px 10px;
+    border: 1px solid #ddd;
+    line-height: 20px;
+}
+.mission-list-list:hover{
+    cursor: pointer;
+}
+.mission-list-list>div{
+    display: inline-block;
+}
+.mission-list-list>div:first-child{
+    padding-left: 10px;
+    width: 43%;
+}
+/*禁用、修改、删除、上移、下移按钮*/
+.mission-list-list>div:last-child{
+   text-align: right;
+    width: 54%;
+}
+/*任务5个按钮*/
+.mission-list-list>div:last-child>span{
+    display: inline-block;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    padding: 0 10px;
+    margin: 3px 5px 3px 0;
+    color:#000;
+}
+.mission-list-list>div:last-child>span:hover{
+    color:#0183be;
+    border:1px solid #0183be;
+}
+/*新增任务中间内容*/
+.newly-box-bottom{
+    margin: 20px 50px;
+    font-size: 14px;
+}
+.newly-box-bottom>div{
+    margin-bottom: 10px;
+}
+.newly-box-bottom>div>div{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 35px;
+    margin-left: 30px;
+}
+/*新增任务弹窗里的备注输入框textarea*/
+.newly-box textarea{
+    resize: none;
+    height: 195px;
+    width: 460px;
+    vertical-align: top;
+}
+/*新增类型弹窗*/
+.newly-box-bottom input[type="text"]{
+    width: 240px;
+    height: 30px;
+    padding-left: 10px;
+}
+.newly-box-bottomm{
+    text-align: center;
+    margin:20px 0;
+}
+.newly-box-bottomm>span{
+    display: inline-block;
+    vertical-align: top;
+    width: 88px;
+    height: 28px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 29px;
+    text-align: center;
+}
+.textright{
+    text-align: right;
+}
+/*新增类型弹窗保存按钮*/
+.newly-box-bottomm input[type="submit"]{
+    color:#fff;
+    background: #0183be;
+    padding: 5px 30px;
+    border: none;
+    font-size: 14px;
+}
+.caption textarea{
+    resize: none;
+    width: 370px;
+    height:100px;
+    margin-top: 10px;
+}
+.chosetype>div:first-child{
+    margin: 20px 0 10px 0;
+}
+/*修改确认按钮*/
+.amend{
+    font-size: 12px;
+    padding: 3px 30px;
+    border: 1px solid #0183be;
+    color: #0183be;
+    margin-right: 2%;
+}
+/*增加类型按钮*/
+.plustype{
+    padding: 3px 10px;
+    border: 1px solid #0183be;
+    font-size: 12px;
+}
+/*修改文本框*/
+#inputname{
+    width:174px;
+    height: 19px;
+    font-size: 14px;
+    display: none;
+}
+/*增加选项*/
+.plustype{
+    color: #0183be;
+}
+/*增加选项+按钮*/
+.plustype>span{
+    vertical-align: top!important;
+    font-weight: bold;
+    line-height: 14px;
+    font-size: 20px;
+    color: #0183be;
+}
+/*修改增加鼠标移入*/
+.amend,.plustype:hover{
+    cursor: pointer;
+}
+/*类型名称*/
+.typename{
+    padding-left: 12px;
+    height: 25px;
+    line-height: 25px;
+}
+/*新增类型弹窗取消按钮*/
+.cancel{
+  margin-right: 30px;
+}
+/*新增类型弹窗取消按钮*/
+.newly-box-bottom .cancel{
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 30px;
+    font-size: 14px;
+}
+/*新增类型弹窗下一步*/
+.newly-box-bottom .next{
+    display: inline-block;
+    vertical-align: top;
+    background: #0183be;
+    border:none;
+    padding: 6px 25px;
+    font-size: 14px;
+}
+.cancelbtn{
+    text-align: center;
+    margin: 20px 0;
+}
+.cancelbtn>span:hover{
+    cursor: pointer;
+}
+/*新增类型弹窗中间列表*/
+.newly-box-middle{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+.newly-box-middle>div{
+    overflow-y: scroll;
+    margin: 0 20px;
+    padding: 20px 0;
+    height: 460px;
+}
+/*新增类型弹窗中间列表首个div取消上外边距*/
+.newly-box-middle>div>div:first-child{
+    margin-top: 0;
+}
+.newly-box-middle>div>div{
+    border: 1px solid #ddd;
+    padding:4px 10px;
+    margin: 10px 10px 0 5px;
+}
+.newly-box-middle-list{
+    line-height: 23px;
+    height: 25px;
+}
+.newly-box-middle-list>div:first-child{
+    display: inline-block;
+    vertical-align: top;
+    width: 69%;
+    height: 22px;
+}
+.newly-box-middle-list>div:first-child>input{
+    width: 100%;
+    display: none;
+    padding-left: 5px;
+}
+.newly-box-middle-list>div:last-child{
+    display: inline-block;
+    vertical-align: top;
+    width:30%;
+    text-align: center;
+}
+.newly-box-middle-list>div:last-child>div{
+    vertical-align: top;
+    padding: 1px 25px;
+    background: #0183be;
+    color: #ffffff;
+    display: none;
+}
+.newly-box-middle-list>div:last-child>span{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.newly-box-middle-list>div:last-child>span,.newly-box-middle-list,.newly-box-middle-list>div:last-child>div:hover{
+    cursor: pointer;
+}
+/*修改图标*/
+.penico{
+    height: 10px;
+    width: 10px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -373px;
+}
+.penico:hover{
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat -15px -373px;
+}
+/*删除图标*/
+.deleico{
+    height: 12px;
+    width: 12px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -386px;
+}
+.deleico:hover{
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat -15px -386px;
+}
+/*上移图标*/
+.newly-box-middle-list .sort-asc{
+    height: 12px;
+    width: 12px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 2px -402px;
+}
+.newly-box-middle-list .sort-asc:hover{
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat -13px -402px;
+}
+/*下移图标*/
+.newly-box-middle-list .sort-down{
+    height: 12px;
+    width: 12px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 2px -418px;
+}
+.newly-box-middle-list .sort-down:hover{
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat -13px -418px;
+}
+/*禁用按钮，眼睛*/
+.eyeico{
+    height:20px;
+    width:20px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 1px -429px;
+}
+.eyeico:hover{
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 1px -460px;
+}
+.type{
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.typetype{
+    padding-left: 5px;
+}
+/*修改按钮弹窗增加选项按钮弹窗*/
+.plusoption{
+    position: absolute;
+    height: 180px;
+    width:430px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background: #fff;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    box-shadow: #000 -1px 1px 25px -2px;
+    display: none;
+}
+/*修改按钮弹窗增加选项按钮弹窗里的头部样式*/
+.plusoption>div:first-child{
+    background: #f6f6f6;
+    padding: 10px 20px;
+    color:#818181;
+    border-bottom: 1px solid #ddd;
+}
+/*修改按钮弹窗增加选项按钮弹窗里的头部关闭按钮*/
+.closed{
+    font-size: 20px;
+    float: right;
+    line-height: 20px;
+}
+.plusoption-middle{
+    margin: 20px 50px;
+}
+.plusoption-middle>div{
+    margin-bottom: 10px;
+}
+.plusoption-middle>div:last-child{
+    text-align: center;
+    margin:20px 0;
+}
+.typenamed{
+    width: 240px;
+    height: 30px;
+    padding-left: 10px;
+}
+/*修改按钮弹窗增加选项按钮弹窗取消按钮*/
+.canceled{
+    display: inline-block;
+    vertical-align: top;
+    border:1px solid #ddd;
+    padding: 5px 30px;
+    margin-right: 30px;
+}
+.canceled,.closed,.nexted:hover{
+    cursor: pointer;
+}
+/*修改按钮弹窗增加选项按钮弹窗下一步*/
+.nexted{
+    display: inline-block;
+    vertical-align: top;
+    background: #0183be;
+    border: none;
+    padding: 6px 25px;
+    color: #fff;
+}

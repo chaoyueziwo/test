@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登陆后台</title>
+<style>
+	body,li,ul,table,p,div{
+		margin: 0;
+		padding: 0;
+	}
+.body-img{width:100%;height:100%;background: url(__ROOT__/static/admin/img/login-background2.jpg)no-repeat;}
+.login-div{min-width:830px;position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);}
+.l-div{display:inline-block; width:48%;}
+.imag1{width:100%;}
+.r-div{width:51%;display: inline-block;vertical-align: top}
+.tubiao2{width: 129px; height: 41px;background:url(__ROOT__/static/admin/image/log.png) no-repeat 0 0;margin-left: 5px;margin-right: 5px;}
+.tubiao{width: 65px; height: 1px;background:url(__ROOT__/static/admin/image/log.png) no-repeat 0 -55px;}
+.shua{float: left; width: 14px; height: 14px;background:url(__ROOT__/static/admin/image/log.png) no-repeat -91px -49px;margin-top: 30px;margin-right: 5px;}
+.tab{height: 100px;margin-left: 22%;}
+.frm{font: 14px/28px "Microsoft YaHei","微软雅黑";color: #a3a2a2;margin-left: 15%;}
+.frm input{width:50%;height: 30px;border:1px solid #e3e3e3;margin-top: 20px;}
+.cor{font: 12px/28px "Microsoft YaHei","微软雅黑";color: red;margin-left: 10px;}
+#yanzheng{width: 25%;}
+#but{width: 26%;height: 35px;border:1px solid #1a7bb9;background: #1a7bb9;border-radius: 5px; font: 14px/28px "Microsoft YaHei","微软雅黑";color: #ffffff;margin:7% 0% 10% 10%;}
+.src{font:bold 14px/28px "Microsoft YaHei","微软雅黑";color: #1a7bb9;margin-left: 10%; text-decoration:none;}
+.fege{overflow: hidden; width: 100%;height: 2px;}
+
+.yzm-div{width: 35%;float: left;}
+.ver{width: 60%;float: left;height: 40px;margin-top: 20px;}
+.ver img{width: 112px;height: 35px; vertical-align: middle;}
+.shua{}
+</style>
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    
+      function check()
+      {
+          if(document.frm.username.value == "")
+          {
+              document.getElementById("user").innerHTML="请输入用户名";
+              document.frm.username.focus();
+              return false;
+          }
+          if(document.frm.password.value == "")
+          {
+              document.getElementById("pwd").innerHTML="请输入密码";
+              document.frm.password.focus();
+              return false;
+          }
+          if(document.frm.yzma.value == "")
+          {
+              document.getElementById("yzma").innerHTML="请输入验证码";
+              document.frm.yzma.focus();
+              return false;
+          }
+        }
+  
+
+       function refreshVerify() {
+        var ts = Date.parse(new Date())/1000;
+        $('#verify_img').attr("src", "__WEB__/captcha?id="+ts);
+      }
+
+</script>
+</head>
+<body class="body-img">
+<div class="login-div">
+	<div class="l-div"><img src="__ROOT__/static/admin/image/gg.png" alt="" class="imag1" /></div>	
+	<div class="r-div">
+		<table class="tab">
+			<tr>
+				<td><div class="tubiao"></div></td>
+				<td><div class="tubiao2"></div></td>
+				<td><div class="tubiao"></div></td>
+			</tr>
+		</table>
+        <form name="frm" action="{:url('Login/check')}" method="post" class="frm" onsubmit="return check()">	
+			用户名　<input type="text" name="username" /><span class="cor" id="user"></span><br/>
+			密　码　<input type="password" name="password" /><span class="cor" id="pwd"></span><br/>
+			<div class="fege"></div>
+			<div class="yzm-div">验证码　<input type="text" name="yzma" placeholder="" /></div><!-- <div class="shua"></div> --><div id="captcha" onclick="refreshVerify()"  class="ver">{:captcha_img()}<span class="cor" id="yzma"></span></div><div class="fege"></div>
+			<input type="submit" value="登陆" id="but" /><a href="" class="src">进入网站首页</a>
+		</form>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../houtaicss/options.css">
+    <title>组织管理</title>
+</head>
+<body>
+   <!--管理栏目片段-->
+    <!--遮罩层-->
+    <div class="masks">
+        <!--弹窗新增组织-->
+         <form action="">
+         <div class="tissue-box">
+             <div>
+                 <span>新增组织</span>
+                 <span class="close">&times;</span>
+             </div>
+             <!--弹窗中间内容-->
+             <div class="tissue-box-middle">
+                <div>
+                    <div>组织名称 :</div>
+                    <div>上级组织 :</div>
+                    <div>备注 :</div>
+                </div>
+                <div>
+                    <div><input type="text"></div>
+                    <div>
+                        <div class="option-box">
+                            <select name="pid">
+                                <option>公司注册</option>
+                                <option>哈哈注册</option>
+                                <option>哇哈注册</option>
+                                <option>啊一注册</option>
+                            </select>
+                        </div>
+                        <div class="principal">
+                            负责人 : <input type="text" placeholder="搜索" name="k" id="keys" class="form-control">
+                        </div>
+                    </div>
+                    <div>
+                        <textarea class="remarks"></textarea>
+                    </div>
+                </div>
+             </div>
+             <!--弹窗底部-->
+             <div class="tissue-box-bottom">
+                 <div class="cancel">取消</div>
+                 <input type="submit" value="保存">
+             </div>
+         </div>
+         </form>
+    </div>
+    <div class="container">
+    <!--新增-->
+    <div class="newplus">
+         <span>+</span>
+         <span>新增</span>
+         </div>
+    </div>
+     <!--底部-->
+   <form action="">
+        <div class="container-bottom">
+              <table id="tb_1">
+                  <thead>
+                        <tr>
+                            <th>折叠</th>
+                            <th>组织名称</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                  </thead>
+                  <!--总部-->
+                  <tbody>
+                        <tr>
+                            <td>
+                                <span>-</span>
+                            </td>
+                            <td class="section">公司总部</td>
+                            <td>/</td>
+                            <td>
+                                <span>修改</span>
+                                <span class="dele">删除</span>
+                                <!--删除确认弹出框-->
+                                <div class="dele-box">
+                                    <div>
+                                        <span>提示信息</span>
+                                        <span class="close">&times;</span>
+                                    </div>
+                                    <div>
+                                        <span class="redico"></span>
+                                        删除后将无法恢复，确认删除此栏目？
+                                    </div>
+                                    <!--确认删除-->
+                                    <div class="confirmdele">
+                                        <span>删除</span>
+                                        <span>取消</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                  </tbody>
+                  <!--总经办-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-总经办</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--会计部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-会计部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <!--子内容-->
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-会计部 - 1组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-会计部 - 2组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--工商部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-工商部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <!--子内容-->
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-工商部 - 1组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-工商部 - 2组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--财务部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-财务部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--市场部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-市场部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <!--子内容-->
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-市场部 - 1组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-市场部 - 2组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-市场部 - 3组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td class="sectionlist-list">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist-list">|-市场部 - 4组</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--人力资源部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-人力资源部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--税务部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-税务部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--外勤部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-外勤部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--企划部-->
+                  <tbody>
+                  <tr>
+                      <td class="sectionlist">
+                          |-<span>-</span>
+                      </td>
+                      <td class="section sectionlist">|-企划部</td>
+                      <td>/</td>
+                      <td>
+                          <span>修改</span>
+                          <span class="dele">删除</span>
+                          <!--删除确认弹出框-->
+                          <div class="dele-box">
+                              <div>
+                                  <span>提示信息</span>
+                                  <span class="close">&times;</span>
+                              </div>
+                              <div>
+                                  <span class="redico"></span>
+                                  删除后将无法恢复，确认删除此栏目？
+                              </div>
+                              <!--确认删除-->
+                              <div class="confirmdele">
+                                  <span>删除</span>
+                                  <span>取消</span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+        </div>
+   </form>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../houtaijs/options.js"></script>
+</body>
+</html>

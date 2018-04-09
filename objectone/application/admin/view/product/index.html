@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加专题页</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/plusproduct.css">
+    <title>增加产品</title>
+
+</head>
+<body>
+<!--增加栏目-->
+<div id="container">
+   <div class="plus-box">
+        增加产品
+    </div>
+    <form action="{:url('Product/add')}" method="post" onSubmit="return submitting();" enctype="multipart/form-data">
+    <div class="container-middle">
+        <div></div>
+            <div class="container-middle-content">
+                <ul>
+                    <li>产品名称 :&nbsp;&nbsp;</li>
+                    <li class="marleft10">
+                        <input type="text" class="width370 columnname" name="name">
+                        <input type="hidden" name="id" value="{$id}"/>
+                        <!--判断样式-->
+                    <span>请输入产品名称</span>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>产品描述 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="description">
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>产品标签 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="lable">
+                        <span>(请填写1-3个标签，请用逗号或空格分开)</span>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>SEO标题 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="seoTitle">
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>SEO关键词 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="seoKey">
+                        <span>(请填写1-3个标签，请用逗号或空格分开)</span>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">SEO描述 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="seoDesc" cols="30" rows="10" class="width375 textarea"></textarea>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>属性 :&nbsp;&nbsp;</li>
+                    <li>
+                        推荐 : <select name="recommend" >
+                        <option value="0">不推荐</option>
+                        <option value="1">1级推荐</option>
+                        <option value="2">2级推荐</option>
+                        <option value="3">3级推荐</option>
+                        <option value="4">4级推荐</option>
+                        <option value="5">5级推荐</option>
+                        <option value="6">6级推荐</option>
+                        <option value="7">7级推荐</option>
+                        <option value="8">8级推荐</option>
+                        <option value="9">9级推荐</option>
+                    </select>
+                        头条 : <select name="top" >
+                        <option value="0">非头条</option>
+                        <option value="1">1级头条</option>
+                        <option value="2">2级头条</option>
+                        <option value="3">3级头条</option>
+                        <option value="4">4级头条</option>
+                        <option value="5">5级头条</option>
+                        <option value="6">6级头条</option>
+                        <option value="7">7级头条</option>
+                        <option value="8">8级头条</option>
+                        <option value="9">9级头条</option>
+                    </select>
+                        置顶 : <select name="overhead" >
+                        <option value="0">不置顶</option>
+                        <option value="1">1级置顶</option>
+                        <option value="2">2级置顶</option>
+                        <option value="3">3级置顶</option>
+                        <option value="4">4级置顶</option>
+                        <option value="5">5级置顶</option>
+                        <option value="6">6级置顶</option>
+                        <option value="7">7级置顶</option>
+                        <option value="8">8级置顶</option>
+                        <option value="9">9级置顶</option>
+                    </select>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>状态 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="radio" id="use" value="1" name="state"><label for="use">启用</label>
+                        <input type="radio" id="useno" value="0" name="state"><label for="useno">不启用</label>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>待审核 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="radio" id="audit" value="0" name="audit"><label for="audit">待审核</label>
+                        <input type="radio" id="audit2" value="1" name="audit"><label for="audit2">已审核</label>
+                        <input type="radio" id="audit3" value="2" name="audit"><label for="audit3">设为草稿</label>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>默认服务价格 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="text"  class="width370" name="price">
+                    </li>
+                </ul>
+                <ul>
+                    <li id="hei160">缩略图 :&nbsp;&nbsp;</li>
+                    <li>
+                        <div>
+                            <input  value="未选择文件" id="text" class="width370">
+                            <input type="file" id="file1" name="bigPic">
+                            <a onclick="$('#file1').click()" class="uploading">上传大图片</a>
+                        </div>
+                        <div>
+                            <input type="text" value="未选择文件" id="text2" class="width370" >
+                            <input type="file" id="file2" name="middlePic">
+                            <a onclick="$('#file2').click()" class="uploading">上传中图片</a>
+                        </div>
+                        <div>
+                            <input type="text" value="未选择文件" id="text3" class="width370" >
+                            <input type="file" id="file3" name="smallPic">
+                            <a onclick="$('#file3').click()" class="uploading">上传小图片</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul  class="caption">
+                    <li>地区 :&nbsp;&nbsp;</li>
+                    <li>
+                        <input type="radio" id="nostart" value="0" name="isShow"><label for="nostart">不启用</label>
+                        <input type="radio" id="start" value="1" name="isShow"><label for="start">启用</label>
+                    </li>
+                </ul>
+            </div>
+        <!--底部温馨提示-->
+            <div class="warm-box">
+                <ul  class="caption">
+                    <li>选择任务流程 :&nbsp;&nbsp;</li>
+                    <li>
+                        <select name="taskId">
+                           {volist name="arr" id='vo'}
+                                <option value="{$vo['id']}">{$vo['name']}</option>
+                            {/volist}
+                        </select>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">温馨提示 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="tip" cols="30" rows="10" class="width375 textarea"></textarea>
+                    </li>
+                </ul>
+                <ul class="caption">
+                    <li  class="height230">备注 :&nbsp;&nbsp;</li>
+                    <li  class="height230">
+                        <textarea name="content" cols="30" rows="10" class="width375 textarea"></textarea>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <!--提交框-->
+    <div class="commit">
+        <input type="reset" value="重置">
+        <input type="submit" value="下一步">
+    </div>
+    </form>
+</div>
+
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/plusproduct.js"></script>
+</body>
+</html>
+</body>
+</html>

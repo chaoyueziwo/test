@@ -1,0 +1,483 @@
+/*后台管理栏目*/
+.container{
+    font-size: 14px;
+    display: flex;
+    margin-top:30px;
+    margin-left: 30px;
+}
+/*宽度20.15.50*/
+.width41{
+    width:20px;
+}
+.width38{
+    width: 15px;
+}
+.width75{
+    width: 50px;
+}
+/*input数字表单的样式*/
+input[type="text"]{
+    width:50px;
+}
+.container>div{
+    height:30px;
+    width: 105px;
+    background: #0183be;
+    color:#ffffff;
+}
+.container>div:hover{
+    cursor: pointer;
+}
+.container>div>span:first-child{
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: -3px 5px 0 10px;
+}
+.container>div>span:last-child{
+    display: inline-block;
+    height: 21px;
+    vertical-align: text-bottom;
+}
+/*竖线*/
+/*.shuxian{*/
+    /*height:30px;*/
+    /*width: 1px;*/
+    /*background: #dddddd;*/
+    /*margin: 0 10px;*/
+/*}*/
+/*设置按钮*/
+/*.container>div:last-child{*/
+    /*height: 30px;*/
+    /*width: 30px;*/
+    /*border: 1px solid #ddd;*/
+    /*background:url("../img/ht-zydh-20180103-1002.png")no-repeat -47px -37px;*/
+/*}*/
+/*底部*/
+.container-bottom{
+    margin-top:15px;
+    height:auto;
+    margin-left: 30px;
+}
+#tb_1>thead>tr>th{
+    background: #f6f6f6;
+}
+#tb_1>tbody>tr:hover{
+    background: #f6f6f6;
+}
+.container-bottom table{
+    font-size: 14px;
+    width: 98%;
+}
+/*折叠减号按钮*/
+#tb_1 tbody>tr>td:first-child>span{
+    border: 1px solid #ddd;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 15px;
+}
+.container-bottom table>tbody>tr>td:last-child>span,#tb_1 tbody>tr>td:first-child>span:hover{
+    cursor: pointer;
+}
+/*修改删除按钮颜色*/
+.container-bottom table>tbody>tr>td:last-child>span{
+    margin-right:10px;
+    color:#0183be;
+}
+
+th,td{
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/*表单数字框*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+/*颜色为0183be*/
+.lanse{
+    color:#0183be;
+}
+/*删除按钮*/
+.dele{
+    cursor: pointer;
+}
+.container-bottom-bottom{
+    height: 45px;
+    border-top:1px solid #ddd;
+    background: #f9f9f9;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 500px;
+}
+.container-bottom-bottom>div{
+    margin: 7px 40px 0 40px;
+}
+/*更新顺序*/
+.update{
+    padding:5px;
+    border: 1px solid #ddd;
+    background:#ffffff;
+}
+.container-bottom-bottom>div>ul>li{
+    margin-left: 10px;
+    display: inline-block;
+}
+/*行高31px*/
+.lineheight31{
+    line-height: 31px;
+}
+/*橙色*/
+.cheng{
+    color:#d6623d;
+ }
+/*折叠*/
+.fold{
+    display:inline-block;
+    height: 10px;
+    width: 10px;
+    border: 1px solid #ddd;
+    line-height: 10px;
+    text-align: center;
+}
+/*加减鼠标移入*/
+.fold:hover{
+    cursor: pointer;
+}
+/*小正方形前的边框*/
+.border{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-top:transparent;
+    border-right:transparent;
+    height: 10px;
+    width: 20px;
+}
+/*小正方形图标*/
+.dianico{
+    display: inline-block;
+    height: 13px;
+    width: 12px;
+    background: url("../img/ht-zydh-20180103-1002.png")no-repeat 0 -84px;
+    vertical-align: bottom;
+}
+/*遮罩层*/
+.masks,.maskss{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+/*组织盒子*/
+.tissue-box,.tissue-boxx{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    background: #fff;
+    height: 380px;
+    width: 720px;
+    box-shadow: 0 0 40px -2px #000;
+    display: none;
+}
+/*组织盒子弹窗里的头部*/
+.tissue-box>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+}
+.tissue-boxx>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+}
+/*关闭按钮*/
+.close{
+    font-size: 20px;
+    float: right;
+    line-height: 20px;
+}
+.close:hover{
+    cursor: pointer;
+}
+/*删除按钮弹窗*/
+.dele-box{
+    height: 190px;
+    width: 450px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -220px;
+    margin-left: -220px;
+    background:#fff;
+    z-index: 9999;
+    display: none;
+}
+/*删除提示信息红色感叹号图标*/
+.redico{
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    vertical-align: top;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -344px;
+}
+/*删除按钮弹窗里的文本删除后将无法恢复，文本居中*/
+.dele-box>div:nth-child(2){
+    text-align: center;
+    padding: 30px 0;
+}
+/*删除按钮弹窗，删除，取消按钮*/
+.confirmdele{
+    text-align: center;
+}
+.confirmdele>span{
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 30px;
+}
+.confirmdele>span:hover{
+    cursor: pointer;
+}
+/*确认删除按钮*/
+.confirmdele>span:first-child{
+    border: 1px solid #0183be;
+    color:#fff;
+    background: #0183be;
+    margin-right:20px;
+}
+/*取消按钮*/
+.confirmdele>span:last-child{
+    border: 1px solid #ddd;
+}
+/*删除按钮弹窗里的头部*/
+.dele-box>div:first-child{
+    background: #f6f6f6;
+    padding:10px 20px;
+    color:#818181;
+}
+/*弹窗中间内容*/
+.tissue-box-middle{
+    padding:20px 50px;
+}
+.tissue-box-middle>div{
+    display: inline-block;
+    vertical-align:top;
+}
+.tissue-box-middle>div:last-child{
+    width: 85%;
+    margin-left:2%;
+}
+/*组织名称各部门颜色*/
+.section{
+   color:#0183be;
+}
+.section:hover{
+    cursor: pointer;
+}
+/*组织名称各部门右内边距*/
+.sectionlist>td:first-child{
+    padding-left: 17px;
+}
+/*组织名称部门子部门*/
+.sectionlist-list>td:first-child{
+    padding-left:34px;
+}
+/*小组,*/
+.sectionlist-list>td:first-child,.sectionlist-list2>td:first-child,.sectionlist-list3>td:first-child,
+.sectionlist-list4>td:first-child,.sectionlist-list5>td:first-child{
+    padding-left:34px;
+}
+/*部门成员*/
+.sectionlist-list-list>td:first-child,.sectionlist-list-list2>td:first-child,.sectionlist-list-list3>td:first-child,
+.sectionlist-list-list4>td:first-child,.sectionlist-list-list5>td:first-child{
+    padding-left: 50px;
+}
+.tissue-box-middle>div>div{
+    margin-bottom: 10px;
+}
+.tissue-box-middle>div:first-child>div{
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+}
+.tissue-box-middle input[type="text"]{
+    height: 30px;
+    width: 190px;
+    border:1px solid #ddd;
+    padding: 0 10px;
+}
+/*选项框，设置相对定位*/
+.option-box{
+    display: inline-block;
+    vertical-align: top;
+}
+.option-box>select{
+    height: 30px;
+    width: 212px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    line-height: 30px;
+}
+.option-box>select:hover{
+    cursor: pointer;
+}
+.option-box>div:first-child{
+    display: inline-block;
+    vertical-align:middle;
+}
+/*上级组织弹窗*/
+.option-box-list{
+    position: absolute;
+    top: 30px;
+    left: -1px;
+    border: 1px solid #ddd;
+    width: 210px;
+    background: #fff;
+    display:none;
+}
+.option-box-list>div{
+    padding-left: 10px;
+}
+.option-box-list>div:hover{
+    cursor: pointer;
+    background: #f6f6f6;
+}
+/*上级组织下拉箭头*/
+.downico{
+    height: 15px;
+    width: 15px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 1px -55px;
+    float:right;
+    margin-top: 8px;
+}
+.searchico{
+    position: absolute;
+    right:15px;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    background: url("../img/ht-yctc-20180131-1734.png")no-repeat 0 -124px;
+    float:right;
+    margin-top: 8px;
+}
+/*负责人*/
+.principal{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    float: right;
+}
+/*负责人里的div及最后一个div里的div*/
+.principal>div,.principal>div:last-child>div{
+    display: inline-block;
+    vertical-align:middle;
+}
+/*负责人搜索框文本框*/
+.principal input[type="text"]{
+    border:1px solid #ddd;
+    padding: 0 10px;
+    width: 210px;
+}
+/*负责人弹窗*/
+.principal-list{
+    position: absolute;
+    width: 210px;
+    background: #fff;
+    border: 1px solid #ddd;
+    right: 0;
+    top: 30px;
+    display: none;
+}
+.principal-list>span{
+    display: block;
+    padding-left: 10px;
+    line-height: 30px;
+}
+.principal-list>span:hover{
+    cursor: pointer;
+    background:#f6f6f6;
+}
+/*备注输入框*/
+.remarks{
+    resize: none;
+    width: 99.5%;
+    border: 1px solid #ddd;
+    height: 140px;
+}
+/*弹窗取消，保存按钮*/
+.tissue-box-bottom{
+    text-align: center;
+}
+.cancel{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ddd;
+}
+/*保存按钮*/
+.tissue-box-bottom>input{
+    border: 1px solid #ddd;
+    background: #0183be;
+    color: #fff;
+    height: 32px;
+    width: 101px;
+    vertical-align: top;
+    margin-left: 20px;
+}
+.tissue-box-bottom>input,.searchico,.layui-table-body .laytable-cell-1-fold>span,.layui-table-body .laytable-cell-1-experience>span,.cancel:hover{
+    cursor: pointer;
+}
+#search_auto{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    border: 1px solid #ddd;
+    width: 220px;
+    height: 30px;
+    background: #fff;
+    line-height: 30px;
+    padding-left: 10px;
+    display: none;   
+}
+#search_auto>span{
+    display: block;
+}
+#search_auto>span:hover{
+    cursor: pointer;
+    background:#f6f6f6;
+}
+#search_auto2{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    border: 1px solid #ddd;
+    width: 220px;
+    height: 30px;
+    background: #fff;
+    line-height: 30px;
+    padding-left: 10px;
+    display: none;   
+}
+#search_auto2>span{
+    display: block;
+}
+#search_auto2>span:hover{
+    cursor: pointer;
+    background:#f6f6f6;
+}

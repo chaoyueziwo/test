@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下单页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/indexmedia.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/top.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/menu.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/order.css">
+</head>
+<body>
+<div id="container">
+    <!--头部-->
+   {include file="common/orderTop" /}
+        <!--中间内容-->
+        <div class="nav-box">
+            <!--内容导航栏-->
+            <div>
+                <!--位置图标-->
+                <span class="locationico"></span>
+                <span> <a href="#">首页</a> ></span>
+                <span> <a href="#">确认订单信息</a></span>
+            </div>
+            <!--订单列表-->
+            <div class="order-box">
+                <div>
+                   <div>
+                       <span>服务名称</span>
+                       <span>所选类型</span>
+                   </div>
+                   <div>
+                       <span>单价</span>
+                       <span>数量</span>
+                       <span>合计(元)</span>
+                       <span>操作</span>
+                   </div>
+                </div>
+                <!--订单明细-->
+                <form method="post" action="__WEB__/index/ShopCart/pay">
+                <ul id="list-box">
+                    <!--订单框-->
+                    {volist name="shopCarts" id='vo' key="k"}
+                    <li class="order-detail-box">
+                    <div class="order-detail">
+                    <div>
+                    <div>
+                    <div class="order-photo">
+                    <img src="__ROOT__/{$vo.smallPic}" style="width: 100px;height: 100px;border-radius:50px">
+                    </div>
+                    <span class="font16 cbcb4">{$vo.productName}</span>
+                    </div>
+                    <div>
+                        <!-- {for start="0" end="$k"} -->
+                 <div>{$arr[0][0]['name']} : {$arrs[1]['name']}</div>
+                 <div>{$arr[0][1]['name']} : {$arrs[0]['name']}</div>
+                 {if condition="$arr[0][2] neq null"}
+                     <div>{$arr[0][2]['name']} : {$arrs[2]['name']}</div>
+                     {else/}
+                    {/if}
+                    
+                    </div>
+                    </div>
+                    <div>
+                    <div class="price">&yen;<span>{$vo.price}</span>元</div>
+                    <div class="width27">
+                    <span class="min" onclick="ReductionInfo(this)">-</span>
+                    <input type="text" onchange="changeVal(this)" value="1" class="count" maxlength="2"/>
+                   <!--  //onkeyup="this.value=this.value.replace(/[^\d]/g, "")" onafterpaste="this.value=this.value.replace(/[^\d]/g, "")" -->
+                    <span class="plus" onclick="addInfo(this)">+</span>
+                    </div>
+                    <div class="invoice-box">
+                    <div><b>&yen;<span class="smilltotal">{$vo.price}</span>元</b></div>
+                    <div>
+                    <input type="checkbox"  id="invoice1" name="isInvoice" value="1"></input>
+                    <label for="invoice1">开发票</label>
+                    </div>
+                    </div>
+                    <!-- //删除按钮 -->
+                    <div class="delete">
+                    <span class="deleteall" onclick="deleteThis(this)">删除</span>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- //优惠券 -->
+                    <div class="discounts">
+                    <div>优惠券</div>
+                    <div>
+                    <span>不使用优惠券</span>
+                    <span class="downico"></span>
+                    </div>
+                    </div>
+                    <input type="hidden" class="propertId" name="productId" value="{$vo.propertId}" /> 
+                    <input type="hidden" class="price" name="payPrice" value="{$vo.price}" /> 
+                    <input type="hidden" class="proQuantity" name="proQuantity" value="{$vo.proQuantity}" /> 
+                    <input type="hidden" class="attrId" name="valueId" value="{$vo.attrId}" />
+                    </li>
+                    {/volist}
+                </ul>
+                    <!--合计，提交订单-->
+                <div class="total">
+                    <div>
+                        <div>
+                            <div>合计金额 :</div>
+                            <div class="summation">&yen;<span>{$vo.price}</span>元</div>
+                        </div>
+                        <div>
+                            <div>优惠券折扣 :</div>
+                            <div>&yen;0元</div>
+                        </div>
+                        <div>
+                            <div>应付总额 :</div>
+                            <!--总计-->
+                            <div class="alltotal">&yen;<span id="price">{$vo.price}</span>元</div>
+                        </div>
+                    </div>
+                </div>
+                    <!--提交订单-->
+                <div class="sub">
+
+                    <input type="submit" value="提交订单">
+                </div>
+                </form>
+            </div>
+        </div>
+        <!--中间结束-->
+        <!--底部资质认证导航栏-->
+        <div class="footer-navbar">
+            <div>
+                <div>
+                    <div class="footernavico1"></div>
+                    <div>
+                        <div>资质认证</div>
+                        <div>服务商100%实名审核认证</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico2"></div>
+                    <div>
+                        <div>支付安全</div>
+                        <div>明码标价支付及信息安全</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico3"></div>
+                    <div>
+                        <div>保险赔付</div>
+                        <div>太平洋保险提供担保赔付</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico4"></div>
+                    <div>
+                        <div>售后无忧</div>
+                        <div>服务出问题客服经理全程跟进</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="footer-box martop60px">
+            <!--热门搜索框-->
+            <div class="footer-box-search">
+                <!--常见问题-->
+                <div class="footer-box-search-middle">
+                    <span><b>常见问题</b></span>
+                    <span class="marleft93"><b>售后相关</b></span>
+                    <span class="marleft94"><b>关于聚惠</b></span>
+                    <ul>
+                        <li><a href="#">新手帮助</a></li>
+                        <li><a href="#">注册公司</a></li>
+                        <li><a href="#">了解我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">支付帮助</a></li>
+                        <li><a href="#">注册商标</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                    </ul>
+                </div>
+                <!--服务支持-->
+                <div class="footer-box-search-right">
+                    <div>
+                        <span><b>服务支持</b></span>
+                        <p class="phonenum">400-718-9622</p>
+                        <p class="date">&nbsp;周一至周日8:00-22:00</p>
+                    </div>
+                    <!--在线咨询-->
+                    <div>
+                        <div class="font16"><b>在线咨询</b></div>
+                        <span class="qqconsult"><b>QQ在线咨询</b></span>
+                    </div>
+                    <div>
+                        <span class="font16"> &nbsp;<b>微信咨询</b></span>
+                        <!--微信图片-->
+                        <div class="wechart">
+                            <img src="__ROOT__/static/product/img/ewm-20171213-1651.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP16046474号-16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__ROOT__/static/product/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/product/js/menu.js"></script>
+<script src="__ROOT__/static/product/js/order.js"></script>
+<script>
+    window.onload=function(){price(); }
+    function price(){
+        var price = $("#price").text();
+        $(".price").val(price);
+
+    }
+</script>
+</script>
+</body>
+</html>

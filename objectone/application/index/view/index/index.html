@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>聚惠企业</title>
+    <link rel="stylesheet" href="__ROOT__/static/index/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/index/css/index.css">
+    <link rel="stylesheet" href="__ROOT__/static/index/css/indexeffect.css">
+    <link rel="stylesheet" href="__ROOT__/static/index/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="__ROOT__/static/index/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/index/css/top.css">
+    <!--<link rel="stylesheet" href="css/indexmedia.css">-->
+    <style>
+    </style>
+</head>
+<body>
+<!--外面大框-->
+<div id="container">
+     {include file="common/top" /}
+        
+                <div class="server-list-box">
+                    <!--所有服务列表下面菜单-->
+                    <div class="server-list-box-left">
+                         {volist name="type" id="v" key="k"}
+                             <div class="server-hover-{$k}">
+                                 <ul>
+                                     {if condition="$k heq 1"} 
+                                     <li class="companyico"></li>
+                                     {elseif condition="$k heq 2"/}
+                                     <li class="accountantico"></li>
+                                     {elseif condition="$k heq 3"/}
+                                     <li class="equityico"></li>
+                                     {elseif condition="$k heq 4"/}
+                                     <li class="socialico"></li>
+                                     {elseif condition="$k heq 5"/}
+                                     <li class="aptitudeico"></li>
+                                     {elseif condition="$k heq 6"/}
+                                     <li class="specialico"></li>
+                                     {/if}
+                                     <li class="fg mar0">{$v.name}</li>
+                                     <li class="leftarrows"></li>
+                                 </ul>
+                                 <ul>
+<!--                                      <li><a href="#">公司注册</a></li>
+                                     <li><a href="#">公司变更</a></li>
+                                     <li><a href="#">外贸公司</a></li> -->
+                                     {volist name="v.overheads" id="v2" key="k2"}
+
+                                        <li><a href="__WEB__/index/Index/productDetail/id/{$v2.typeId}">{$v2.productName}</a></li>
+
+                                     {/volist}
+                                 </ul>
+                             </div>
+                         {/volist}
+                    </div>
+                    <!--所有服务列表弹出框-->
+                    <div class="server-list-box-right">
+                        <!--可显示隐藏的盒子-->
+
+                    {volist name="type" id="v" key="k"}
+                        <!-- <h1>wangliang</h1> -->
+
+                         {if condition="$k heq 1"} 
+
+                        <!--第1个列表-->
+                        <div class="server-list-box-right-list-1 server-none-1">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                           <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/home/login/img/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/home/login/img/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/home/login/img/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                         {elseif condition="$k heq 2"/}
+
+                        <div class="server-list-box-right-list-1 server-none-2">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                            <!--左边区域结束-->
+                            <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                         {elseif condition="$k heq 3"/}
+                        <!--第3个隐藏列表-->
+                        <div class="server-list-box-right-list-1 server-none-3">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                            
+                            <!--左边区域结束-->
+                            <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {elseif condition="$k heq 4"/}
+
+                        <!--第4个隐藏列表-->
+                        <div class="server-list-box-right-list-1 server-none-4">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                            <!--左边区域结束-->
+                            <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {elseif condition="$k heq 5"/}
+
+                        <!--第5个隐藏列表-->
+                        <div class="server-list-box-right-list-1 server-none-5">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                            <!--左边区域结束-->
+                            <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                        {elseif condition="$k heq 6"/}
+                        <!--第6个隐藏列表-->
+                        <div class="server-list-box-right-list-1 server-none-6">
+                            <!--导航条列表-->
+                            <div class="server-list-right">
+
+
+                                {volist name="v.typeProducts" id="v2" key="k2"}
+
+                                    {if condition="$k2 heq 1"} 
+                                        <div class="server-list-right-top">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li>
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+                                     {else /}
+
+                                        <div class="server-list-right-top martop10px">
+                                            <div>
+                                                <span class="font16"><b>{$v2.name}</b></span>
+                                            </div>
+                                            <div class="limited borderbot">
+                                                <ul>
+                                                    {volist name="v2.products" id="v3" key="k3"}
+
+                                                        {if condition="$k3 heq 5 or $k3 heq 9 or $k3 heq 13 or $k3 heq 17"} 
+                                                            </ul>
+                                                            <ul>
+                                                        {/if}
+
+                                                        {if condition="$v3.recommend > 0"} 
+                                                   <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}" class="redfont">{$v3.productName}</a></li> 
+                                                        {else /}
+                                                            <li><a href="__WEB__/index/Index/productDetail/id/{$v3.productId}">{$v3.productName}</a></li>
+                                                        {/if}
+                                                    {/volist}
+                                                </ul>
+<!--                                                 <ul class="marbottom10">
+                                                    <li><a href="#">协会、商会注册</a></li>
+                                                </ul> -->
+                                            </div>
+                                        </div>
+
+                                     {/if}
+                                {/volist}
+                            </div>
+                            <!--左边区域结束-->
+                            <div class="server-list-left">
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top1.png"></a>
+                                </div>
+                                <div class="borderbot">
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top2.png"></a>
+                                </div>
+                                <div>
+                                    <a href="#"><img src="__ROOT__/static/index/img/image/top3.png"></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                         {/if}
+
+                    {/volist}
+                    
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--聚惠企业所有服务分类结束-->
+        <!--轮播-->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="__ROOT__/static/index/img/images/lunbo5.png" ></div>
+                <div class="swiper-slide"><img src="__ROOT__/static/index/img/images/lunbo5.png" ></div>
+                <div class="swiper-slide"><img src="__ROOT__/static/index/img/images/lunbo5.png" ></div>
+                <div class="swiper-slide"><img src="__ROOT__/static/index/img/images/lunbo5.png" ></div>
+                <div class="swiper-slide"><img src="__ROOT__/static/index/img/images/lunbo5.png" ></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                <span swiper-pagination-bullet></span>
+                <span swiper-pagination-bullet></span>
+                <span swiper-pagination-bullet></span>
+                <span swiper-pagination-bullet></span>
+                <span swiper-pagination-bullet></span>
+            </div>
+        </div>
+        <!--轮播结束-->
+        <!--中间主体内容-->
+        <div id="nav-box">
+            <!--3个菜单栏-->
+            <div class="nav-box-list">
+                <!--左-->
+                <div class="nav-box-list-left">
+                      <span>领优惠券</span>
+                      <p>通用优惠券，可用于公司所有业务（仅可领取一次）</p>
+                      <ul>
+                          <!--第一个li占满剩余空间-->
+                          <li class="redfont fg font18px">&yen;50元</li>
+                          <!--receive立即领取-->
+                          <a href="#"><li class="receive">立即领取</li></a>
+                      </ul>
+                </div>
+                <!--中-->
+                <div class="nav-box-list-left">
+                    <span>创业套餐</span>
+                    <p>深圳公司注册 <span class="redfont">+</span> 三章办理 <span class="redfont">+</span> 一年做账报税</p>
+                    <ul>
+                        <!--第一个li占满剩余空间-->
+                        <li class=" fg"><span class="redfont font18px">仅 &yen;2600元</span>&nbsp;&nbsp;&nbsp;<s>(原价：￥3200元)</s></li>
+                        <!--receive立即领取-->
+                        <a href="#"><li class="receive">查看详情</li></a>
+                    </ul>
+                </div>
+                <!--右-->
+                <div class="nav-box-list-left">
+                    <span>超值服务</span>
+                    <p>代办记账报税（让财税公司来帮您解决报税问题）</p>
+                    <ul>
+                        <!--第一个li占满剩余空间-->
+                        <li class="fg"><span class="redfont font18px">&yen; 100元起</span>&nbsp;&nbsp;&nbsp;(每月)</li>
+                        <!--receive立即领取-->
+                        <a href="#"><li class="receive">查看详情</li></a>
+                    </ul>
+                </div>
+            </div>
+            <!--3个菜单栏结束-->
+            <!--创业第一步Entrepreneurship-->
+            <div class="entrepreneurship-box">
+                <!--创业第一步，你所需的服务-->
+               <div class="entrepreneurship-box-top">
+                   <h3>创业第一步，你所需的服务</h3>
+                   <p>公司注册、代理记账、商标注册、人事社保等事物--聚惠帮您一站解决</p>
+               </div>
+                <!--创业第一步中间-->
+               <div class="entrepreneurship-box-middle">
+                   <!--工商注册圆点图-->
+                   <div class="entrepreneurship-box-middle-yuan">
+                       <ul>
+                           <li class="linetypeli1">工商注册</li>
+                           <li class="linetypeli2">工商变更</li>
+                           <li class="linetypeli3">知识产权</li>
+                           <li class="linetypeli4">资质办理</li>
+                           <li class="linetypeli5">税务代理</li>
+                       </ul>
+                       <!--线型图-->
+                       <div class="linetype">
+                           <div class="linetype1"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                           <div class="linetype2"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                           <div class="linetype3"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                           <div class="linetype4"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                           <div class="linetype5"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                       </div>
+                   </div>
+                   <!--工商注册列表图1-->
+                   <div class="entrepreneurship-box-bottom linetypelist1">
+                       <!--左边背景图-->
+                         <div class="entrepreneurship-box-bottom-left">
+                            <!--工商注册-->
+                             <div>工商注册</div>
+                             <ul>
+                                 <li>&nbsp;&nbsp;极速响应</li>
+                                 <li>&nbsp;&nbsp;中国领先的会计服务平台</li>
+                                 <li>&nbsp;&nbsp;专属顾问一对一服务</li>
+                                 <li>&nbsp;&nbsp;价格透明，无隐藏收费</li>
+                             </ul>
+                         </div>
+                       <!--右边菜单栏-->
+                         <div class="entrepreneurship-box-bottom-right">
+                             <div>
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_01.png"></div>
+                                 <p  class="font18px">深圳公司注册</p>
+                                 <p class="redfont"><span>0</span>元公益注册</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="marleft6px">
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_02.png"></div>
+                                 <p class="font18px">香港公司注册</p>
+                                 <p class="redfont"><span>200</span>元起</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="marleft6px">
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_03.png"></div>
+                                 <p class="font18px">外贸公司注册</p>
+                                 <p class="redfont"><span>200</span>元起</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="marleft6px">
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_04.png"></div>
+                                 <p class="font18px">广东公司注册</p>
+                                 <p class="redfont"><span>200</span>元起</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="martop10px">
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_05.png"></div>
+                                 <p class="font18px">无区域公司注册</p>
+                                 <p class="redfont"><span>200</span>元起</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="martop10px marleft6px">
+                                 <div><img src="__ROOT__/static/index/img/image/sy-2_06.png"></div>
+                                 <p class="font18px">集团、协会注册</p>
+                                 <p  class="redfont"><span>200</span>元起</p>
+                                 <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                                 <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                             </div>
+                             <div class="martop10px marleft6px freename">
+                                 <div class="font18px">
+                                     <b class="marlf10">免费核名</b>
+                                 </div>
+                                     <p>查询公司是否被占用</p>
+                                     <p>人工查询相比直接申请注册</p>
+                                     <p>成功率提高98.6%</p>
+                                 <a href="#"><div class="detail try"><b>试一试</b></div></a>
+                             </div>
+                             <div class="martop10px marleft6px freename">
+                                 <div class="font18px">
+                                     <b>注册公司流程</b>
+                                 </div>
+                                 <p>对注册公司的流程、资料</p>
+                                 <p>各类注意事项详解</p>
+                                 <p>提高公司注册的成功率</p>
+                                 <a href="#"><div class="detail try"><b>详细介绍</b></div></a>
+                             </div>
+                         </div>
+                   </div>
+                   <!--工商变更2-->
+                   <div class="entrepreneurship-box-bottom linetypelist2">
+                       <!--左边背景图-->
+                       <div class="entrepreneurship-box-bottom-left entrepreneurship2">
+                           <!--工商注册-->
+                           <div>工商变更</div>
+                           <ul>
+                               <li>&nbsp;&nbsp;明码标价，服务范围清晰</li>
+                               <li>&nbsp;&nbsp;专员与您无缝对接</li>
+                               <li>&nbsp;&nbsp;服务不满意时可更换代理人</li>
+                               <li>&nbsp;&nbsp;理由合理时可享受全额退款</li>
+                           </ul>
+                       </div>
+                       <!--右边菜单栏-->
+                       <div class="entrepreneurship-box-bottom-right">
+                           <div>
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_09.png"></div>
+                               <p  class="font18px">公司名变更</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_10.png"></div>
+                               <p class="font18px">法人股东变更</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_11.png"></div>
+                               <p class="font18px">地址变更</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_12.png"></div>
+                               <p class="font18px">增资、减资</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_13.png"></div>
+                               <p class="font18px">进出口权办理</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_14.png"></div>
+                               <p class="font18px">公司证件遗失补办</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_15.png"></div>
+                               <p class="font18px">执照延期</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_16.png"></div>
+                               <p class="font18px">公司买卖</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                       </div>
+                   </div>
+                   <!--知识产权3-->
+                   <div class="entrepreneurship-box-bottom linetypelist3">
+                       <!--左边背景图-->
+                       <div class="entrepreneurship-box-bottom-left entrepreneurship3">
+                           <!--工商注册-->
+                           <div>知识产权</div>
+                           <ul>
+                               <li>&nbsp;&nbsp;快捷申请，极速响应</li>
+                               <li>&nbsp;&nbsp;急客户之急，做客户之需</li>
+                               <li>&nbsp;&nbsp;高性价比，极速办理</li>
+                               <li>&nbsp;&nbsp;资质顾问，一对一服务</li>
+                           </ul>
+                       </div>
+                       <!--右边菜单栏-->
+                       <div class="entrepreneurship-box-bottom-right">
+                           <div>
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_17.png"></div>
+                               <p class="font18px">国内商标申请</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_18.png"></div>
+                               <p class="font18px">香港商标注册</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_19.png"></div>
+                               <p class="font18px">海外商标申请</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_20.png"></div>
+                               <p class="font18px">国内商标设计</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_21.png"></div>
+                               <p class="font18px">外观专利申请</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_22.png"></div>
+                               <p class="font18px">发明专利申请</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_23.png"></div>
+                               <p class="font18px">实用新型专利申请</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_24.png"></div>
+                               <p class="font18px">软件著作权</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                       </div>
+                   </div>
+                   <!--资质办理4-->
+                   <div class="entrepreneurship-box-bottom linetypelist4">
+                       <!--左边背景图-->
+                       <div class="entrepreneurship-box-bottom-left entrepreneurship4">
+                           <!--工商注册-->
+                           <div>资质办理</div>
+                           <ul>
+                               <li>&nbsp;&nbsp;高性价比，急速办理</li>
+                               <li>&nbsp;&nbsp;节约客户时间</li>
+                               <li>&nbsp;&nbsp;给企业一个合法经营的身份</li>
+                               <li>&nbsp;&nbsp;全程跟进，随时可查</li>
+                           </ul>
+                       </div>
+                       <!--右边菜单栏-->
+                       <div class="entrepreneurship-box-bottom-right">
+                           <div>
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_25.png"></div>
+                               <p class="font18px">人力资源证</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_26.png"></div>
+                               <p class="font18px">劳务派遣证</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_27.png"></div>
+                               <p class="font18px">食品流通许可证</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_28.png"></div>
+                               <p class="font18px">道路运输许可证</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_29.png"></div>
+                               <p class="font18px">社保开户</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_30.png"></div>
+                               <p class="font18px">公积金开户</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_31.png"></div>
+                               <p class="font18px">新四板</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_32.png"></div>
+                               <p class="font18px">ICP经营许可证</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                       </div>
+                   </div>
+                   <!--税务代理5-->
+                   <div class="entrepreneurship-box-bottom linetypelist5">
+                       <!--左边背景图-->
+                       <div class="entrepreneurship-box-bottom-left entrepreneurship5">
+                           <!--工商注册-->
+                           <div>税务代理</div>
+                           <ul>
+                               <li>&nbsp;&nbsp;价格透明，无隐藏收费</li>
+                               <li>&nbsp;&nbsp;节省企业经营成本</li>
+                               <li>&nbsp;&nbsp;账务处理全面实行电算化</li>
+                               <li>&nbsp;&nbsp;专业服务、合理筹划</li>
+                           </ul>
+                       </div>
+                       <!--右边菜单栏-->
+                       <div class="entrepreneurship-box-bottom-right">
+                           <div>
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_33.png"></div>
+                               <p class="font18px">记账报税</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_34.png"></div>
+                               <p class="font18px">申请一般纳税人</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_35.png"></div>
+                               <p class="font18px">整理旧账补账</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_36.png"></div>
+                               <p class="font18px">汇算清缴</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_37.png"></div>
+                               <p class="font18px">税务筹划</p>
+                               <p class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_38.png"></div>
+                               <p class="font18px">异常税务处理</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_39.png"></div>
+                               <p class="font18px">代购发票</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                           <div class="martop10px marleft6px">
+                               <div><img src="__ROOT__/static/index/img/image/sy-2_40.png"></div>
+                               <p class="font18px">审计报告</p>
+                               <p  class="redfont"><span>200</span>元起</p>
+                               <a href="#"><div class="detail"><b>详细介绍</b></div></a>
+                               <a href="#"><div class="consult"><b>在线咨询</b></div></a>
+                           </div>
+                       </div>
+                   </div>
+                   <!--视频区域-->
+                   <div class="video-box">
+                       <!--头部-->
+                       <div class="entrepreneurship-box-top">
+                           <h3>让企业瘦身健体，集中精力谋企业</h3>
+                           <p class="font16px">乔布斯--苹果之所以只做创新不做生产，是因为我们明白，要让企业高效运作，</p>
+                           <p class="font16px">就应把精力集中在主业上，而将企业不擅长的事务外包出去。</p>
+                       </div>
+                       <!--视频切换列表-->
+                       <div class="video-box-middle">
+                             <div class="entrepreneurship-box-middle-yuan video-box-middle-yuan">
+                                 <ul>
+                                      <li class="linetypeli6">创业者(李莉莉)</li>
+                                      <li class="linetypeli7">企业家(李逍遥)</li>
+                                      <li class="linetypeli8">投资人(韩梅梅)</li>
+                                      <li class="linetypeli9">合伙人(王小明)</li>
+                                      <li class="linetypeli10">企业家(钱多多)</li>
+                                 </ul>
+                           <!--线型图-->
+                             <div class="linetype linetypelist">
+                                 <div class="linetype6"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                                 <div class="linetype7"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                                 <div class="linetype8"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                                 <div class="linetype9"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                                 <div class="linetype10"><img src="__ROOT__/static/index/img/image/sy-0002_02.png"></div>
+                             </div>
+                             </div>
+                             <!--视频底部设置相对定位-->
+                             <div class="video-box-footer">
+                                 <!--视口绝对定位z-index为2-->
+                                 <div class="video-box-footer-list">
+                                     <!--创业者-->
+                                     <div class="video-box-footer-list-1 linetypelist6">
+                                       <!--视频-->
+                                       <div>
+                                           <img src="__ROOT__/static/index/img/image/20180102090146.png">
+                                           <!--播放按钮-->
+                                           <div class="playbtn">
+                                               <img src="__ROOT__/static/index/img/images/sy-bftb-20171214-1759.png" >
+                                           </div>
+                                           <!--遮罩层-->
+                                           <div id="mask" class="mask">
+                                           </div>
+                                           <!--视频-->
+                                           <div class="maskvideo">
+                                               <video src="video/movie.MP4" controls id="play"></video>
+                                           </div>
+                                       </div>
+                                       <!--视频文字-->
+                                       <div class="video-character">
+                                            <p>
+                                                <img src="__ROOT__/static/index/img/images/sy-20171215-0950.png">
+                                                <b>在刚创办公司时，琐碎的事情特别多</b>
+                                            </p>
+                                           <p>
+                                               <b>所以我将公司注册、商标注册、财税申报等事宜</b>
+                                           </p>
+                                           <p>
+                                               <b>都交给专业的财税代理公司去做</b>
+                                           </p>
+                                           <p>
+                                               <b>这不仅仅降低了公司的成本负担</b>
+                                           </p>
+                                           <p>
+                                               <b>同时也让公司能将精力集中在业务开拓上&nbsp;&nbsp;&nbsp;</b>
+                                               <img src="__ROOT__/static/index/img/images/sy-20171215- 0950.png" class="imgvertical">
+                                           </p>
+                                           <p class="text-align" id="martop40px">
+                                               <b>北京智慧科技发展有限公司</b>
+                                           </p>
+                                           <p class="text-align">
+                                               <b>创始人&CEO
+                                               <span>李 莉 莉</span>
+                                               </b>
+                                           </p>
+                                       </div>
+                                    </div>
+                                     <!--企业家-->
+                                     <div class="video-box-footer-list-1 linetypelist7">
+                                         <!--视频-->
+                                         <div>
+                                             <img src="__ROOT__/static/index/img/image/20180102090146.png">
+                                             <!--播放按钮-->
+                                             <div class="playbtn">
+                                                 <img src="__ROOT__/static/index/img/images/sy-bftb-20171214-1759.png">
+                                             </div>
+                                         </div>
+                                         <!--视频文字-->
+                                         <div class="video-character">
+                                             <p>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215-0950.png">
+                                                 <b>在刚创办公司时，琐碎的事情特别多</b>
+                                             </p>
+                                             <p>
+                                                 <b>所以我将公司注册、商标注册、财税申报等事宜</b>
+                                             </p>
+                                             <p>
+                                                 <b>都交给专业的财税代理公司去做</b>
+                                             </p>
+                                             <p>
+                                                 <b>这不仅仅降低了公司的成本负担</b>
+                                             </p>
+                                             <p>
+                                                 <b>同时也让公司能将精力集中在业务开拓上&nbsp;&nbsp;&nbsp;</b>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215- 0950.png" class="imgvertical">
+                                             </p>
+                                             <p class="text-align" id="martop40px2">
+                                                 <b>北京智慧科技发展有限公司</b>
+                                             </p>
+                                             <p class="text-align">
+                                                 <b>企业家&CEO
+                                                     <span>李 逍 遥</span>
+                                                 </b>
+                                             </p>
+                                         </div>
+                                     </div>
+                                     <!--投资人-->
+                                     <div class="video-box-footer-list-1 linetypelist8">
+                                         <!--视频-->
+                                         <div>
+                                             <img src="__ROOT__/static/index/img/image/20180102090146.png">
+                                             <!--播放按钮-->
+                                             <div class="playbtn">
+                                                 <img src="__ROOT__/static/index/img/images/sy-bftb-20171214-1759.png">
+                                             </div>
+                                         </div>
+                                         <!--视频文字-->
+                                         <div class="video-character">
+                                             <p>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215-0950.png">
+                                                 <b>在刚创办公司时，琐碎的事情特别多</b>
+                                             </p>
+                                             <p>
+                                                 <b>所以我将公司注册、商标注册、财税申报等事宜</b>
+                                             </p>
+                                             <p>
+                                                 <b>都交给专业的财税代理公司去做</b>
+                                             </p>
+                                             <p>
+                                                 <b>这不仅仅降低了公司的成本负担</b>
+                                             </p>
+                                             <p>
+                                                 <b>同时也让公司能将精力集中在业务开拓上&nbsp;&nbsp;&nbsp;</b>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215- 0950.png" class="imgvertical">
+                                             </p>
+                                             <p class="text-align" id="martop40px3">
+                                                 <b>北京智慧科技发展有限公司</b>
+                                             </p>
+                                             <p class="text-align">
+                                                 <b>投资人&CEO
+                                                     <span>韩 梅 梅</span>
+                                                 </b>
+                                             </p>
+                                         </div>
+                                     </div>
+                                     <!--合伙人-->
+                                     <div class="video-box-footer-list-1 linetypelist9">
+                                         <!--视频-->
+                                         <div>
+                                             <img src="__ROOT__/static/index/img/image/20180102090146.png">
+                                             <!--播放按钮-->
+                                             <div class="playbtn">
+                                                 <img src="__ROOT__/static/index/img/images/sy-bftb-20171214-1759.png">
+                                             </div>
+                                         </div>
+                                         <!--视频文字-->
+                                         <div class="video-character">
+                                             <p>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215-0950.png">
+                                                 <b>在刚创办公司时，琐碎的事情特别多</b>
+                                             </p>
+                                             <p>
+                                                 <b>所以我将公司注册、商标注册、财税申报等事宜</b>
+                                             </p>
+                                             <p>
+                                                 <b>都交给专业的财税代理公司去做</b>
+                                             </p>
+                                             <p>
+                                                 <b>这不仅仅降低了公司的成本负担</b>
+                                             </p>
+                                             <p>
+                                                 <b>同时也让公司能将精力集中在业务开拓上&nbsp;&nbsp;&nbsp;</b>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215- 0950.png" class="imgvertical">
+                                             </p>
+                                             <p class="text-align" id="martop40px4">
+                                                 <b>北京智慧科技发展有限公司</b>
+                                             </p>
+                                             <p class="text-align">
+                                                 <b>合伙人&CEO
+                                                     <span>王小明</span>
+                                                 </b>
+                                             </p>
+                                         </div>
+                                     </div>
+                                     <!--企业家-->
+                                     <div class="video-box-footer-list-1 linetypelist10">
+                                         <!--视频-->
+                                         <div>
+                                             <img src="__ROOT__/static/index/img/image/20180102090146.png">
+                                             <!--播放按钮-->
+                                             <div class="playbtn">
+                                                 <img src="__ROOT__/static/index/img/images/sy-bftb-20171214-1759.png">
+                                             </div>
+                                         </div>
+                                         <!--视频文字-->
+                                         <div class="video-character">
+                                             <p>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215-0950.png">
+                                                 <b>在刚创办公司时，琐碎的事情特别多</b>
+                                             </p>
+                                             <p>
+                                                 <b>所以我将公司注册、商标注册、财税申报等事宜</b>
+                                             </p>
+                                             <p>
+                                                 <b>都交给专业的财税代理公司去做</b>
+                                             </p>
+                                             <p>
+                                                 <b>这不仅仅降低了公司的成本负担</b>
+                                             </p>
+                                             <p>
+                                                 <b>同时也让公司能将精力集中在业务开拓上&nbsp;&nbsp;&nbsp;</b>
+                                                 <img src="__ROOT__/static/index/img/images/sy-20171215- 0950.png" class="imgvertical">
+                                             </p>
+                                             <p class="text-align" id="martop40px5">
+                                                 <b>北京智慧科技发展有限公司</b>
+                                             </p>
+                                             <p class="text-align">
+                                                 <b>企业家&CEO
+                                                     <span>钱 多 多</span>
+                                                 </b>
+                                             </p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                       </div>
+                   </div>
+               </div>
+            </div>
+            <!--聚惠，帮企业减轻 工商财税办理负担-->
+            <div class="juhui-photo">
+                <div class="entrepreneurship-box-top">
+                   <h3>聚惠，帮企业减轻 工商财税办理负担</h3>
+                   <p class="font16px">于创业者，我们是公益注册公司服务提供者； 于中小微企业，我们是记账报税服务提供者；</p>
+                   <p class="font16px">&nbsp;&nbsp;于操作，我们是简易网上操作的先行者；于服务，我们是按月业务信息回馈的实现者；</p>
+                </div>
+                <!--聚惠服务优势图片-->
+                <div class="juhui-photo-server">
+                    <div>
+                        <div>
+                            <p>明码标价,无隐形收费</p>
+                            <p>一口价，不存在隐形消费，不绑定任何收费</p>
+                            <p>项目，自愿选择服务。</p>
+                        </div>
+                        <div class="photo1">
+                            <img src="__ROOT__/static/index/img/image/sy-0003_01.png">
+                        </div>
+                        <div class="line"></div>
+                            <div>
+                                <p>全程代办，一站服务</p>
+                                <p>一站式企业服务，集成整合了企业从公司注</p>
+                                <p>册到工商财税所需的多项服务。</p>
+                            </div>
+                            <div class="photo1">
+                                <img src="__ROOT__/static/index/img/image/sy-0003_03.png">
+                            </div>
+                    </div>
+                    <!--中间服务优势图片-->
+                    <div class="photoimg">
+                        <img src="__ROOT__/static/index/img/image/sy-4.png">
+                    </div>
+                    <!--3-->
+                    <div>
+                        <div>
+                            <img src="__ROOT__/static/index/img/image/sy-0003_02.png">
+                        </div>
+                        <div class="textleft">
+                            <p>办理进度，实时掌控</p>
+                            <p>业务办理进度及时反馈客户，随时掌控，随</p>
+                            <p>地可查，让客户一清二楚。</p>
+                        </div>
+                        <div class="line2"></div>
+                        <div>
+                            <img src="__ROOT__/static/index/img/image/sy-0003_04.png">
+                        </div>
+                        <div class="textleft">
+                            <p>办理进度，实时掌控</p>
+                            <p>业务办理进度及时反馈客户，随时掌控，随</p>
+                            <p>地可查，让客户一清二楚。</p>
+                        </div>
+                    </div>
+                </div>
+                <!--聚惠承诺-->
+                <div class="juhuipromise">
+                    <p>
+                        <b><span class="fontspan30">聚惠承诺</span> , 服务不设任何隐形收费,注册 <span class="fontspan30">不成功全额退款</span></b>
+                    </p>
+                    <p>
+                        <b>深圳公司 + 三章办理 + 一年做账报税 = ￥2600&nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><span class="juhuipromise-refer">立 即 咨 询</span></a></b>
+                    </p>
+                </div>
+            </div>
+            <!--留言板-->
+            <div class="message-box">
+                <div class="entrepreneurship-box-top">
+                    <h3>最新 财税-创业-商业 咨询</h3>
+                    <p>创业与公司运作必备干货大集结，掌握更多商业、创业知识与咨询，让创业变得更简单！</p>
+                </div>
+                <!--留言列表-->
+                <div class="message-box-list">
+                    <!--左留言板-->
+                    <div class="message-box-list-left">
+                        <div>
+                            <ul>
+                               <li class="fg">
+                                  <span class="activity"></span>
+                                  <b>创业资讯</b>
+                               </li>
+                               <li class="more">
+                                <a href="#">+ <i>MORE</i></a>
+                               </li>
+                            </ul>
+                            <!--最新活动-->
+                            <div class="newactivity" >
+                                 <span class="redfont">【最新活动】</span>
+                                <!--标题-->
+                                 <span class="caption"><b>2017国庆中秋双节特惠活动开始了！</b></span>
+                                 <span class="leavecontent">聚惠企业为庆祝公司成立5周年，公司于2017年10月15日至21日，特推出以下折扣优惠活动！活动期间来公司签约客户，公司均赠送</span>
+                                 <span class="detailfont"><a href="#"><i>详细介绍</i></a></span>
+                            </div>
+                            <!--新闻列表-->
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【创客频道】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【商业资讯】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【攻略指南】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【成功案例】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【财税专题】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--中留言板-->
+                    <div class="message-box-list-left">
+                        <div>
+                            <ul>
+                                <li class="fg">
+                                    <span class="activity"></span>
+                                    <b>财税问答</b>
+                                </li>
+                                <li class="more">
+                                    <a href="#">+ <i>MORE</i></a>
+                                </li>
+                            </ul>
+                            <!--最新活动-->
+                            <div class="newactivity" >
+                                <span class="redfont">【注册公司】</span>
+                                <!--标题-->
+                                <span class="caption"><b>2017国庆中秋双节特惠活动开始了！</b></span>
+                                <span class="leavecontent">聚惠企业为庆祝公司成立5周年，公司于2017年10月15日至21日，特推出以下折扣优惠活动！活动期间来公司签约客户，公司均赠送</span>
+                                <span class="detailfont"><a href="#"><i>详细介绍</i></a></span>
+                            </div>
+                            <!--新闻列表-->
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【记账报税】</span>分公司企业所得税是否啊啊啊</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【工商变更】</span>股权转让变更流程</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【进出口权】</span>退抵税申请后什么时候到账</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【人事社保】</span>公司如何进行社保登记？</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【其他问题】</span>公司公章坏了要怎么更换？</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--右留言板-->
+                    <div class="message-box-list-left">
+                        <div>
+                            <ul>
+                                <li class="fg">
+                                    <span class="activity"></span>
+                                    <b>知识库</b>
+                                </li>
+                                <li class="more">
+                                    <a href="#">+ <i>MORE</i></a>
+                                </li>
+                            </ul>
+                            <!--最新活动-->
+                            <div class="newactivity" >
+                                <span class="redfont">【公司注册】</span>
+                                <!--标题-->
+                                <span class="caption"><b>2017国庆中秋双节特惠活动开始了！</b></span>
+                                <span class="leavecontent">聚惠企业为庆祝公司成立5周年，公司于2017年10月15日至21日，特推出以下折扣优惠活动！活动期间来公司签约客户，公司均赠送
+                                    <span class="detailfont"><a href="#"><i>详细介绍</i></a></span>
+                                </span>
+                            </div>
+                            <!--新闻列表-->
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【公司变更】</span>马云无人超市：这些黑心</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【代理记账】</span>商标转让右哪些注意事项！</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【税务代理】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【商业资讯】</span>老客户续费即送3个月</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                            <span class="dashed">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span>
+                            <ul class="news-list">
+                                <a href="#"><li class="newsoverflow"><span>【财税专题】</span>公司没有任何财务往来啊</li></a>
+                                <li><i>2017/7/25</i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--中间主体nav-box结束-->
+        <!--底部图片-->
+        <div class="footer-photo">
+            <!--空标签-->
+            <div></div>
+            <div class="footer-photo-list">
+                 <!--评估图片-->
+                 <div>
+                     <img src="__ROOT__/static/index/img/image/cgl.png">
+                 </div>
+                 <!--评估图片旁边的文字-->
+                <div class="footer-photo-font">
+                    <span>公司名称注册&nbsp;&nbsp;<b>成功率免费评估</b></span>
+                    <div>
+                    <p class="fontmartop">很多创业者在创办公司时，往往会因为公司名不合格无法注册，而耽搁浪费很长</p>
+                    <p>时间</p>
+                    </div>
+                    <div>
+                    <p class="fontmartop">所以，建议创业者在注册公司时，最好先对所注册公司的名称做一个免费的认证</p>
+                    <p>评估，避免因公司名称不规范、经营行业范围混乱、城市政策不同等问题，导致</p>
+                    <p>公司注册被驳回而平白浪费很多时间、精力和费用！</p>
+                    </div>
+                    <div>
+                    <p class="fontmartop">深圳聚惠企业，免费为创业者提供注册公司名评估服务，帮助企业者一次性胜利</p>
+                    <p>通过公司注册申请！创业者一旦填写完成并提交表单，我们的工作人员将会在24</p>
+                    <p>小时之内与您取得联系，并告知您所申请公司名能否成功注册。</p>
+                    </div>
+                    <div class="pingguyemian">
+                        <div>进入评估页面</div>
+                        <div>直接在线咨询</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部广告-->
+        <div class="footer-box">
+            <!--热门搜索框-->
+            <div class="footer-box-search">
+                <!--热门搜索-->
+                <div class="footer-box-search-left">
+                    <span><b>热门搜索</b></span>
+                    <ul>
+                        <li><a href="#">注册公司</a></li>
+                        <li><a href="#">注册商标</a></li>
+                        <li><a href="#">代理记账</a></li>
+                        <li><a href="#">公司注销</a></li>
+                        <li><a href="#">代账</a></li>
+                        <li><a href="#">税务顾问</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">税务顾问</a></li>
+                        <li><a href="#">财务外包</a></li>
+                        <li><a href="#">代办资质</a></li>
+                        <li><a href="#">许可证办理</a></li>
+                        <li><a href="#">税务顾问</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">有限公司注册</a></li>
+                        <li><a href="#">有限合伙公司注册</a></li>
+                        <li><a href="#">小规模纳税人</a></li>
+                        <li><a href="#">税务顾问</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">一般纳税人代理记账</a></li>
+                        <li><a href="#">年度企业所得税汇算清缴</a></li>
+                        <li><a href="#">税务顾问</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">餐饮服务许可证证新办</a></li>
+                        <li><a href="#">开办公司</a></li>
+                        <li><a href="#">财税代理</a></li>
+                        <li><a href="#">公司注销</a></li>
+                    </ul>
+                </div>
+                <!--常见问题-->
+                <div class="footer-box-search-middle">
+                        <span><b>常见问题</b></span>
+                        <span><b>财税服务</b></span>
+                        <span><b>关于聚惠</b></span>
+                    <ul>
+                        <li><a href="#">新手帮助</a></li>
+                        <li><a href="#">注册公司</a></li>
+                        <li><a href="#">了解我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">支付帮助</a></li>
+                        <li><a href="#">注册商标</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">开具发票</a></li>
+                        <li><a href="#">代理记账</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">财税咨询</a></li>
+                        <li><a href="#">人事社保</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">进出口权</a></li>
+                        <li><a href="#">TAG标签</a></li>
+                    </ul>
+                </div>
+                <!--服务支持-->
+                <div class="footer-box-search-right">
+                    <div>
+                        <span><b>服务支持</b></span>
+                        <p class="phonenum">&nbsp;400-718-9622</p>
+                        <p class="date">&nbsp;周一至周日8:00-22:00</p>
+                        <span class="qqconsult"><b>QQ在线咨询</b></span>
+                    </div>
+                    <div>
+                        <span> &nbsp;扫描二维码 关注公众号</span>
+                        <!--微信图片-->
+                        <div class="wechart">
+                            <img src="__ROOT__/static/index/img/images/ewm-20171213-1651.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <ul>
+                        <li>友情链接&nbsp;&nbsp; : </li>
+                        <li>&nbsp;&nbsp; <a href="#">公司注册</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">商标注册</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">财税代理</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">财务外包</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">公司注册</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">商标注册</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">财税代理</a> &nbsp;&nbsp;| </li>
+                        <li>&nbsp;&nbsp; <a href="#">财务外包</a></li>
+                    </ul>
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP备16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__ROOT__/static/index/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/index/js/swiper-3.4.2.min.js"></script>
+<script src="__ROOT__/static/index/js/top.js"></script>
+<script src="__ROOT__/static/index/js/index.js"></script>
+</body>
+</html>

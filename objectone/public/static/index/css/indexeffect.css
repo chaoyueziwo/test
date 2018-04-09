@@ -1,0 +1,41 @@
+
+/*领取优惠券 创业套餐 超值服务*/
+.nav-box-list-left:hover{
+    border: 1px solid #1cbbb4;
+    border-bottom:5px solid #1cbbb4;
+}
+/*立即领取查看详情*/
+.receive:hover{
+   background:#FF0000;
+   border:1px solid darkgray;
+}
+/*在线咨询*/
+.consult:hover{
+    background:#FF0000;
+    border:1px solid darkgray;
+}
+/*详细介绍*/
+.detail:hover{
+    color:#FF0000;
+    border:1px solid #FF0000;
+}
+/*第一步创业里面div的样式*/
+.entrepreneurship-box-bottom-right>div:hover{
+    border:2px solid #1cbbb4;
+}
+/*工商注册圆点鼠标移入时，鼠标变成手指*/
+.linetype>div:hover{
+    cursor: pointer;
+}
+/*弹出框鼠标移入时为显示状态*/
+.server-list-box-right:hover{
+    display: block;
+}
+/*底部图片立即咨询*/
+.juhuipromise-refer:hover{
+    color:#FF0000;
+}
+/*播放按钮*/
+.playbtn:hover{
+    cursor: pointer;
+}

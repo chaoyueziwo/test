@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/pluscolumn.css">
+    <script type="text/javascript" src="__ROOT__/static/kindeditor/kindeditor.js"></script>
+    <title>增加栏目</title>
+</head>
+<script type="text/javascript">
+     var editor;//编辑器对象
+    //加载编辑器
+    KindEditor.ready(function(e){
+        //创建编辑器
+        editor = e.create("[name=content]",{
+            width:"700px",
+            height:"300px"
+            //items:["undo","redo","|","bold","italic","underline"]
+        });
+        //设置编辑器中的内容
+        //editor.html("在这里编写你的内容...");
+    });
+</script>
+<body>
+  <!--增加栏目-->
+ <div id="container">
+         <div>
+             增加专题页
+         </div>
+         <form onSubmit="return submitting();" action="{:url('Zdylist/add')}" method="post" enctype="multipart/form-data">
+         <div class="container-middle">
+             <div></div>
+             <div class="container-middle-content">
+                     <ul>
+                         <li>专题名称 :&nbsp;&nbsp;</li>
+                         <li class="marleft10"><input type="text" class="width370 columnname" name="name"></li>
+                         <!--判断样式-->
+                         <li>请输入栏目名称</li>
+                     </ul>
+                     <ul>
+                    <li>缩略图 :&nbsp;&nbsp;</li>
+                    <li>
+                   <!--  <li class="marleft10"><input type="file" class="width370 columnname" name="image"></li> -->
+                        <input type="file" value="未选择文件" class="width370" name="image">
+                       <!-- <input type="file" id="file1">
+                       <a onclick="$('#file1').click()" class="uploading">上传图片</a> -->
+                        </li>
+                    </ul>
+                     <ul>
+                         <li>专题类型 :&nbsp;&nbsp;</li>
+                         <li>
+                             <!--标题切换点击-->
+                             <input type="radio" checked="checked" class="captionlist" name="type">&nbsp;独立页面
+                             <!--调用链接切换点击-->
+                             <input type="radio" class="calllist" name="type">&nbsp;调用链接<span>&nbsp;&nbsp;(选择后不能修改)</span>
+                         </li>
+                     </ul>
+                 <!--标题切换-->
+                     <ul class="caption">
+                         <li>专题标题 :&nbsp;&nbsp;</li>
+                         <li>
+                             <input type="text" class="width370 columntitle" name="title"><span>&nbsp;&nbsp;(为空则与栏目名相同)</span>
+                         </li>
+                     </ul>
+                <!--调用链接-->
+                     <ul class="call">
+                          <li>调用链接地址 :&nbsp;&nbsp;</li>
+                          <li><input type="url" class="width370" name="url"></li>
+                     </ul>
+                     <ul>
+                         <li>所属父级 :&nbsp;&nbsp;</li>
+                         <li>
+                             <select class="height40" name="fid">
+                                       <option value="0">顶级</option>
+                    {volist name="re" id='vo'}
+                                <option value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}|--{$vo['name']}</option>
+                            {/volist}
+                                    </select>
+                         </li>
+                     </ul>
+                     <ul  class="caption">
+                         <li>关键字 :&nbsp;&nbsp;</li>
+                         <li>
+                             <input type="text"  class="width370" name="gjz">
+                         </li>
+                     </ul>
+                     <ul class="caption">
+                         <li  class="height230 borbottom">简介 :&nbsp;&nbsp;</li>
+                         <li  class="height230 padd">
+                             <textarea name="content" cols="30" rows="10" class="width375 textarea"></textarea>
+                         </li>
+                     </ul>
+                     <ul>
+                         <li>显示排序 :&nbsp;&nbsp;</li>
+                         <li>
+                             <input type="text" name="paixu" onkeyup="this.value=this.value.replace(/[^\d]/g,'')
+                    " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " value="0" class="height25">
+                             <span>&nbsp;&nbsp;(值越小排序越靠前)</span></li>
+                     </ul>
+                    
+             </div>
+         </div>
+     <!--提交框-->
+     <div class="commit">
+         <input type="submit" placeholder="提交">
+         <input type="reset" placeholder="重置">
+     </div>
+         </form>
+ </div>
+
+
+
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/pluscolumn.js"></script>
+</body>
+</html>

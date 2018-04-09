@@ -1,0 +1,1163 @@
+/*头部公共样式*/
+body{
+    font-size: 14px;
+}
+/*字体14px*/
+.font14px{
+    font-size: 14px;
+}
+/*公共样式*/
+a{
+    color:#424242;
+}
+/*轮播上边框1px*/
+.swiper-container{
+    border-top:1px solid #1cbbb4;
+    min-width: 1200px;
+}
+ /*所有服务列表弹出菜单*/
+.server-list-box{
+    width:1200px;
+    position:absolute;
+    top:39px;
+    left:0;
+    z-index: 3;
+    font-size: 0;
+}
+/*所有服务列表左边的div里的class为mar0右边距为0*/
+.server-list-box-left>div .mar0{
+    margin-left:0;
+    font-size: 16px;
+    width: 60%;
+}
+/*所有服务列表里的div里的ul*/
+.server-list-box-left>div>ul{
+    color: #ffffff;
+}
+.server-list-box-left>div>ul>li{
+    margin:12px 10px 0 11px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.server-list-box-left>div>ul>li>a{
+   color:white;
+}
+/*右箭头*/
+.leftarrows{
+    height:15px;
+    width:20px;
+    background:url("../img/image/sy-1.png")no-repeat -85px -76px;
+}
+/*公司服务图标*/
+.companyico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat -83px -47px;
+}
+/*会计服务图标*/
+.accountantico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat -109px -47px;
+}
+/*知识产权图标*/
+.equityico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat -139px -47px;
+}
+/*人事社保图标*/
+.socialico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat 1px -76px;
+}
+/*资质办理*/
+.aptitudeico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat -22px -76px;
+}
+/*特殊渠道*/
+.specialico{
+    height:22px;
+    width:25px;
+    background: url("../img/image/sy-1.png")no-repeat -22px -76px;
+}
+
+/*轮播里面的图片最小宽度为1200px，小于1200px则不变化*/
+.swiper-wrapper img{
+    width:100%;
+    height:485px;
+    min-width: 1200px;
+}
+/*轮播楼层最小宽度为1200px，小于则不变化*/
+.swiper-pagination{
+    min-width:1200px;
+}
+.server-list-box-left{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.server-list-box-left>div{
+    background-color:#2B7773;
+    opacity:0.8;
+    height:80px;
+    width:269px;
+    border-bottom: 1px solid #ddd;
+}
+.server-list-box-left>div:last-child{
+    height:81px;
+}
+/*所有服务列表下面右边弹出框*/
+.server-list-box-right{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    width:77.5%;
+    height:484px;
+    background:#ffffff;
+    border: 1px solid #1cbbb4;
+    border-left:none;
+}
+/*弹出框容器*/
+.server-list-box-right-list{
+    height: 484px;
+    width:930px;
+}
+.server-list-box-right-list-1>div{
+    display: inline-block;
+    vertical-align: top;
+}
+.server-list-right{
+    width:69%;
+    vertical-align: top;
+    margin:1% 2%;
+}
+.server-list-left{
+    width: 26%;
+    vertical-align: top;
+}
+/*公司注册*/
+.server-list-right-top>div{
+    display:inline-block;
+    vertical-align: top;
+}
+/*有限公司注册 右边距10px*/
+.limited{
+    margin-left:2%;
+}
+.limited>li>a:hover{
+    color:#1cbbb4;
+}
+/*弹出框菜单栏里的公共样式公共样式上外边距20px*/
+.martop20px{
+    margin-top:20px;
+}
+/*弹出框菜单栏里的公共样式公共样式下外边距10px*/
+.marbottom10{
+    margin-bottom: 10px;
+}
+/*有限公司注册里的ul里的li下外边距10px*/
+.limited>ul>li{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 5px;
+    width:137px;
+}
+
+/*所有分类弹出菜单右边的3幅图片的外框 上下左右外边距5px*/
+.server-list-left>div{
+    margin:1%;
+}
+/*所有分类弹出菜单右边的3幅图片 宽240px 高145px*/
+.server-list-left>div>a>img{
+    width:235px;
+    height:150px;
+    border: 1px solid transparent;
+}
+/*公共样式下边框1px 颜色#464646*/
+.borderbot{
+    border-bottom: 1px solid lightgray;
+}
+/*轮播*/
+#lunbo{
+    width:100%;
+    height:487px;
+}
+/*中间主体内容*/
+#nav-box{
+   width:1200px;
+    margin:0 auto;
+    margin-top: 20px;
+}
+/*设为弹性布局*/
+.nav-box-list>div{
+    display:inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+.nav-box-list>div:first-child{
+    margin-right: 4%;
+}
+.nav-box-list>div:last-child{
+    margin-left: 4%;
+}
+.nav-box-list-left{
+    width:370px;
+    height:130px;
+    border:1px solid transparent;
+    border-bottom:5px solid #1cbbb4;
+    background: #f6f6f6;
+}
+.nav-box-list-left>span{
+    display: inline-block;
+    margin: 15px 20px;
+    color: #1cbbb4;
+    font-size: 16px;
+}
+.nav-box-list-left>p{
+    margin-left: 20px;
+    font-size: 14px;
+}
+/*红色样式*/
+.redfont{
+    color: #FF0000;
+}
+.nav-box-list-left>ul{
+    margin: 15px 20px;
+}
+/*第一个li行高30px*/
+.nav-box-list-left>ul>li:first-child{
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+/*立即领取内边距上下5px 左右15px  字体为14px；颜色白色，1px边框颜色为灰色，背景颜色为#1cbcb4*/
+.receive{
+    display: inline-block;
+    vertical-align: top;
+    padding:5px 15px;
+    color:white;
+    border:1px solid #ddd;
+    background:#1cbcb4;
+    font-size: 14px;
+}
+/*创业第一步盒子*/
+.entrepreneurship-box{
+    margin-top: 70px;
+}
+/*创业第一步头部里的h3*/
+.entrepreneurship-box-top>h3{
+    text-align: center;
+}
+/*创业第一步里的p标签*/
+.entrepreneurship-box-top>p{
+    text-align: center;
+    margin:10px 0;
+}
+/*创业第一步中间*/
+.entrepreneurship-box-middle{
+    margin-top: 50px;
+}
+.entrepreneurship-box-middle-yuan>ul{
+    margin: 0 auto;
+    width:71%;
+    font-size: 0;
+}
+.entrepreneurship-box-middle-yuan>ul>li{
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    text-align: center;
+}
+.entrepreneurship-box-middle-yuan>ul>li:last-child{
+    /*margin-left:12%;*/
+    /*margin-right: 0;*/
+}
+/*线型图 宽度680px 边框3px颜色为灰色 居中 上外边距20px 设置相对定位*/
+.linetype{
+    width:56%;
+    border:3px solid #6c6c6c;
+    margin: 0 auto;
+    margin-top: 20px;
+    position:relative;
+}
+/*线型图里的div设置绝对定位*/
+.linetype>div{
+    position: absolute;
+}
+/*线型图1*/
+.linetype1{
+    top:-10px;
+    left:-2%;
+}
+/*线型图2*/
+.linetype2{
+    top:-10px;
+    left:23%;
+}
+/*线型图3*/
+.linetype3{
+    top:-10px;
+    left:49%;
+}
+/*线型图4*/
+.linetype4{
+    top:-10px;
+    left:74%;
+}
+/*线型图5*/
+.linetype5{
+    top:-10px;
+    left:99%;
+}
+/*线型图6*/
+.linetype6{
+    top:-10px;
+    left:-2%;
+}
+/*线型图7*/
+.linetype7{
+    top:-10px;
+    left:23%;
+}
+/*线型图8*/
+.linetype8{
+    top:-10px;
+    left:49%;
+}
+/*线型图9*/
+.linetype9{
+    top:-10px;
+    left:74%;
+}
+/*线型图10*/
+.linetype10{
+    top:-10px;
+    left:99%;
+}
+/*创业第一步列表*/
+.entrepreneurship-box-bottom{
+    margin-top: 30px;
+    width:100%;
+    font-size: 0;
+}
+.entrepreneurship-box-bottom-left{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    height:400px;
+    width:20%;
+    background:url("../img/image/sy-6/sy-6-1.png")no-repeat;
+}
+.entrepreneurship2{
+    background:url("../img/image/sy-6/sy-6-2.png")no-repeat;
+}
+.entrepreneurship3{
+    background:url("../img/image/sy-6/sy-6-3.png")no-repeat;
+}
+.entrepreneurship4{
+    background:url("../img/image/sy-6/sy-6-4.png")no-repeat;
+}
+.entrepreneurship5{
+    background:url("../img/image/sy-6/sy-6-5.png")no-repeat;
+}
+/*创业第一步列表左边的框里的div 外边距25px 颜色为白色*/
+.entrepreneurship-box-bottom-left>div{
+    margin: 25px;
+    color: white;
+}
+/*工商注册左侧工商注册头部标题字体大小*/
+.entrepreneurship-box-bottom-left>div:first-child{
+    font-size: 18px;
+}
+/*工商公共样式字体18px*/
+.font18px{
+    font-size: 18px;
+}
+/*创业第一步列表左边的框里的ul 外边距25px 颜色为白色*/
+.entrepreneurship-box-bottom-left>ul{
+   margin:40px 0 0 30px;
+    color:white;
+    font-size: 13px;
+    list-style-type:disc;
+}
+.entrepreneurship-box-bottom-left>ul>li{
+    margin:10px;
+}
+.entrepreneurship-box-bottom-right{
+    display: inline-block;
+    vertical-align: top;
+    height: 400px;
+    width: 79%;
+    font-size: 14px;
+    margin-left: 1%;
+}
+/*工商注册、工商变更、知识产权、资质办理、税务代理.图片样式*/
+.entrepreneurship-box-bottom-right>div>div:first-child{
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+.entrepreneurship-box-bottom-right>div{
+    font-size: 16px;
+    height:194px;
+    width:24%;
+    border:2px solid transparent;
+    display: inline-block;
+    background-color:#f6f6f6;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+/*0元公益注册字体*/
+.redfont>span{
+    font-size: 24px;
+}
+/*上边距10px*/
+.martop10px{
+    margin-top: 10px;
+}
+/*右边距6px*/
+.marleft6px{
+    margin-left: 5px;
+}
+/*创业第一步列表右边里的div里面所有p标记 文本居中 上下10px*/
+.entrepreneurship-box-bottom-right>div p{
+    text-align: center;
+    margin:8px 0;
+}
+/*深圳公司图标*/
+.shenzhenico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -29px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*香港公司*/
+.hongkongico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -53px -29px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*外贸公司注册*/
+.foreignico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -107px -29px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*广东公司注册*/
+.guangdongico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -161px -29px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*无区域公司注册*/
+.noareaico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -83px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*集团、协会注册*/
+.groupico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -83px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*公司变更*/
+/*公司名变更图标*/
+.nameico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -135px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*法人股权图标*/
+.legalico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -135px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*地址变更图标*/
+.addressico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -135px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*增资减资图标*/
+.plusico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -135px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*进出口图标*/
+.turnoverico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -189px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*公司证件遗失图标*/
+.papersico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -189px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*执照延期图标*/
+.permitico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -189px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*公司买卖图标*/
+.dealico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -189px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*知识产权*/
+/*国内商标图标*/
+.inlandico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -241px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*香港商标图标*/
+.hongkong1ico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -241px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*海外商标图标*/
+.overseasico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -241px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*国内商标设计图标*/
+.designico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -241px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*资质办理*/
+/*外观专利图标*/
+.facadeico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -293px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*发明专利图标*/
+.findico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -293px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*实用新型专利图标*/
+.practicalico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -293px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*软件著作权图标*/
+.softwareico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -293px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*资质办理*/
+/*人力资源图表*/
+.hrico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -345px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*劳务派遣图标*/
+.labourico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -345px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*食品流通图标*/
+.foodico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -345px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*道路运输图标*/
+.roadico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -345px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*社保图标*/
+.social1ico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -399px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*公积金开户图标*/
+.accumulationico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -399px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*新四板图标*/
+.newfourico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -399px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*ICP图标*/
+.icpico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -399px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*税务代理*/
+/*记账报税图标*/
+.declareico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -452px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*申请一般纳税人图标*/
+.taxpayerico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -452px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*整理旧账图标*/
+.oldaccountico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -452px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*汇算清缴*/
+.settleico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -452px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*税务筹划*/
+.planico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat 1px -505px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*异常税务处理图标*/
+.abnormalico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -54px -505px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*代购发票图标*/
+.buyico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -108px -505px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*审计报告图标*/
+.auditico{
+    height:50px;
+    width:50px;
+    background: url("../img/image/sy-2.png")no-repeat -162px -505px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/*详细介绍*/
+.detail{
+    display:inline-block;
+    padding:5px 12px;
+    border:1px solid #1cbcb4;
+    background:white;
+    color:#1cbcb4;
+    margin-left:15px;
+    font-size: 14px;
+}
+/*在线咨询*/
+.consult{
+     display: inline-block;
+    padding:5px 12px;
+    border:1px solid transparent;
+    background:#1cbcb4;
+    color:white;
+    margin-left:15px;
+    font-size:14px;
+}
+/*免费核名里的第一个div*/
+.entrepreneurship-box-bottom-right .freename>div:first-child{
+    width:110px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    height: 30px;
+}
+/*免费核名里的p标记*/
+.freename>p{
+    font-size: 13px;
+}
+/*试一试*/
+.try{
+    margin-top: 6px;
+   margin-left: 70px;
+    padding:5px 20px;
+}
+/*视频盒子*/
+.video-box{
+    margin-top:70px;
+}
+/*视频弹出框*/
+.mask{
+    position: fixed; top: 0; filter: alpha(opacity=60); background-color: #777;
+    z-index: 1002; left: 0;
+    opacity:0.5; -moz-opacity:0.5;
+    display: none;
+}
+.maskvideo{
+    z-index: 1003;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: none;
+    margin-left: -500px;
+    margin-top: -250px;
+}
+.maskvideo>video{
+    width: 1000px;
+}
+/*视频中间部分,线圈图的框*/
+.video-box-middle{
+    margin-top: 50px;
+}
+/*视频底部,设置为相对定位*/
+.video-box-footer{
+    margin-top: 30px;
+    height:400px;
+    width:100%;
+    background: url("../img/image/sy000000-0000.png")no-repeat;
+    position:relative;
+}
+/*视口设置为绝对定位\，设为盒子模型*/
+.video-box-footer-list{
+    width:80%;
+    height:300px;
+    position: absolute;
+    top:50px;
+    left:120px;
+    box-sizing: border-box;
+}
+/*视口列表1 设为弹性布局 ,两端距离相等*/
+.video-box-footer-list-1>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+}
+.video-box-footer-list-1>div:last-child{
+    margin-left: 8%;
+}
+/*视频全局样式 边框圆角10px height400px*/
+.video-box-footer-list-1>div>img{
+    border-radius: 10px;
+    box-shadow:6px 6px 10px #4d5353;
+}
+/*视频文字里的p标记*/
+.video-character>p{
+    color: white;
+    margin: 10px;
+}
+/*视频文字里的第一个p标记*/
+.video-character>p:first-child{
+    margin-left: -30px;
+}
+/*视频文字右下角的双引号*/
+.imgvertical{
+    vertical-align:bottom;
+}
+/*文本居右*/
+.text-align{
+    text-align: right;
+}
+/*上外边距40px*/
+#martop40px{
+    margin-top: 40px;
+}
+#martop40px2{
+    margin-top: 40px;
+}
+#martop40px3{
+    margin-top: 40px;
+}
+#martop40px4{
+    margin-top: 40px;
+}
+#martop40px5{
+    margin-top: 40px;
+}
+/*视频文字里的最后一个p标记，李莉莉*/
+.video-character>p:last-child>b>span{
+    font-size: 30px;
+}
+/*第一个视频*/
+.linetypelist6{
+    position: relative;
+}
+/*播放按钮*/
+.playbtn{
+    position: absolute;
+    top:200px;
+    left:50px;
+}
+/*聚惠，帮企业减轻 工商财税办理负担*/
+.juhui-photo{
+    margin-top: 70px;
+}
+.font16px{
+    font-size: 16px;
+}
+/*聚惠服务优势图片*/
+.juhui-photo-server{
+    margin-top: 70px;
+}
+.juhui-photo-server>div{
+    display: inline-block;
+    vertical-align: top;
+    width:33%;
+}
+.line{
+    width:50px;
+    height: 3px;
+    background: #ddd;
+    margin: 55px 0 0 302px;
+}
+.line2{
+    width:50px;
+    height: 3px;
+    background: #ddd;
+    display: block!important;
+    margin-left: 15px;
+}
+.photoimg>img{
+    margin-left: 30px;
+}
+.photo1>img{
+    margin: 10px 20px;
+}
+.textleft{
+    margin-left: 20px;
+}
+/*文本居右*/
+.textleft>p{
+    text-align: left!important;
+}
+.juhui-photo-server>div>div>p{
+    text-align: right;
+    margin: 8px 0;
+    color:#6b6a6a;
+}
+.juhui-photo-server>div>div>p:first-child{
+    font-size: 20px;
+    font-weight: bold;
+    color:#000000;
+}
+.juhui-photo-server>div>div{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+}
+/*聚惠承诺*/
+.juhuipromise{
+    margin-top: 70px;
+    height:140px;
+    background:#1cbcb4;
+    width:100%;
+}
+/*聚惠承诺里的p标签*/
+.juhuipromise>p{
+    color:white;
+}
+/*聚惠承诺里的第一个p标签字体设为23px*/
+.juhuipromise>p:first-child{
+    font-size: 21px;
+    padding: 20px 0 0 230px;
+}
+/*聚惠承诺里的最后一个p标签文本居中*/
+.juhuipromise>p:last-child{
+    text-align: center;
+    margin: 20px 0 0 180px;
+    font-size: 18px;
+}
+/*聚惠承诺里的公共样式span字体为30px*/
+.fontspan30{
+    font-size: 30px;
+}
+/*聚惠承诺里的立即咨询*/
+.juhuipromise-refer{
+    display:inline-block;
+    padding:8px 30px;
+    background:white;
+    border-radius: 10px;
+    color:#1cbcb4;
+    box-shadow:4px 4px #126E6B;
+    font-size:16px;
+}
+/*新闻板盒子*/
+.message-box{
+    margin-top: 70px;
+}
+/*新闻板盒子3个列表 上外边距50px 设为弹性布局 内容边距相等*/
+.message-box-list{
+    margin-top: 50px;
+    font-size: 0;
+}
+.message-box-list>div{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.message-box-list>div:first-child{
+    margin-right:3%;
+}
+.message-box-list>div:last-child{
+    margin-left: 4%;
+}
+.message-box-list-left{
+    border-bottom: 5px solid #1cbbb4;
+}
+/*新闻板盒子里的子级div*/
+.message-box-list>div{
+    height:410px;
+    width:31%;
+    background:#f9f9f9;
+}
+/*新闻板盒子里的div*/
+.message-box-list-left>div{
+    width:330px;
+    height:340px;
+    margin:20px;
+}
+/*新闻板最新活动背景图*/
+.activity{
+    display: inline-block;
+    vertical-align: bottom;
+    height:17px;
+    width:15px;
+    background: url("../img/image/sy-2.png")no-repeat -50px -1px;
+}
+/*新闻板更多*/
+.more{
+    line-height: 23px;
+    font-size: 12px;
+    color: gray;
+}
+/*新闻板主题*/
+.caption{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    width: 241px;
+    vertical-align: top;
+    color:#636363;
+}
+/*最新活动*/
+.newactivity{
+    font-size: 14px;
+    line-height: 25px;
+    width: 330px;
+    margin-left: 7px;
+    margin-top: 10px;
+}
+/*最新活动里的第一个span*/
+.newactivity>span:first-child{
+    margin-left: -6px;
+}
+/*新闻板的详细介绍*/
+.detailfont{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+.detailfont>a{
+    color:#1cbbb4;
+}
+.news-list>li{
+    width:105px;
+    text-align: right;
+}
+/*新闻列表里的li溢出隐藏公共样式*/
+.newsoverflow{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    width:220px;
+    display: inline-block;
+    vertical-align: top;
+}
+.newsoverflow>span{
+    color:#1cbcb4;
+}
+.newsoverflow:hover{
+    color:#1cbbb4;
+}
+/*虚线样式*/
+.dashed{
+  display: inline-block;
+  color:#c3c1c1;
+  margin:5px 0 5px 6px;
+}
+.message-box-list-left>div>ul>li{
+    display: inline-block;
+    vertical-align: top;
+}
+/*公共样式，新闻列表日期颜色a2a2a2*/
+.message-box-list-left>div>ul>li>i{
+    color:#a2a2a2;
+}
+/*新闻列表头部最新活动字体16px div里的首个ul里的首个li*/
+.message-box-list-left>div>ul:first-child>li:first-child{
+    font-size: 16px;
+    color:#424242;
+    width: 82%;
+}
+/*公共样式，新闻列表ul里的第一个li颜色为1cbbb4*/
+.message-box-list-left>div>ul>li:first-child{
+    color:#1cbbb4;
+}
+/*底部图片评估表*/
+.footer-photo{
+    margin-top: 80px;
+    height:550px;
+    background: url("../img/image/back.jpg")no-repeat;
+    min-width: 1200px;
+}
+/*底部图片评估里的内容*/
+.footer-photo-list{
+    width:1200px;
+    margin: 0 auto;
+}
+/*底部图片评估里的内容*/
+.footer-photo-list>div{
+    margin-top: 60px;
+    display: inline-block;
+    vertical-align:top;
+}
+/*底部图片文字公共样式 颜色为白色 字体大小16px*/
+.footer-photo-font{
+    color:#ffffff;
+    font-size: 16px;
+    margin-left: 20px;
+}
+/*底部图片文字里的span*/
+.footer-photo-font>span:first-child{
+   font-size: 32px;
+}
+/*底部图片文字里的span里的b标签*/
+.footer-photo-font>span:first-child>b{
+    font-size: 40px;
+}
+.pingguyemian>div{
+    width:165px;
+    height:40px;
+    background: #1cbbb4;
+    display: inline-block;
+    text-align: center;
+    line-height: 37px;
+    margin-right: 10%;
+}
+/*底部图片文字里的div*/
+.footer-photo-font>div{
+    margin-top: 30px;
+}
+/*底部图片文字里的div里的p标签*/
+.footer-photo-font>div>p{
+    margin-top:10px;
+}
+/*底部文字里公共样式上外边距20px*/
+.fontmartop{
+    margin:20px 0 0 0;
+}
+.server-none-1,.server-none-2,.server-none-3,.server-none-4,.server-none-5,.server-none-6{
+    display: none;
+}
+.server-list-box-right{
+    display: none;
+}
+.linetypelist2,.linetypelist3,.linetypelist4,.linetypelist5,.linetypelist7,.linetypelist8,.linetypelist9,.linetypelist10{
+    display: none;
+}

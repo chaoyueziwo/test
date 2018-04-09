@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" content="text/html;">
+    <link rel="stylesheet" href="__ROOT__/static/admin/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/layui/css/layui.css">
+    <link rel="stylesheet" href="__ROOT__/static/admin/houtaicss/options.css">
+    <title>管理栏目</title>
+    <style>
+    .form-control, .single-line {
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 5px 12px;
+    -webkit-transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+    transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+    width: 213px;
+    font-size: 14px;
+}
+    #del{color: #0183be;}
+    </style>
+</head>
+<body>
+   <!--管理栏目片段-->
+    <!--遮罩层-->
+    <div class="masks">
+        <!--弹窗新增组织-->
+         <form action="{:url('Section/add')}" method="post">
+         <div class="tissue-box">
+             <div>
+                 <span>新增组织</span>
+                 <span class="close">&times;</span>
+             </div>
+             <!--弹窗中间内容-->
+             <div class="tissue-box-middle">
+                <div>
+                    <div>组织名称 :</div>
+                    <div>上级组织 :</div>
+                    <div>备注 :</div>
+                </div>
+                <div>
+                    <div><input type="text" name="name"></div>
+                    <div>
+                        <div style="display: inline-block;">
+                            <select class="form-control" name="pid">
+                                       <option value="0">顶级</option>
+                                        {volist name="re" id='vo'}
+                                        <option value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}|--{$vo['name']}</option>
+                                         {/volist}
+                            </select>
+                        </div>
+                        <div class="principal">
+
+                            <div>负责人 :</div>
+                            <div>
+                                <!--搜索框-->
+                                <div class="search-box" id="search"><input type="text" name="k" placeholder="搜索"></div>
+                                <div class="searchico"></div>
+                            </div>
+                            <p id="search_auto"></p>
+                    </div>
+                        </div>
+                    <div>
+                        <textarea class="remarks" name="description"></textarea>
+                    </div>
+                </div>
+             </div>
+             <!--弹窗底部-->
+             <div class="tissue-box-bottom">
+                 <div class="cancel">取消</div>
+                 <input type="submit" value="保存">
+             </div>
+         </div>
+         </form>
+    </div>
+     <div class="maskss">
+        <!--弹窗新增组织-->
+         <form action="{:url('Section/save')}" method="post">
+         <div class="tissue-boxx">
+             <div>
+                 <span>新增组织</span>
+                 <span class="close">&times;</span>
+             </div>
+             <!--弹窗中间内容-->
+             <div class="tissue-box-middle">
+                <div>
+                    <div>组织名称 :</div>
+                    <div>上级组织 :</div>
+                    <div>备注 :</div>
+                </div>
+                <div>
+                    <div><input type="text" name="name" id="names"></div>
+                    <div>
+                        <div style="display: inline-block;">
+                            <select class="form-control" name="pid">
+                                       <option value="0">顶级</option>
+                                        {volist name="re" id='vo'}
+                                        <option value="{$vo['id']}">{$vo['level']|str_repeat="&nbsp;&nbsp;&nbsp;",###}|--{$vo['name']}</option>
+                                         {/volist}
+                            </select>
+                        </div>
+                        <div class="principal">
+
+                            <div>负责人 :</div>
+                            <div>
+                                <!--搜索框-->
+                                <div class="search-box" id="search2"><input type="text" name="k" placeholder="搜索" id="keywords"></div>
+                                <div class="searchico"></div>
+                            </div>
+                            <p id="search_auto2"></p>
+                    </div>
+                        </div>
+                    <div>
+                        <textarea class="remarks" name="description" id="description"></textarea>
+                    </div>
+                </div>
+             </div>
+             <!--弹窗底部-->
+             <div class="tissue-box-bottom">
+                 <div class="cancel">取消</div>
+                 <input type="hidden" name="id" id="updateid">
+                 <input type="submit" value="保存">
+             </div>
+         </div>
+         </form>
+    </div>
+     <div class="container">
+    <!--新增-->
+    <div class="newplus">
+         <span>+</span>
+         <span>新增</span>
+         </div>
+    </div>
+     <!--底部-->
+   <form action="">
+        <div class="container-bottom">
+              <table id="tb_1">
+                  <thead>
+                        <tr>
+                            <th>折叠</th>
+                            <th>组织名称</th>
+                            <th>备注</th>
+                            <th>操作</th>
+                        </tr>
+                  </thead>
+                  <!--总部-->
+                 
+                  {$res}
+              </table>
+        </div>
+   </form>
+<script src="__ROOT__/static/admin/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/admin/layui/layui.js"></script>
+<script src="__ROOT__/static/admin/houtaijs/options.js"></script>
+<script>
+$(function(){
+
+      //$('#search_auto').css({'width':$('#search input[name="k"]').width()+4});
+      $('#search input[name="k"]').keyup(function(){
+      $.post("{:url('Section/ajaxs')}",{'value':$(this).val()},function(data){
+      if(data=='0') $('#search_auto').html('').css('display','none');
+      else $('#search_auto').html(data).css('display','block');
+      });
+      });
+ $('#search2 input[name="k"]').keyup(function(){
+      $.post("{:url('Section/ajaxs')}",{'value':$(this).val()},function(data){
+      if(data=='0') $('#search_auto2').html('').css('display','none');
+      else $('#search_auto2').html(data).css('display','block');
+      });
+      });
+      });
+    function values(obj){
+        //负责人选择框点击内容当前文本切换
+
+       $(".search-box>input").val($(obj).text());
+       $("#search_auto").css('display','none');
+       $("#search_auto2").css('display','none');
+    }
+    function update(id){
+
+         var url = "{:url('Section/update')}"; 
+    $.ajax({  
+            type:'post',  
+            url:url,  
+            data:("id="+id),  
+            dataType:"json", 
+            jsonpCallback:"flightHandler",   
+      
+            success:function(t){  
+                 
+                if(t != null){  
+                    $("input[type='hidden']").val(id);
+                  $(".maskss").show().find(".tissue-boxx").show(); 
+                  $("#names").val(t.name);
+                  $("#keywords").val(t.person);
+                  $("#description").text(t.description);
+                  $("#updateid").val(t.id);
+                }else{  
+      
+                    alert('修改失败');  
+                }  
+            }     
+        });
+    }
+   // /* function dele(id){
+   //      var url = "{:url('Section/dels')}"; 
+   //  $.ajax({  
+   //          type:'post',  
+   //          url:url,  
+   //          data:("id="+id),  
+   //          /*data: {vids:vid,vids1:vid1,prices:prices}, */
+   //          dataType:"json", 
+   //          jsonpCallback:"flightHandler",  
+   //          //beforeSend: function(){  
+   //          //    $("#span_content").text("数据处理中...");  
+   //          //},  
+   //          //success: function(msg){  
+   //          //    $("#show").html(msg);  
+      
+   //          success:function(t){  
+                 
+   //              if(t  ==  '1'){  
+      
+   //                  alert('删除成功');  
+      
+   //              }else{  
+      
+   //                  alert('删除失败');  
+   //              }  
+   //          }     
+   //      });
+   //  }*/
+</script>
+</body>
+</html>

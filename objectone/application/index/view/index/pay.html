@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/reset.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/indexmedia.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/bottom.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/top.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/menu.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/order.css">
+    <link rel="stylesheet" href="__ROOT__/static/product/css/pay.css">
+</head>
+<body>
+<div id="container">
+    <!--头部-->
+    <!--头部-->
+    <div class="container-box">
+        <div class="container-box-top">
+            <!--头部-->
+            <ul>
+                <li class="cbcb4"><a href="#"  class="cbcb4">聚惠企业</a>&nbsp;&nbsp;</li>
+                <li>|&nbsp;&nbsp;专业的财税服务平台</li>
+                <li>
+                    {if condition="$Think.session.user heq null"}  
+                    <div class="nologing">
+                        <div>&nbsp;&nbsp;<a href="__WEB__/index/User/login">登录</a>&nbsp;&nbsp;|</div>
+                        <div>&nbsp;&nbsp;<a href="__WEB__/index/User/register">注册</a>&nbsp;&nbsp;|</div>
+                    </div>
+                    {else/}
+                    <div class="loging" style="display:inline-block;">
+                        <div>&nbsp;&nbsp;<a href="#">{$Think.session.user.nickname}</a>&nbsp;&nbsp;|</div>
+                        <div>&nbsp;&nbsp;<a href="#">我的订单</a>&nbsp;&nbsp;|</div>
+                        <div class="shopcar">&nbsp;&nbsp;<a href="#">购物车</a><span>(1)</span>&nbsp;&nbsp;|</div>
+                    </div>
+                    {/if}
+                    <div class="wechartloginico">&nbsp;&nbsp;<a href="#"><span class="iphoneico">
+                    <div>
+                        <div>
+                            <img src="__ROOT__/static/index/img/image/sy-sjdlxljt-20180102-1609.png">
+                        </div>
+                        <div class="wechartlogin">
+                            <img src="__ROOT__/static/index/img/image/cyzx-xqy-ewm-20171227-1856.png">
+                        </div>
+                    </div>
+                      </span>手机端登录</a>&nbsp;&nbsp;</div>
+                    <div class="cbcb4">&nbsp;&nbsp;全国服务热线:400-718-9622</div>
+                </li>
+            </ul>
+        </div>
+        <!--头部结束-->
+        <!--聚惠企业图标-->
+        <div class="juhui-box">
+            <ul>
+                <a href="#">
+                    <li class="juhuiico">
+                    </li>
+                </a>
+                <li class="fg marlf20">
+                    <span><i>专注服务小微企业</i></span>
+                    <p>
+                        <span><span class="zizhiico"></span><b>资质认证</b></span>
+                        <span><span class="baoxianico"></span><b>保险赔付</b></span>
+                        <span><span class="shouhouico"></span><b>售后无忧</b></span>
+                    </p>
+                </li>
+                 <!--订单进度-->
+                <li>
+                    <div class="schedule">
+                       <div class="cbcb4">确认信息 提交订单</div>
+                        <!--进度条-->
+                        <p class="bgcbcb4">
+                           <span class="borcbcb4 cbcb4"><b>1</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div class="cbcb4">在线支付 生成订单</div>
+                        <!--进度条-->
+                        <p class="bgcbcb4">
+                            <span class="borcbcb4 cbcb4"><b>2</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div>填写资料 开始办理</div>
+                        <!--进度条-->
+                        <p>
+                            <span><b>3</b></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!--头部结束-->
+        </div>
+        <!--中间线-->
+        <div class="middleline"></div>
+
+        <!--中间内容-->
+        <div class="nav-box">
+            <!--内容导航栏-->
+            <div>
+                <!--位置图标-->
+                <span class="locationico"></span>
+                <span> <a href="#">首页</a> ></span>
+                <span> <a href="#">订单支付</a></span>
+            </div>
+            <!--内容盒子-->
+            <div class="nav-box-nav">
+                <!--上下左右外边距div-->
+                <div>
+                    <div>
+                        <div>
+                            <span class="yesico">
+                            </span>
+                            <span class="font18">订单已提交成功，您可通过以下其中一种方式在线进行付款！</span>
+                            <div class="marleft65">应付总额 : <span class="d6623d maright50">&yen;<span>{$re.payPrice}</span>元</span>
+                            订单号 : <span class="order-num">{$re.orderId}</span>
+                            <span class="cbcb4 xiangqing">订单详情<span class="downnico"></span></span>
+                                <!--订单详情-->
+                                <div class="xiangqinglist">1231465487987654651246545</div>
+                            </div>
+                        </div>
+                        <!--应付-->
+                        <div class="should">
+                            <p>
+                                <a href="__WEB__/index/Index/paySucceed/rid/{$rid}">微信 / 支付宝</a>
+                            </p>
+                            <!--支付宝-->
+                            <a href="#" target="_blank">
+                            <div class="alipayi">
+                                <span></span>
+                                <span >支付宝支付</span>
+                            </div>
+                            </a>
+                            <!--微信支付-->
+                            <div class="wechartic">
+                                <span></span>
+                                <span>微信支付</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--个人银行支付方式-->
+                    <div class="gerenbank">
+                        <div>
+                            <span>个人银行</span>
+                            <span>支持以下各银行借记卡及信用卡</span>
+                        </div>
+                        <!--链接-->
+                        <div class="bank">
+                            <div><a href="order.html" target="_blank"><img src="__ROOT__/static/product/img/zf09_12.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_14.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_03.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_05.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_07.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_17.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_09.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_26.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_28.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_30.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_32.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_35.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_37.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_34.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_48.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_49.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_51.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_57.png" class="martop5"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_52.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_55.png"></a></div>
+                            <div><a href="#" target="_blank"><img src="__ROOT__/static/product/img/zf09_46.png"></a></div>
+                        </div>
+                    </div>
+                    <!--自助转账-->
+                    <div class="self-help">
+                        <div>
+                            <span>自助转账</span>因限额不能支付时，建议使用自助转账
+                        </div>
+                        <!--支付平台-->
+                        <div class="platform">
+                            <div>
+                                <div>
+                                    <img src="__ROOT__/static/product/img/zfb_03.png">
+                                </div>
+                                <div>
+                                    <p>支付宝账号: xx@xxxxxx.com</p>
+                                    <p>校验全名 : 深圳市聚惠企业登记代理有限公司</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <img src="__ROOT__/static/product/img/zgyh_05.png">
+                                </div>
+                                <div>
+                                    <p>开户账号 : </p>
+                                    <p>开户名 : 深圳市聚惠企业登记代理有限公司</p>
+                                    <p>开户行 : 招商银行股份有限公司某某某支行</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>注：转账时请将订单编号备注在付款信息里；转账完成之后，请通知客服。</p>
+                        <p>客服热线：400-7189-622</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--中间结束-->
+        <!--遮罩层-->
+        <div class="mask"></div>
+        <!--遮罩层内容-->
+        <div class="paylist">
+            <!--在线支付-->
+            <div class="payonline">
+                 <div>
+                       <div>在线付款</div>
+                       <div class="closed">&times;</div>
+                 </div>
+                 <div>
+                     <div>
+                         <!--感叹号图标-->
+                            <div class="plaintico"></div>
+                     </div>
+                     <div>
+                         <p>
+                             请在新打开的页面完成支付后视情况选择
+                         </p>
+                         <!--支付成功-->
+                         <a href="#"><span class="paysucceed">支付成功</span></a>
+                         <!--支付遇到问题-->
+                         <a href="#"><span class="payquestion">支付遇到问题</span></a>
+                         <p><span class="close">返回选择其他支付方式</span></p>
+                         <p>如遇到超过限额无法支付，建议通过自助转账的方式</p>
+                     </div>
+                 </div>
+            </div>
+            <!--微信支付-->
+            <div class="wechartpay">
+                <div>
+                    <div>微信付款</div>
+                    <div class="closed">&times;</div>
+                </div>
+                <!--二维码内容-->
+                <div class="erweima">
+                    <div>
+                        {$result}
+                    </div>
+                    <div>请使用微信扫描二维码支付</div>
+                    <div>二维码30分钟内有效，请尽快支付</div>
+                </div>
+            </div>
+        </div>
+        <!--底部资质认证导航栏-->
+        <div class="footer-navbar">
+            <div>
+                <div>
+                    <div class="footernavico1"></div>
+                    <div>
+                        <div>资质认证</div>
+                        <div>服务商100%实名审核认证</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico2"></div>
+                    <div>
+                        <div>支付安全</div>
+                        <div>明码标价支付及信息安全</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico3"></div>
+                    <div>
+                        <div>保险赔付</div>
+                        <div>太平洋保险提供担保赔付</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footernavico4"></div>
+                    <div>
+                        <div>售后无忧</div>
+                        <div>服务出问题客服经理全程跟进</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="footer-box martop60px">
+            <!--热门搜索框-->
+            <div class="footer-box-search">
+                <!--常见问题-->
+                <div class="footer-box-search-middle">
+                    <span><b>常见问题</b></span>
+                    <span class="marleft93"><b>售后相关</b></span>
+                    <span class="marleft94"><b>关于聚惠</b></span>
+                    <ul>
+                        <li><a href="#">新手帮助</a></li>
+                        <li><a href="#">注册公司</a></li>
+                        <li><a href="#">了解我们</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">支付帮助</a></li>
+                        <li><a href="#">注册商标</a></li>
+                        <li><a href="#">品牌故事</a></li>
+                    </ul>
+                </div>
+                <!--服务支持-->
+                <div class="footer-box-search-right">
+                    <div>
+                        <span><b>服务支持</b></span>
+                        <p class="phonenum">400-718-9622</p>
+                        <p class="date">&nbsp;周一至周日8:00-22:00</p>
+                    </div>
+                    <!--在线咨询-->
+                    <div>
+                        <div class="font16"><b>在线咨询</b></div>
+                        <span class="qqconsult"><b>QQ在线咨询</b></span>
+                    </div>
+                    <div>
+                        <span class="font16"> &nbsp;<b>微信咨询</b></span>
+                        <!--微信图片-->
+                        <div class="wechart">
+                            <img src="__ROOT__/static/product/img/ewm-20171213-1651.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--友情链接-->
+            <div class="friend-box">
+                <div class="friend-box-list">
+                    <p>
+                        CopyRight 2008-2017, JH128.CN, Inc.All Rights Reserved 沪ICP16046474号-16
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__ROOT__/static/product/js/jquery-1.11.3.min.js"></script>
+<script src="__ROOT__/static/product/js/menu.js"></script>
+<script src="__ROOT__/static/product/js/pay.js"></script>
+
+</body>
+</html>

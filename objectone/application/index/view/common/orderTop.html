@@ -1,0 +1,79 @@
+ <!--头部-->
+    <div class="container-box">
+        <div class="container-box-top">
+            <!--头部-->
+            <ul>
+                <li class="cbcb4"><a href="#"  class="cbcb4">聚惠企业</a>&nbsp;&nbsp;</li>
+                <li>|&nbsp;&nbsp;专业的财税服务平台</li>
+                <li>
+                    {if condition="$Think.session.user heq null"}  
+                    <div class="nologing">
+                        <div>&nbsp;&nbsp;<a href="__WEB__/index/User/login">登录</a>&nbsp;&nbsp;|</div>
+                        <div>&nbsp;&nbsp;<a href="__WEB__/index/User/register">注册</a>&nbsp;&nbsp;|</div>
+                    </div>
+                    {else/}
+                    <div class="loging" style="display:inline-block;">
+                        <div>&nbsp;&nbsp;<a href="#">{$Think.session.user.nickname}</a>&nbsp;&nbsp;|</div>
+                        <div>&nbsp;&nbsp;<a href="#">我的订单</a>&nbsp;&nbsp;|</div>
+                        <div class="shopcar">&nbsp;&nbsp;<a href="#">购物车</a><span>(1)</span>&nbsp;&nbsp;|</div>
+                    </div>
+                    {/if}
+                    <div class="wechartloginico">&nbsp;&nbsp;<a href="#"><span class="iphoneico">
+                    <div>
+                        <div>
+                            <img src="__ROOT__/static/index/img/image/sy-sjdlxljt-20180102-1609.png">
+                        </div>
+                        <div class="wechartlogin">
+                            <img src="__ROOT__/static/index/img/image/cyzx-xqy-ewm-20171227-1856.png">
+                        </div>
+                    </div>
+                      </span>手机端登录</a>&nbsp;&nbsp;</div>
+                    <div class="cbcb4">&nbsp;&nbsp;全国服务热线:400-718-9622</div>
+                </li>
+            </ul>
+        </div>
+        <!--头部结束-->
+        <!--聚惠企业图标-->
+        <div class="juhui-box">
+            <ul>
+                <a href="#">
+                    <li class="juhuiico">
+                    </li>
+                </a>
+                <li class="fg marlf20">
+                    <span><i>专注服务小微企业</i></span>
+                    <p>
+                        <span><span class="zizhiico"></span><b>资质认证</b></span>
+                        <span><span class="baoxianico"></span><b>保险赔付</b></span>
+                        <span><span class="shouhouico"></span><b>售后无忧</b></span>
+                    </p>
+                </li>
+                <!--订单进度-->
+                <li>
+                    <div class="schedule">
+                       <div class="cbcb4">确认信息 提交订单</div>
+                        <!--进度条-->
+                        <p class="bgcbcb4">
+                           <span class="borcbcb4 cbcb4"><b>1</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div>在线支付 生成订单</div>
+                        <!--进度条-->
+                        <p>
+                            <span><b>2</b></span>
+                        </p>
+                    </div>
+                    <div class="schedule">
+                        <div>填写资料 开始办理</div>
+                        <!--进度条-->
+                        <p>
+                            <span><b>3</b></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <!--头部结束-->
+        </div>
+        <!--中间线-->
+        <div class="middleline"></div>
